@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding-top: 60px;
+}
+
+.wrap {
+    max-width: 1200px;
+    width: 100%;
+        /* width 100% padding會爆掉往外加 */
+    box-sizing: border-box;
+    /* 沒有加margin，不會自動左右致中 */
+    margin: auto;
+}
+
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+
+    background-color: white;
+    box-shadow: black 0 0 10px;
+}
+
+.header .header-inner {
+        /* 陰影顏色，x軸座標 y軸座標 陰影範圍 */
+    display: flex;
+    /* 上下致中 */
+    align-items: center;
+    /* logo和ul分開排版，SPACE只留在中間，SAPCE AROUND左右中等分 */
+    justify-content: space-between;
+}
+
+.header-inner > ul {
+    margin: 0;
+    padding: 0;
+    /* 去掉點點 */
+    list-style-type: none;
+     /* 預設單列排版 */
+    display: flex;
+} 
+.header-inner li {
+    padding: 0 30px;
+    border: double;
+}
+
+.logo {
+    width: 110px;
+    height: 55px; 
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+
+}
+
+.about {
+    display: flex;
+        /* 上下致中 */
+    align-items: center;
+    /* logo和ul分開排版，SPACE只留在中間，SAPCE AROUND左右中等分 */
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+
+.myimage {
+    max-width: 500px;
+}
+
+.self-intro {
+    display: flex;
+        /* 上下致中 */
+    align-items: center;
+    /* logo和ul分開排版，SPACE只留在中間，SAPCE AROUND左右中等分 */
+    justify-content: space-between;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    max-width: 200px;
+    max-height: 60px;
+    /* background-color: pink; */
+    
+    align-items: center;
+    justify-content: center;
+    /* 本來inline元素就可以用 */
+    /* text-align: center; */
+    margin: 50px auto;
+
+    border-style:double;
+
+}
+
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects > ul {
+    display: flex;
+    margin: 0;
+    /* default有padding */
+    padding: 0;
+    margin-right: -15px;
+
+    --column:3;
+    
+    list-style-type: none;
+    
+}
+
+.projects li {  
+    margin-right: 15px;
+    padding: 30px;
+    width: calc(100% / var(--column));
+    border-style:double;
+}
+
+.projects li>img {
+    max-width: 100%;  
+
+}
+
+
+.internships {
+    
+
+}
+
+.internships > ul {
+    margin: 0;
+    /* default有padding */
+    padding: 0;
+    list-style-type: none;
+}
+
+.internships li {
+
+}
+.copyrights {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 200px;
+    background-color: wheat;
+
+}
