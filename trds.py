@@ -1,5 +1,21 @@
 #!/bin/python3
 
+
+.title {
+    display: flex
+    max-width: 200px
+    max-height: 60px
+    / * background-color: pink
+    * /
+    align-items: center
+    justify-content: center
+    / * 本來inline元素就可以用 * /
+    / * text-align: center
+    * /
+    margin: 50px auto
+    border-style: double
+}
+
 import math
 import os
 import random

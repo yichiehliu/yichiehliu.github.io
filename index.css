@@ -1,7 +1,33 @@
 body {
     margin: 0;
     padding-top: 55px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/* 智能合約安全問題
+密冠合約
+DAO事件
+POKATALK ETHEREUM
+1. 用HIGHPERLEDGER的原因
+寫過智能合約麻
+履歷問題
+作品集
+網頁
+智能合約 ERC20/721
+car rental 實做哪些部分?
+backend flask 實作
+和區塊鏈架構
+Quorum服務 使用架構
+
+在Aegis custody做的事?
+1. api testing
+unitest
+(穩定幣架構不知道要不要講???)
+
+視差運動
+JS固定使用者位置扣掉MARGIN
+
+ */
 
 .wrap {
     max-width: 1200px;
@@ -60,6 +86,24 @@ body {
     margin: 0;
     /* 去掉文字底線 */
     display: inline-block;
+    /* font-family: 'regular'; */
+}
+
+.title {
+    max-width: 80%;
+    display: block;
+    margin: 17% auto;
+}
+
+
+.title > h3 {
+    color: #5857f9;
+    font-size: 26px;
+}
+
+.title > h4 {
+    font-size: 36px;
+
 }
 
 .logo {
@@ -73,7 +117,7 @@ body {
 
 .about {
     /* %跟着哪里？》？？？ */
-    padding-top: 5%;
+    /* padding-top: 5%; */
     display: flex;
     /* 上下致中 */
     align-items: center;
@@ -88,10 +132,11 @@ body {
 
 .myimage {
     padding: 0;
+    width: 100%;
     display: block;
     margin: 0 auto;
-    max-width: 80%;
-    max-height: 80%;
+    /* max-width: 80%;
+    max-height: 80%; */
 }
 
 .self-intro {
@@ -104,32 +149,37 @@ body {
     text-align: center;
 }
 
-.title {
-    display: flex;
-    max-width: 200px;
-    max-height: 60px;
-    /* background-color: pink; */
-    align-items: center;
-    justify-content: center;
-    /* 本來inline元素就可以用 */
-    /* text-align: center; */
-    margin: 50px auto;
-    border-style: double;
+
+
+
+.projects li h3{
+    /* default  */
+    font-size: 24px;
+    height: 1em;
+}
+
+.projects li h4{
+    /* default  */
+    margin: 12px 0;
+    font-size: 20px;
+}
+
+.projects li p {
+    margin-top: 0;
+}
+
+.projects {
+    overflow: hidden;
 }
 
 
-/* .projects {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 .projects>ul {
-    width: 100%;
-    margin: 0;
+    /* 不能設width 100%因為已經超過100 */
+    /* width: 100%; */
+    margin: 0 -15px;
     /* default有padding */
     padding: 0;
-    margin-right: ;
     --column: 3;
     list-style-type: none;
     display: flex;
@@ -137,9 +187,12 @@ body {
 
 .projects li {
     margin: 0 15px;
-    padding: 30px;
-    width: calc(100% / (var(--column)));
+    padding: 0 30px;
+    width: calc((100% / var(--column)) - 30px);
+    box-sizing: border-box;
+
     border-style: double;
+
 }
 
 .projects li img {
@@ -154,15 +207,29 @@ body {
 }
 
 .internships {
-    max-width: 100%;
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.intern-company {
+    height: 100vh;
+}
+
+.internships h3 {
+    font-size: 50px;
+}
+
+.internships h4 {
+    font-size: 20px;
 }
 
 .internships>ul {
     margin: 0;
     /* default有padding */
     padding: 0;
-    max-width: 100%;
-    height: 100%;
+    /* max-width: 100%; */
+    /* height: 100%; */
     list-style-type: none;
 }
 
@@ -170,8 +237,8 @@ body {
     /*  */
     margin: 30px 0;
     padding: 0;
-    width: 100%;
-    border-style: double;
+    /* width: 100%; */
+    /* border-style: double; */
     display: flex;
     /* align-items: center; */
     align-items: center;
@@ -181,12 +248,6 @@ body {
 .internships li>div {
     margin: 0;
     padding: 0;
-    width: 50%;
-}
-
-.internships li .intern-pic-container {
-    height: 100%;
-    text-align: center;
 }
 
 .internships li a {
@@ -194,11 +255,17 @@ body {
     padding: 0;
 }
 
-.internships li img {
+/* .intern-pic-container {
     width: 50%;
-    height: 100%;
+} */
+
+.internships li img {
+    width: 100%;
+    /* height: 100%; */
     margin: 0;
     padding: 0;
+    /* img預設是inline 會有3px的空隙 */
+    display: block;
 }
 
 
@@ -207,6 +274,34 @@ body {
     margin: 0;
     padding: 0;
 } */
+
+.activities {
+    max-width: 80%;  
+    margin: 0 auto;
+}
+
+/* .activity-tokyo {
+    max-width: 80%;   
+} */
+
+
+
+.activities img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-height: 60vh;
+
+    display: block;
+
+
+    /* height: 80px; */
+    /* display: flex;
+    margin: 0 auto; */
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+}
 
 .contact>ul {
     padding: 0;
