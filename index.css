@@ -1,8 +1,9 @@
 body {
     margin: 0;
     padding-top: 55px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'regular'
 }
+
 
 /* 智能合約安全問題
 密冠合約
@@ -49,6 +50,7 @@ JS固定使用者位置扣掉MARGIN
     height: 55px;
     background-color: white;
     box-shadow: black 0 0 10px;
+    font-family: 'Raleway';
 }
 
 .header .header-inner {
@@ -73,7 +75,7 @@ JS固定使用者位置扣掉MARGIN
 
 .header-inner li {
     padding: 10px 30px;
-    border: double;
+    /* border: double; */
     display: flex;
     /* 上下致中 */
     align-items: center;
@@ -95,15 +97,13 @@ JS固定使用者位置扣掉MARGIN
     margin: 17% auto;
 }
 
-
-.title > h3 {
+.title>h3 {
     color: #5857f9;
     font-size: 26px;
 }
 
-.title > h4 {
+.title>h4 {
     font-size: 36px;
-
 }
 
 .logo {
@@ -118,21 +118,21 @@ JS固定使用者位置扣掉MARGIN
 .about {
     /* %跟着哪里？》？？？ */
     /* padding-top: 5%; */
+    display: block;
+    text-align: center;
+}
+
+.myimage-container {
     display: flex;
     /* 上下致中 */
     align-items: center;
     /* logo和ul分開排版，SPACE只留在中間，SAPCE AROUND左右中等分 */
     justify-content: space-between;
-    text-align: center;
-}
-
-.myimage-container {
-    max-width: 50%;
 }
 
 .myimage {
     padding: 0;
-    width: 100%;
+    width: calc(100%/3);
     display: block;
     margin: 0 auto;
     /* max-width: 80%;
@@ -140,25 +140,19 @@ JS固定使用者位置扣掉MARGIN
 }
 
 .self-intro {
-    display: flex;
+    display: block;
     /* 上下致中 */
-    align-items: center;
-    /* logo和ul分開排版，SPACE只留在中間，SAPCE AROUND左右中等分 */
-    justify-content: space-between;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     text-align: center;
 }
 
-
-
-
-.projects li h3{
+.projects li h3 {
     /* default  */
     font-size: 24px;
     height: 1em;
 }
 
-.projects li h4{
+.projects li h4 {
     /* default  */
     margin: 12px 0;
     font-size: 20px;
@@ -171,8 +165,6 @@ JS固定使用者位置扣掉MARGIN
 .projects {
     overflow: hidden;
 }
-
-
 
 .projects>ul {
     /* 不能設width 100%因為已經超過100 */
@@ -190,9 +182,7 @@ JS固定使用者位置扣掉MARGIN
     padding: 0 30px;
     width: calc((100% / var(--column)) - 30px);
     box-sizing: border-box;
-
-    border-style: double;
-
+    /* border-style: double; */
 }
 
 .projects li img {
@@ -255,6 +245,7 @@ JS固定使用者位置扣掉MARGIN
     padding: 0;
 }
 
+
 /* .intern-pic-container {
     width: 50%;
 } */
@@ -275,26 +266,32 @@ JS固定使用者位置扣掉MARGIN
     padding: 0;
 } */
 
-.activities {
-    max-width: 80%;  
+.world-map img {
+    max-width: 70%;
+    display: block;
     margin: 0 auto;
 }
+
+.activities {
+    /* max-width: 100%; */
+    /* margin: 0 auto; */
+    display: flex;
+}
+
 
 /* .activity-tokyo {
     max-width: 80%;   
 } */
 
-
+.activities div {
+    width: calc(100%/3);
+}
 
 .activities img {
     margin: 0;
     padding: 0;
     width: 100%;
-    max-height: 60vh;
-
-    display: block;
-
-
+    /* max-height: 60vh; */
     /* height: 80px; */
     /* display: flex;
     margin: 0 auto; */
@@ -309,6 +306,47 @@ JS固定使用者位置扣掉MARGIN
     list-style-type: none;
     text-align: center;
 }
+
+.contact-social>* {
+    display: block;
+    margin: 0 auto;
+}
+
+.contact-social>ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-social li img {
+    margin: 0 10px;
+    width: 30px;
+}
+
+.btn-start-order {
+    background: 0 0 #ffffff;
+    border: 1px solid #2f323a;
+    border-radius: 3px;
+    color: #2f323a;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: inherit;
+    margin: 30px 0;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    transition: all 0.25s ease 0s;
+}
+
+.btn-start-order:hover,
+.btn-start-order:active,
+.btn-start-order:focus {
+    border-color: #5e9bfc;
+    color: #5e9bfc;
+}
+
+
+/* ------------------------------------------------------------ */
 
 .footer {
     background-color: wheat;
