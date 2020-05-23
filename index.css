@@ -329,13 +329,11 @@ JS固定使用者位置扣掉MARGIN
     border: 1px solid #2f323a;
     border-radius: 3px;
     color: #2f323a;
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway";
     font-size: 16px;
-    line-height: inherit;
     margin: 30px 0;
     padding: 10px 50px;
     text-transform: uppercase;
-    transition: all 0.25s ease 0s;
 }
 
 .btn-start-order:hover,
