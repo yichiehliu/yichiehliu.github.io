@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding-top: 55px;
-    font-family: 'regular'
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 
@@ -50,7 +50,7 @@ JS固定使用者位置扣掉MARGIN
     height: 55px;
     background-color: white;
     box-shadow: black 0 0 10px;
-    font-family: 'Raleway';
+    /* font-family: 'Raleway'; */
 }
 
 .header .header-inner {
@@ -91,20 +91,38 @@ JS固定使用者位置扣掉MARGIN
     /* font-family: 'regular'; */
 }
 
+
+.ball {
+    width: 20px;
+    height: 20px;
+    margin: 3px 0 0 0;
+    border-radius: 100%;
+    background-color: #5857f9;
+}
+
 .title {
     max-width: 80%;
     display: block;
     margin: 17% auto;
 }
 
+/* position > display > width height > padding margin >font size background */
 .title>h3 {
+    display: flex;
+    align-items: center;
     color: #5857f9;
     font-size: 26px;
+
 }
 
 .title>h4 {
     font-size: 36px;
 }
+
+.title-ball {
+    margin: 3px 0 0 20px;
+}
+
 
 .logo {
     width: 110px;
@@ -164,6 +182,7 @@ JS固定使用者位置扣掉MARGIN
 
 .projects {
     overflow: hidden;
+    
 }
 
 .projects>ul {
@@ -175,14 +194,27 @@ JS固定使用者位置扣掉MARGIN
     --column: 3;
     list-style-type: none;
     display: flex;
+    background-color: white;
 }
 
 .projects li {
+    position: relative;
     margin: 0 15px;
     padding: 0 30px;
     width: calc((100% / var(--column)) - 30px);
     box-sizing: border-box;
     /* border-style: double; */
+}
+
+.projects .ball {
+    position: absolute;
+    /* 另外一種置中方法 */
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 170px;
+    /* 隱藏到圖片底下 */
+    z-index: -1;
 }
 
 .projects li img {
@@ -202,12 +234,30 @@ JS固定使用者位置扣掉MARGIN
     margin: 0 auto;
 }
 
+
+
 .intern-company {
     height: 100vh;
 }
 
+
+
 .internships h3 {
+    display: flex;
+    position: relative;
     font-size: 50px;
+
+}
+
+.internships h3>.ball {
+    /* 推點點出去 */
+    position: absolute;
+    left: -64px;
+    right: 0;
+    top: 10px;
+    width: 45px;
+    height: 45px;
+
 }
 
 .internships h4 {
@@ -266,8 +316,30 @@ JS固定使用者位置扣掉MARGIN
     padding: 0;
 } */
 
-.world-map img {
+.world-map {
     max-width: 70%;
+    margin: 0 auto 200px;
+
+    display: flex;
+    /* 還是可以置中 */
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.world-map h3 {
+    color: #5857f9;
+    font-size: 26px;
+}
+
+.world-map h4 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+.world-map img {
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
@@ -300,29 +372,69 @@ JS固定使用者位置扣掉MARGIN
     background-size: cover; */
 }
 
-.contact>ul {
+/* .contact {
+    display: flex;
+}
+
+.contact div {
+    width: 50%;
+} */
+
+.s-media {
+    display: flex;
+    /* width: calc(30%/4); */
     padding: 0;
     margin: 0;
     list-style-type: none;
     text-align: center;
+
+}
+.s-media img {
+    margin: 0 10px ;
+    width: 30px;
 }
 
-.contact-social>* {
-    display: block;
-    margin: 0 auto;
-}
-
-.contact-social>ul {
-    list-style: none;
+.contact-info {
+    /* padding: 0 100px; */
+    /* max-width: 60%; */
     display: flex;
+    flex-direction: column;
+    /* margin: 0 auto; */
+    align-items: center;
+    justify-content: center;
+    /* text-align: center;   */
+    
+
+}
+
+.contact-info > h3{
+    margin: 50px 0 0;
+    color: #5857f9;
+    font-size: 26px;
+}
+
+.contact-info > h4{
+    margin: 0 0 30px;
+    font-size: 36px;
+}
+
+.form {
+    display: flex;  
+    flex-direction: column;
+    margin: 15px 0;
     align-items: center;
     justify-content: center;
 }
 
-.contact-social li img {
-    margin: 0 10px;
-    width: 30px;
+.form > h4 {
+    margin: 35px 0 10px;
+    font-size: 26px;
 }
+
+.form-group {
+
+}
+
 
 .btn-start-order {
     background: 0 0 #ffffff;
@@ -346,6 +458,35 @@ JS固定使用者位置扣掉MARGIN
 
 /* ------------------------------------------------------------ */
 
+.balls > .ball {
+    position: absolute;
+    top: 0;
+
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+
+}
+
+.ball-blue {
+    background-color: #5857f9;
+    transition: all 1s ease-out;
+}
+
+.float-ball-blue {
+
+}
+
+.ball-pink {
+    background-color: #ff5d7d;
+}
+
+.ball-purple {
+    background-color: #ff5d7d;
+}
 .footer {
     background-color: wheat;
 }
