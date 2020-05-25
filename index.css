@@ -184,6 +184,7 @@ a:hover {
     box-sizing: border-box;
     background-color: #381460;
     text-align: center;
+    /* margin: auto; */
     /* Referenced */
     display: inline-block;
     vertical-align: middle;
@@ -196,12 +197,15 @@ a:hover {
     transition-property: transform;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    /* transform: translateY(-50%); */
+    /* 置中 */
+    line-height: 28px;
 }
 
 .circle-font:hover,
 .circle-font:focus,
 .circle-font:active {
-    /* Referenced */
+    /* Referenced */ 
     -webkit-transform: translateY(-8px);
     transform: translateY(-8px);
 }
