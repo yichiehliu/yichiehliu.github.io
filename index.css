@@ -30,6 +30,27 @@ JS固定使用者位置扣掉MARGIN
 
  */
 
+a {
+    font-family: 'Raleway';
+}
+
+a:visited {
+    /* //設定已經瀏覽過的連結 */
+    color: black;
+}
+
+a:active {
+    text-decoration: none;
+    background-color: #ff2e63;
+    color: #ff2e63;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: #fafafa;
+    color: #3fc5f0;
+}
+
 .wrap {
     max-width: 1200px;
     width: 100%;
@@ -50,6 +71,7 @@ JS固定使用者位置扣掉MARGIN
     height: 55px;
     background-color: white;
     box-shadow: black 0 0 10px;
+    z-index: 100;
     /* font-family: 'Raleway'; */
 }
 
@@ -91,7 +113,6 @@ JS固定使用者位置扣掉MARGIN
     /* font-family: 'regular'; */
 }
 
-
 .ball {
     width: 20px;
     height: 20px;
@@ -106,13 +127,14 @@ JS固定使用者位置扣掉MARGIN
     margin: 17% auto;
 }
 
+
 /* position > display > width height > padding margin >font size background */
+
 .title>h3 {
     display: flex;
     align-items: center;
     color: #5857f9;
     font-size: 26px;
-
 }
 
 .title>h4 {
@@ -123,14 +145,81 @@ JS固定使用者位置扣掉MARGIN
     margin: 3px 0 0 20px;
 }
 
-
 .logo {
-    width: 110px;
+    position: relative;
+    width: 200px;
     height: 55px;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+/* .y-circle {
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.logo:hover .y-circle {
+    opacity: 1;
+    color: white;
+    bottom: 0;
+    height: 28px;
+    -webkit-transition: all .7s ease-in-out;
+} */
+
+.circle-font {
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    margin: 0 2px;
+    color: white;
+    box-sizing: border-box;
+    background-color: #381460;
+    text-align: center;
+    /* Referenced */
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.circle-font:hover,
+.circle-font:focus,
+.circle-font:active {
+    /* Referenced */
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+.y-circle {
+    background-color: #a278b5;
+}
+
+.j-circle {
+    background-color: #46b3e6;
+}
+
+.l-circle {
+    background-color: #b2dffb;
+}
+
+.i-circle {
+    background-color: #ff2e63;
 }
 
 .about {
@@ -138,6 +227,19 @@ JS固定使用者位置扣掉MARGIN
     /* padding-top: 5%; */
     display: block;
     text-align: center;
+}
+
+
+/* .network-container {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+} */
+
+.network {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 .myimage-container {
@@ -181,8 +283,8 @@ JS固定使用者位置扣掉MARGIN
 }
 
 .projects {
+    /* position: relative; */
     overflow: hidden;
-    
 }
 
 .projects>ul {
@@ -204,7 +306,55 @@ JS固定使用者位置扣掉MARGIN
     width: calc((100% / var(--column)) - 30px);
     box-sizing: border-box;
     /* border-style: double; */
+    /* background-color: ; */
 }
+
+
+/* .slide:before {
+    background: rgba(255, 93, 125, 0.11);
+} */
+
+
+/* 
+.slide {}
+
+.projects:hover {
+    transition: all .7s ease-in-out;
+    -webkit-transition: all .7s ease-in-out;
+    border-radius: 50%;
+    z-index: -1;
+} */
+
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    /* height: calc(calc(100/3) * calc(10/11)); */
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ff5d7d;
+}
+
+
+/* .activity-taipei:hover .overlay-nfac {
+    opacity: 1;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    height: 100%;
+} */
+
+
+/* .slider {
+    position: absolute;
+    left: 0;
+    right: 0;
+} */
 
 .projects .ball {
     position: absolute;
@@ -234,19 +384,14 @@ JS固定使用者位置扣掉MARGIN
     margin: 0 auto;
 }
 
-
-
 .intern-company {
     height: 100vh;
 }
-
-
 
 .internships h3 {
     display: flex;
     position: relative;
     font-size: 50px;
-
 }
 
 .internships h3>.ball {
@@ -257,7 +402,6 @@ JS固定使用者位置扣掉MARGIN
     top: 10px;
     width: 45px;
     height: 45px;
-
 }
 
 .internships h4 {
@@ -317,52 +461,73 @@ JS固定使用者位置扣掉MARGIN
 } */
 
 .world-map {
+    width: 80%;
+    display: block;
+    margin: 0 auto 0;
+}
+
+.act-pic {
+    text-align: center;
+}
+
+.act-pic>h2 {
+    margin: 100px 0 0;
+    font-size: 36px;
+}
+
+.act-pic>h5 {
+    margin: 0 0 100px;
+}
+
+.act-title {
     max-width: 70%;
     margin: 0 auto 200px;
-
     display: flex;
     /* 還是可以置中 */
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 }
 
-.world-map h3 {
+.act-title>h2 {
+    margin: 100px 0 0;
+    font-size: 36px;
+}
+
+.act-title>h3 {
     color: #5857f9;
     font-size: 26px;
 }
 
-.world-map h4 {
-    margin-top: 0;
+.act-title>h4 {
+    margin: 0;
     font-size: 36px;
 }
 
-.world-map img {
+.act-title>h5 {
+    margin: 0 0 100px;
+}
+
+.act-title img {
     max-width: 100%;
     display: block;
-    margin: 0 auto;
+    margin: 50px auto 0;
 }
 
 .activities {
-    /* max-width: 100%; */
-    /* margin: 0 auto; */
     display: flex;
 }
 
-
-/* .activity-tokyo {
-    max-width: 80%;   
-} */
-
-.activities div {
+.img-container {
     width: calc(100%/3);
+    height: 30%;
 }
 
-.activities img {
+.img-container>img {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
     /* max-height: 60vh; */
     /* height: 80px; */
     /* display: flex;
@@ -372,13 +537,260 @@ JS固定使用者位置扣掉MARGIN
     background-size: cover; */
 }
 
-/* .contact {
+.activity-taipei {
+    position: relative;
+}
+
+.overlay-nfac {
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    /* height: calc(calc(100/3) * calc(10/11)); */
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ff5d7d;
+}
+
+.activity-taipei:hover .overlay-nfac {
+    opacity: 1;
+    color: white;
+    text-align: center;
+    font-size: 1.28vw;
+    bottom: 0;
+    height: 100%;
+}
+
+.nfac {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* -ms-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+}
+
+.activity-tokyo {
+    position: relative;
+}
+
+.overlay-slush {
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    /* height: calc(calc(100/3) * calc(10/11)); */
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #5857f9;
+}
+
+.activity-tokyo:hover .overlay-slush {
+    opacity: 1;
+    color: white;
+    text-align: center;
+    font-size: 1.28vw;
+    bottom: 0;
+    height: 100%;
+}
+
+.slush {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* -ms-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+}
+
+.activity-china {
+    position: relative;
+}
+
+.overlay-yan {
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    /* height: calc(calc(100/3) * calc(10/11)); */
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #59257d;
+}
+
+.activity-china:hover .overlay-yan {
+    opacity: 1;
+    color: white;
+    bottom: 0;
+    height: 100%;
+    font-size: 1.28vw;
+    text-align: center;
+}
+
+.yanxing {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* -ms-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+}
+
+
+/* .activities {
+    position: relative;
+}
+
+.activities:hover .slush {
+    background-color: black;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0.8;
+    color: white;
+} */
+
+
+/* .activity-tokyo {
+    position: relative;
+} */
+
+
+/* .activity-tokyo:hover .slush {
+    background-color: black;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0.8;
+    color: white;
+    --heightPic:var(calc(100%/3))
+    height: 100%;
+    transition: transform .2s;
+    /* overflow: hidden; */
+
+
+/* broder-s */
+
+
+/*  */
+
+
+/* }  */
+
+
+/* 
+.slush-img {
+    position: relative;
+}
+
+.slush {
+    display: none;
+}
+
+.slush-img:hover {
+    background-color: black;
+    position: absolute;
+    width: calc(100%/3); */
+
+
+/* top: 0;
+    left: 0; */
+
+
+/* opacity: 0.3; */
+
+
+/* -webkit-transform: scale(0.8);。 */
+
+
+/* } */
+
+
+/* 
+.slush {
+    position: absolute;
+    display: none;
+} */
+
+
+/* background-color: yellow; */
+
+
+/* .te:hover .slush {
+    background-color: black;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0.8;
+    color: white;
+    height: 100%; */
+
+
+/* overflow: hidden; */
+
+
+/* broder-s */
+
+
+/* -webkit-transform: scale(0.8); */
+
+
+/* } */
+
+
+/* .slush {
+    position: absolute;
+    display: none;
+} */
+
+#yanxing {
+    width: 100%;
+    /* background-color: yellow; */
+}
+
+#slush:hover {
+    background-color: black;
+}
+
+#nfac:hover {
+    background-color: black;
+}
+
+
+/* .activity-tokyo {
+    position: absolute;
+}
+
+.activity-taipei {
+    position: absolute;
+}
+
+.activitu-china {
+    position: absolute;
+} */
+
+.contact {
     display: flex;
 }
 
-.contact div {
+.contact>div {
     width: 50%;
-} */
+}
 
 .s-media {
     display: flex;
@@ -387,10 +799,10 @@ JS固定使用者位置扣掉MARGIN
     margin: 0;
     list-style-type: none;
     text-align: center;
-
 }
+
 .s-media img {
-    margin: 0 10px ;
+    margin: 0 10px;
     width: 30px;
 }
 
@@ -403,38 +815,53 @@ JS固定使用者位置扣掉MARGIN
     align-items: center;
     justify-content: center;
     /* text-align: center;   */
-    
-
 }
 
-.contact-info > h3{
+.contact-info>h3 {
     margin: 50px 0 0;
     color: #5857f9;
     font-size: 26px;
 }
 
-.contact-info > h4{
+.contact-info>h4 {
     margin: 0 0 30px;
     font-size: 36px;
 }
 
 .form {
-    display: flex;  
+    display: flex;
     flex-direction: column;
     margin: 15px 0;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
 }
 
-.form > h4 {
+.form>h4 {
     margin: 35px 0 10px;
     font-size: 26px;
 }
 
-.form-group {
-
+.form-control {
+    border-radius: 0;
+    border-color: #ccc;
+    border-width: 0 0 2px 0;
+    border-style: none none solid none;
+    box-shadow: none;
+    font-family: "Raleway";
 }
 
+.form-control:focus {
+    box-shadow: none;
+    border-style: none none solid none;
+    outline: none;
+    border-color: #5857f9;
+}
+
+
+/* 
+.form-control {
+    border-style: none;
+} */
 
 .btn-start-order {
     background: 0 0 #ffffff;
@@ -458,17 +885,15 @@ JS固定使用者位置扣掉MARGIN
 
 /* ------------------------------------------------------------ */
 
-.balls > .ball {
+.balls>.ball {
     position: absolute;
     top: 0;
-
 }
 
 .ball {
     width: 20px;
     height: 20px;
     border-radius: 100%;
-
 }
 
 .ball-blue {
@@ -476,9 +901,7 @@ JS固定使用者位置扣掉MARGIN
     transition: all 1s ease-out;
 }
 
-.float-ball-blue {
-
-}
+.float-ball-blue {}
 
 .ball-pink {
     background-color: #ff5d7d;
@@ -487,6 +910,7 @@ JS固定使用者位置扣掉MARGIN
 .ball-purple {
     background-color: #ff5d7d;
 }
+
 .footer {
     background-color: wheat;
 }
