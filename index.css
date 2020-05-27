@@ -398,6 +398,8 @@ a:hover {
     z-index: -1;
 }
 
+
+
 .projects li img {
     margin: 0;
     padding: 0;
@@ -409,15 +411,22 @@ a:hover {
     background-size: cover; */
 }
 
-
 /* 動畫 */
-.project-slide {
-        /* transition: all 1s ease-out; */
-    /* visibility: hidden; */
+
+.projects.animate .project-1 {
+    background-color: rgba(71, 214, 230, 0.51);
+    transition: all .8s ease-out;
+    /* visibility: visible; */
 }
-.projects.animate .project-slide {
+
+.projects.animate .project-2 {
     background-color: #baf1a1;
-    transition: all 1s ease-out;
+    transition: all .8s ease-out;
+    /* visibility: visible; */
+}
+.projects.animate .project-3 {
+    background-color: #ffe23c;
+    transition: all .8s ease-out;
     /* visibility: visible; */
 }
 
@@ -450,9 +459,9 @@ a:hover {
     position: absolute;
     left: -64px;
     right: 0;
-    top: 10px;
-    width: 45px;
-    height: 45px;
+    top: .15em;
+    width: 1em;
+    height: 1em;
 }
 
 .internships h4 {
@@ -494,6 +503,9 @@ a:hover {
 .intern-company h3 {
     margin: 30px 0;
 }
+
+
+
 /* 動畫 */
 /* 先從display射程none之後發現不能用動畫    display: none; */
 /* 之後改成visibility 發現還是占空間 */
@@ -844,6 +856,18 @@ a:hover {
 
 
 /* ------------------------------------------------------------ */
+/* 球動畫 */
+.dotted-circle {
+    position: absolute;
+    border-radius: 50%;
+    border-style: dashed;
+    width: 1.2em;
+    height: 1.2em;
+    left: -71px;
+    right: 0;
+    bottom: .15px;
+}
+
 
 .balls>.ball {
     position: absolute;
