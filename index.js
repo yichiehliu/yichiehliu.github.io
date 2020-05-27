@@ -20,9 +20,50 @@ function InternTitleToCom() {
 }
 
 
-new IntersectionObserver(callback, InternTitleToCom) {
+// new IntersectionObserver(callback, InternTitleToCom) {
 
+// }
+
+
+// console.log(projectTBB.position().left)
+
+
+var scroller = scrollama();
+scroller.setup({
+    step: ".intern-intro",
+    offset: .16,
+    debug: true
+})
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+
+function handleStepEnter({ element, direction }) {
+    if (direction == 'down') {
+        element.classList.add('animate');
+    }
+    console.log(element, direction);
 }
 
 
-console.log(projectTBB.position().left)
+function handleStepExit({ element, direction }) {
+    if (direction == 'up') {
+        element.classList.remove('animate');
+    }
+    console.log(element, direction);
+}
+
+
+// var scroller_2 = scrollama();
+// scroller_2.setup({
+//     step: ".intern-intro",
+//     offset: .21,
+//     debug: true
+// })
+//     .onStepExit(handleStepExit);
+
+// function handleStepExit({ element, direction }) {
+//     // if (direction == 'up') {
+//     element.classList.remove('animate');
+//     console.log(element, direction);
+// }
