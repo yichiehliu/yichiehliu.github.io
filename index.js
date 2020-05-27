@@ -28,10 +28,20 @@ function InternTitleToCom() {
 // console.log(projectTBB.position().left)
 
 
-var scroller = scrollama();
-scroller.setup({
+var scroller_intern = scrollama();
+scroller_intern.setup({
     step: ".intern-intro",
     offset: .16,
+    debug: true
+})
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+
+var scroller_project = scrollama();
+scroller_project.setup({
+    step: ".projects",
+    offset: .5,
     debug: true
 })
     .onStepEnter(handleStepEnter)

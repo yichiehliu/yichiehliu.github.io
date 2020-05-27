@@ -169,7 +169,7 @@ a:hover {
     bottom: 100%;
     left: 0;
     right: 0;
-    height: 0;
+    max-height:0;
     overflow: hidden;
     opacity: 0;
     transition: .5s ease;
@@ -180,7 +180,7 @@ a:hover {
     color: white;
     bottom: 0;
     height: 28px;
-    -webkit-transition: all .7s ease-in-out;
+    -webkit-transition:max-height .7s ease-in-out;
 } */
 
 .circle-font {
@@ -350,8 +350,8 @@ a:hover {
 .slide {}
 
 .projects:hover {
-    transition: all .7s ease-in-out;
-    -webkit-transition: all .7s ease-in-out;
+    transition:max-height .7s ease-in-out;
+    -webkit-transition:max-height .7s ease-in-out;
     border-radius: 50%;
     z-index: -1;
 } */
@@ -363,7 +363,7 @@ a:hover {
     left: 0;
     right: 0;
     width: 100%;
-    height: 0;
+    /* max-height:0; */
     /* height: calc(calc(100/3) * calc(10/11)); */
     overflow: hidden;
     opacity: 0;
@@ -409,6 +409,21 @@ a:hover {
     background-size: cover; */
 }
 
+
+/* 動畫 */
+.project-slide {
+        /* transition: all 1s ease-out; */
+    /* visibility: hidden; */
+}
+.projects.animate .project-slide {
+    background-color: #baf1a1;
+    transition: all 1s ease-out;
+    /* visibility: visible; */
+}
+
+
+/* ------ */
+
 .internships {
     max-width: 50%;
     display: block;
@@ -419,6 +434,9 @@ a:hover {
     height: 100vh;
 }
 
+.internships {
+    height: 300vh;
+}
 
 .internships h3 {
     display: flex;
@@ -470,31 +488,169 @@ a:hover {
 .internships li a {
     margin: 0;
     padding: 0;
+
 }
 
 .intern-company h3 {
     margin: 30px 0;
 }
 /* 動畫 */
+/* 先從display射程none之後發現不能用動畫    display: none; */
+/* 之後改成visibility 發現還是占空間 */
+/* 最後改成設height，發現波不了動畫 */
+/* 最後改成max-height成功 */
+
+/* .intern-intro {
+    height: 100vh;
+} */
 
 .intern-content {
-    display: none;
+
+    -webkit-transition: max-height 0.5 ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
 }
 
-.intern-intro {
-    height: 100vh;
+.intern-content-1 {
+
+
+    max-height:0;
+    overflow: hidden;    
+    transition: max-height 0.5s ease-in-out;
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition-delay: 300ms;
+}
+
+.intern-content-2 {
+
+
+    max-height:0;
+    overflow: hidden;
+    transition:max-height 0.5s ease-in-out;
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition-delay: 250ms;
+
+}
+.intern-content-3 {
+
+
+    max-height:0;
+    overflow: hidden;
+    transition:max-height 0.5s ease-in-out;
+    -webkit-transition:max-height 0.5 ease-in-out;
+
+    transition-delay: 200ms;
+}
+
+.intern-content-4 {
+    max-height:0;
+
+    transition:max-height 0.5s ease-in-out;
+    -webkit-transition:max-height 0.5 ease-in-out;
+
+    transition-delay: 150ms;
+
+    overflow: hidden;
+
+
+}
+.intern-content-5 {
+
+    max-height:0;
+    overflow: hidden;
+    transition:max-height 0.5s ease-in-out;
+    -webkit-transition:max-height 0.5 ease-in-out;
+
+    transition-delay: 100ms;
+
+}
+.intern-content-6 {
+
+    max-height:0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    -webkit-transition:max-height 0.5 ease-in-out;
 }
 .intern-inner {
     position: -webkit-sticky;
     position: sticky;
-    top: 16%;
+    top: 16%;  
 }
 
-.intern-intro.animate .intern-content {
-    display: block;
+.intern-intro.animate {
+    height: 100vh;
+}
+
+
+.intern-intro.animate .intern-content { 
+    max-height:100%;
+    overflow: auto;
     position: sticky;
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition:max-height 0.5s ease-in-out;
 }
 
+
+.intern-intro.animate .intern-content-1 {
+    max-height:100%;
+    overflow: auto;    
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition:max-height 0.5s ease-in-out;
+}
+
+.intern-intro.animate .intern-content-2 {
+
+    max-height:100%;
+    overflow: auto;
+
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition:max-height 0.5s ease-in-out;
+
+    transition-delay: 100ms;
+
+}
+.intern-intro.animate .intern-content-3 {
+
+    max-height:100%;
+    overflow: auto;
+
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition:max-height 0.5s ease-in-out;
+
+    transition-delay: 150ms;
+
+    
+}
+.intern-intro.animate .intern-content-4 {
+
+    max-height:100%;
+    overflow: auto;
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition:max-height 0.5s ease-in-out;
+    transition-delay: 200ms;
+
+}
+.intern-intro.animate .intern-content-5 {
+
+    max-height:100%;
+    overflow: auto;
+    -webkit-transition:max-height 0.5 ease-in-out;
+    transition:max-height 0.5s ease-in-out;
+
+    transition-delay: 250ms;
+
+}
+.intern-intro.animate .intern-content-6 {
+
+    overflow: auto;
+    max-height:100%;
+    -webkit-transition: max-height 0.5 ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+
+    transition-delay: 300ms;
+
+}
 .internships li img {
     width: 100%;
     /* height: 100%; */
@@ -702,7 +858,7 @@ a:hover {
 
 .ball-1 {
     background-color: #46b3e6;
-    transition: all 1s ease-out;
+    transition:max-height 0.5 ease-out;
 }
 
 .float-ball-2 {}
