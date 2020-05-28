@@ -130,10 +130,16 @@ a:hover {
 .title {
     /* max-width: 70%; */
     display: block;
-    margin: 400px 0;
+    margin: 300px 0;
     padding: 0 300px;
     /* text-align: center;s */
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: all 1s ease-in;
+
 }
+
+
 
 
 /* position > display > width height > padding margin >font size background */
@@ -151,6 +157,15 @@ a:hover {
 
 .title-ball {
     margin: 3px 0 0 20px;
+}
+
+.title.animate {
+    transition: all 1s ease-in;
+    /* transition-duration: 2s;
+    background-color: #2098D1;
+    color: white; */
+    /* visibility: visible; */
+    opacity: 1;
 }
 
 .logo {
@@ -267,10 +282,17 @@ a:hover {
     z-index: 100;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 100%);
+    opacity: 0;
 }
 
+.self-intro.animate {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 1;
+}
 .self-intro > h1 {
     color: #46b3e6;
+    
 }
 
 .myimage-container {
@@ -286,10 +308,34 @@ a:hover {
     width: calc(100%/3);
     display: block;
     margin: 0 auto;
-    /* max-width: 80%;
-    max-height: 80%; */
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
 }
 
+.myimage-container.animate .myimage-1 {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 1;
+}
+
+
+.myimage-container.animate .myimage-2 {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 1;
+    transition-delay: 600ms;
+    -webkit-animation-delay: 600ms;
+
+}
+
+.myimage-container.animate .myimage-3 {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 1;
+    transition-delay: 300ms;
+    -webkit-animation-delay: 300ms;
+}
 .self-intro {
     display: block;
     /* 上下致中 */
@@ -413,22 +459,105 @@ a:hover {
 
 /* 動畫 */
 
-.projects.animate .project-1 {
-    background-color: rgba(71, 214, 230, 0.51);
-    transition: all .8s ease-out;
-    /* visibility: visible; */
+/* Radial Out Referenced */
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  background: white;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: #2098D1; */
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  /* color: white; */
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+/* Radial Out Referenced */
+
+.projects.animate .hvr-radial-out:before  {
+  -webkit-transform: scale(2);
+  transform: scale(2);
 }
 
-.projects.animate .project-2 {
-    background-color: #baf1a1;
-    transition: all .8s ease-out;
-    /* visibility: visible; */
+.projects.animate .project-1  {
+    color: #46b3e6;
 }
-.projects.animate .project-3 {
-    background-color: #ffe23c;
-    transition: all .8s ease-out;
-    /* visibility: visible; */
+
+.projects.animate .project-1:before  {
+    background: #d7fffd;
 }
+
+.projects.animate .project-2  {
+    color: #216353;
+}
+
+
+.projects.animate .project-2:before  {
+    background: #d1f5d3;
+}
+
+.projects.animate .project-3  {
+    color: #eb8242;
+
+}
+.projects.animate .project-3:before  {
+    background: #fcf7bb;
+}
+
+
+.project-1:hover {
+    color: #46b3e6;
+}
+
+.project-2:hover{
+    color: #216353;
+
+}
+.project-3:hover{
+    color: #eb8242;
+}
+.project-1:hover:before {
+    background: #d7fffd;
+}
+
+.project-2:hover:before {
+    background: #d1f5d3;
+
+}
+
+.project-3:hover:before {
+    background: #fcf7bb;
+}
+
 
 
 /* ------ */
@@ -437,6 +566,12 @@ a:hover {
     max-width: 50%;
     display: block;
     margin: 0 auto;
+    opacity: 0;
+}
+
+.internships.animate {
+    transition: all 1s ease-in;
+    opacity: 1;
 }
 
 .intern-company {
@@ -535,8 +670,6 @@ a:hover {
 }
 
 .intern-content-2 {
-
-
     max-height:0;
     overflow: hidden;
     transition:max-height 0.5s ease-in-out;
@@ -573,7 +706,6 @@ a:hover {
     overflow: hidden;
     transition:max-height 0.5s ease-in-out;
     -webkit-transition:max-height 0.5 ease-in-out;
-
     transition-delay: 100ms;
 
 }
@@ -587,7 +719,7 @@ a:hover {
 .intern-inner {
     position: -webkit-sticky;
     position: sticky;
-    top: 16%;  
+    top: 16%; 
 }
 
 .intern-intro.animate {
@@ -603,7 +735,17 @@ a:hover {
     transition:max-height 0.5s ease-in-out;
 }
 
+.intern-intro.animate .intern-inner {
+    /* background: #216353;
+    color: white; */
+}
 
+.intern-intro.animate .intern-title {
+    /* opacity: 0.6; 這樣會整個都變透明 */
+    color: rgba(0, 0, 0, 0.5); 
+    -webkit-transition:all 0.3 linear;
+    transition:all 0.3s linear;
+}
 .intern-intro.animate .intern-content-1 {
     max-height:100%;
     overflow: auto;    
@@ -616,7 +758,7 @@ a:hover {
     max-height:100%;
     overflow: auto;
 
-    -webkit-transition:max-height 0.5 ease-in-out;
+    -webkit-transition:max- height 0.5 ease-in-out;
     transition:max-height 0.5s ease-in-out;
 
     transition-delay: 100ms;
@@ -683,6 +825,16 @@ a:hover {
     align-items: center;
     justify-content: center; */
     text-align: center;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+
+}
+
+.act-title.animate{
+    opacity: 1;
+    transition: all 1.5s ease-in-out;
+
+
 }
 
 .act-title>h2 {
@@ -712,6 +864,7 @@ a:hover {
 }
 
 
+
 .activities {
     display: block;
     width: 80%;
@@ -724,6 +877,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     margin: 200px 0;
+
 }
 
 .activity > div {
@@ -750,10 +904,58 @@ a:hover {
     padding: 0 20px;
 }
 
+.activity-tokyo {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+}
 
+.activity-taipei {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+}
+
+.activity-china {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+}
+
+/* Activities  */
+
+.activity-tokyo.animate  {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 1;
+
+}
+
+.activity-china.animate{
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 1; 
+}
+
+.activity-taipei.animate {
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    opacity: 1;
+
+}
+
+/* Contact */
 .contact {
     display: flex;
-    
+    opacity: 0;
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+
+.contact.animate {
+    opacity: 1;
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
 }
 
 .contact>div {
