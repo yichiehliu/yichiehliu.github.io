@@ -40,6 +40,13 @@ a {
     font-family: 'Raleway';
 }
 
+a.anchor {
+    display: block;
+    position: relative;
+    top: -50%;
+    visibility: hidden;
+}
+
 a:visited {
     /* //設定已經瀏覽過的連結 */
     color: black;
@@ -47,7 +54,6 @@ a:visited {
 
 a:active {
     text-decoration: none;
-    background-color: #46b3e6;
     color: black;
 }
 
