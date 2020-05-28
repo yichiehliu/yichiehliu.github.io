@@ -261,7 +261,7 @@ a:hover {
 .network-container {
     width: 100%;
     height: 100vh;
-    background-image: url(images/network.png);
+    background-image: url(resized_image/network.png);
     background-size: cover ;
     background-repeat: no-repeat;
     display: flex;
