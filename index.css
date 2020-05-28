@@ -48,12 +48,11 @@ a:visited {
 a:active {
     text-decoration: none;
     background-color: #46b3e6;
-    color: #46b3e6;
+    color: black;
 }
 
 a:hover {
     text-decoration: underline;
-    background-color: #fafafa;
     color: #3fc5f0;
 }
 
