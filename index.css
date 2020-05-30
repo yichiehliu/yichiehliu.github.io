@@ -37,6 +37,7 @@ JS固定使用者位置扣掉MARGIN
  */
 
 a {
+    color: black;
     font-family: 'Raleway';
 }
 
@@ -124,6 +125,9 @@ a:hover {
     /* font-family: 'regular'; */
 }
 
+.menu {
+    display: none;
+}
 .ball {
     width: 20px;
     height: 20px;
@@ -270,7 +274,7 @@ a:hover {
     background-size: cover ;
     background-repeat: no-repeat;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 
 }
 
@@ -286,7 +290,7 @@ a:hover {
     /* background-color: white; */
     z-index: 100;
     background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 22%, rgba(255,255,255,1) 78%, rgba(255, 255, 255, 0) 100%);
     opacity: 0;
 }
 
@@ -664,18 +668,36 @@ a:hover {
     overflow: hidden;
 }
 
+.intern-intro.animate {
+    overflow: auto;
+}
+
+.intern-content > * {
+    opacity: 0;
+    transform: translate(-50px, 0);
+    transition: all .3s ease-out;
+}
+
+.intern-intro.animate .intern-content > * {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.intern-intro.animate .intern-content .intern-content-1 {
+    transition-delay: 300ms;
+}
+/* 
 .intern-content-1 {
 
 
-    max-height:0;
     overflow: hidden;    
-    transition: max-height 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     -webkit-transition:max-height 0.5 ease-in-out;
     transition-delay: 300ms;
-}
+} */
 
 .intern-content-2 {
-    max-height:0;
+    /* max-height:0; */
     overflow: hidden;
     transition:max-height 0.5s ease-in-out;
     -webkit-transition:max-height 0.5 ease-in-out;
@@ -685,7 +707,7 @@ a:hover {
 .intern-content-3 {
 
 
-    max-height:0;
+    /* max-height:0; */
     overflow: hidden;
     transition:max-height 0.5s ease-in-out;
     -webkit-transition:max-height 0.5 ease-in-out;
@@ -694,7 +716,7 @@ a:hover {
 }
 
 .intern-content-4 {
-    max-height:0;
+    /* max-height:0; */
 
     transition:max-height 0.5s ease-in-out;
     -webkit-transition:max-height 0.5 ease-in-out;
@@ -707,7 +729,7 @@ a:hover {
 }
 .intern-content-5 {
 
-    max-height:0;
+    /* max-height:0; */
     overflow: hidden;
     transition:max-height 0.5s ease-in-out;
     -webkit-transition:max-height 0.5 ease-in-out;
@@ -716,7 +738,7 @@ a:hover {
 }
 .intern-content-6 {
 
-    max-height:0;
+    /* max-height:0; */
     overflow: hidden;
     transition: 0.5s ease-in-out;
     -webkit-transition:max-height 0.5 ease-in-out;
@@ -747,16 +769,16 @@ a:hover {
 
 .intern-intro.animate .intern-title {
     /* opacity: 0.6; 這樣會整個都變透明 */
-    color: rgba(0, 0, 0, 0.5); 
+    color: rgba(0, 0, 0, 0.2); 
     -webkit-transition:all 0.3 linear;
     transition:all 0.3s linear;
 }
-.intern-intro.animate .intern-content-1 {
+/* .intern-intro.animate .intern-content-1 {
     max-height:100%;
     overflow: auto;    
     -webkit-transition:max-height 0.5 ease-in-out;
     transition:max-height 0.5s ease-in-out;
-}
+} */
 
 .intern-intro.animate .intern-content-2 {
 
@@ -810,6 +832,7 @@ a:hover {
     transition-delay: 300ms;
 
 }
+
 .internships li img {
     width: 100%;
     /* height: 100%; */
@@ -1113,4 +1136,54 @@ a:hover {
     justify-content: center;
     max-width: 100%;
     max-height: 200px;
+}
+
+/* Media query */
+
+@media only screen and (max-width: 980px) {
+    .network-container {
+        
+    }
+    .header ul {
+        display: none;
+    }
+    .menu {
+        display: block;
+        margin: 0 10px 0;
+    }
+    .unfold_menu {  
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75%;
+        height: 100%;
+        background-color: white;
+        z-index: 1000;
+    }
+
+    
+.unfold_menu>ul {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* 去掉點點 */
+}
+
+.unfold_menu li {
+    padding: 10px 30px;
+    margin: 50px ;
+    /* border: double; */
+    display: flex;
+    flex-direction: column;
+    /* 左右致中 */
+    justify-content: center;
+}
+
+.unfold_menu li p {
+    padding: 0;
+    margin: 0;
+    /* 去掉文字底線 */
+    display: inline-block;
+    /* font-family: 'regular'; */
+}
 }
