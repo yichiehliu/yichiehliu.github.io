@@ -602,6 +602,7 @@ a:hover {
 
 .activities {
   display: flex;
+  /* flex-direction: column; */
   height:100vh;
 }
 .activity {
@@ -610,12 +611,13 @@ a:hover {
   flex-grow: 1;
   transition: flex .3s ease-out, background-size 1.5s ease-out;
   background-attachment: scroll;
-  background-size: 100%;
+  background-size: 50%;
   background-repeat: no-repeat;
 }
 .activity:nth-child(1) {
   background-image: url("https://yichiehliu.github.io/resized_image/slush.jpg");
-  background-position: 0 0;
+  background-position: 50% 0;
+  
 }
 .activity:nth-child(2) {
   background-image: url("https://yichiehliu.github.io/resized_image/nfac.jpg");
@@ -623,11 +625,12 @@ a:hover {
 }
 .activity:nth-child(3) {
   background-image: url("https://yichiehliu.github.io/resized_image/yanxing.jpg");
-  background-position: 100% 0;
+  background-position: 50% 0;
 }
 .activity:hover {
   flex-grow: 2;
-  background-size: 100%;
+  background-size: 53%;
+  
 }
 
 /* 
