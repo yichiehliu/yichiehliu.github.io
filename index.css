@@ -607,10 +607,50 @@ a:hover {
     /* margin: 0 auto; */
 }
 
-.activity>div {
-    /* width: 50vw;
-    height: 50vh; */
+
+.activity {
+  flex-grow: 1;
+  height: 70vh;
+  margin: 0 auto;
+  transition: flex .3s ease-out;
 }
+.activity:nth-child(1) {
+  /* background-color: #f00; */
+  background-image: url(resized_image/slush.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.activity:nth-child(2) {
+  /* background-color: #ff0; */
+  background-image: url(resized_image/nfac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.activity:nth-child(3) {
+  /* background-color: #f0f; */
+  background-image: url(resized_image/yanxing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+.activity:hover {
+  flex-grow: 6;
+}
+
+/* 
+.activity-tokyo {
+    background-color: #2f323a;
+}
+
+.activity-taipei {
+    background-color: #46b3e6;
+}
+.activity-china {
+    background-color: #baf1a1;
+} */
 
 .img-container {
     /* width: 50%; */
