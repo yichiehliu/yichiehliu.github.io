@@ -601,43 +601,33 @@ a:hover {
 }
 
 .activities {
-    display: flex;
-    /* width: 80%;
-    height: 100%; */
-    /* margin: 0 auto; */
+  display: flex;
+  height:100vh;
 }
-
-
 .activity {
+  overflow: hidden;
+  position: relative;
   flex-grow: 1;
-  height: 70vh;
-  margin: 0 auto;
-  transition: flex .3s ease-out;
+  transition: flex .3s ease-out, background-size 1.5s ease-out;
+  background-attachment: scroll;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 .activity:nth-child(1) {
-  /* background-color: #f00; */
-  background-image: url(resized_image/slush.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  background-image: url("https://yichiehliu.github.io/resized_image/slush.jpg");
+  background-position: 0 0;
 }
 .activity:nth-child(2) {
-  /* background-color: #ff0; */
-  background-image: url(resized_image/nfac.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  background-image: url("https://yichiehliu.github.io/resized_image/nfac.jpg");
+  background-position: 50% 0;
 }
 .activity:nth-child(3) {
-  /* background-color: #f0f; */
-  background-image: url(resized_image/yanxing.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
+  background-image: url("https://yichiehliu.github.io/resized_image/yanxing.jpg");
+  background-position: 100% 0;
 }
 .activity:hover {
-  flex-grow: 6;
+  flex-grow: 2;
+  background-size: 100%;
 }
 
 /* 
