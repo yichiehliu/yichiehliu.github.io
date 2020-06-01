@@ -1,8 +1,10 @@
 body {
     margin: 0;
+    font-size: 16px;
     /* padding-top: 55px; */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
+
 
 /* 
 
@@ -10,6 +12,7 @@ body {
 #baf1a1
 #46b3e6
  */
+
 
 /* 智能合約安全問題
 密冠合約
@@ -80,11 +83,6 @@ a:hover {
     display: flex;
     align-items: center;
     width: 100%;
-    /* height: 55px; */
-    background-color: rgba(255,255,255,0.8);
-    /* box-shadow: black 0 0 10px; */
-    z-index: 100;
-    /* font-family: 'Raleway'; */
 }
 
 .header .header-inner {
@@ -125,9 +123,16 @@ a:hover {
     /* font-family: 'regular'; */
 }
 
+.show_header {
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 100;
+    box-shadow: black 0 0 10px;
+}
+
 .menu {
     display: none;
 }
+
 .ball {
     width: 20px;
     height: 20px;
@@ -139,16 +144,13 @@ a:hover {
 .title {
     /* max-width: 70%; */
     display: block;
-    margin: 300px 0;
-    padding: 0 300px;
+    margin: 50vh 0;
+    padding: 0 50vh;
     /* text-align: center;s */
     /* visibility: hidden; */
     opacity: 0;
     transition: all 1s ease-in;
-
 }
-
-
 
 
 /* position > display > width height > padding margin >font size background */
@@ -157,11 +159,11 @@ a:hover {
     display: flex;
     align-items: center;
     color: #46b3e6;
-    font-size: 26px;
+    font-size: 1.25rem;
 }
 
 .title>h4 {
-    font-size: 36px;
+    font-size: 1.7rem;
 }
 
 .title-ball {
@@ -186,26 +188,6 @@ a:hover {
     align-items: center;
     justify-content: center;
 }
-
-
-/* .y-circle {
-    top: 0;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    max-height:0;
-    overflow: hidden;
-    opacity: 0;
-    transition: .5s ease;
-}
-
-.logo:hover .y-circle {
-    opacity: 1;
-    color: white;
-    bottom: 0;
-    height: 28px;
-    -webkit-transition:max-height .7s ease-in-out;
-} */
 
 .circle-font {
     border-radius: 100%;
@@ -263,20 +245,28 @@ a:hover {
     /* %跟着哪里？》？？？ */
     /* padding-top: 5%; */
     display: block;
-    text-align: center;
+}
+
+.self-intro {
+    position: absolute;
+    top: 50vh;
+    left: 30vh;
+    z-index: 1;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
 }
 
 
-.network-container {
+/* .network-container {
     width: 100%;
     height: 100vh;
     background-image: url(resized_image/network.png);
-    background-size: cover ;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+} */
 
-}
 
 /* .network {
     width: 100%;
@@ -285,12 +275,13 @@ a:hover {
     
 } */
 
+
+/* 
 .self-intro {
     width: 100%;
-    /* background-color: white; */
     z-index: 100;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 22%, rgba(255,255,255,1) 78%, rgba(255, 255, 255, 0) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 1) 78%, rgba(255, 255, 255, 0) 100%);
     opacity: 0;
 }
 
@@ -298,11 +289,7 @@ a:hover {
     -webkit-transition: all 0.8 ease-in-out;
     transition: all 0.8s ease-in-out;
     opacity: 1;
-}
-.self-intro > h1 {
-    color: #46b3e6;
-    
-}
+} */
 
 .myimage-container {
     display: flex;
@@ -313,21 +300,45 @@ a:hover {
 }
 
 .myimage {
-    padding: 0;
-    width: calc(100%/3);
+    /* padding: 10px; */
+    /* width: calc(100%/3); */
     display: block;
-    margin: 0 auto;
     -webkit-transition: all 0.8 ease-in-out;
     transition: all 0.8s ease-in-out;
     opacity: 0;
+    width: 100%;
 }
 
-.myimage-container.animate .myimage-1 {
+.image-shadow {
+    width: calc(100%/3);
+    text-align: center;
+    /* height: auto; */
+    /* border-radius: 50%;
+    border: 3px solid #7E9CC2; */
+    /* height: 50vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-shadow-1 {
+    width: 100%;
+}
+
+.image-shadow-2 {
+    width: 100%;
+}
+
+.image-shadow-3 {
+    width: 100%;
+}
+
+
+/* .myimage-container.animate .myimage-1 {
     -webkit-transition: all 0.8 ease-in-out;
     transition: all 0.8s ease-in-out;
     opacity: 1;
 }
-
 
 .myimage-container.animate .myimage-2 {
     -webkit-transition: all 0.8 ease-in-out;
@@ -335,7 +346,6 @@ a:hover {
     opacity: 1;
     transition-delay: 600ms;
     -webkit-animation-delay: 600ms;
-
 }
 
 .myimage-container.animate .myimage-3 {
@@ -344,635 +354,313 @@ a:hover {
     opacity: 1;
     transition-delay: 300ms;
     -webkit-animation-delay: 300ms;
-}
-.self-intro {
-    display: block;
-    /* 上下致中 */
-    /* flex-grow: 1; */
-    text-align: center;
+} */
+
+
+/* project */
+
+.projects h3 {
+    height: 1.5rem;
+    text-transform: uppercase;
+    display: flex;
+    position: relative;
+    font-size: 3.125rem;
+    margin: 50px 0;
 }
 
-.projects li h3 {
+.projects h4 {
     /* default  */
-    font-size: 24px;
-    height: 1em;
-}
-
-.projects li h4 {
-    /* default  */
-    margin: 12px 0;
-    font-size: 20px;
-}
-
-.projects li p {
-    margin-top: 0;
+    font-size: 1.25rem;
+    /* text-transform: uppercase; */
 }
 
 .projects {
-    /* position: relative; */
-    overflow: hidden;
-}
-
-.projects>ul {
-    /* 不能設width 100%因為已經超過100 */
-    /* width: 100%; */
-    margin: 0 -15px;
-    /* default有padding */
-    padding: 0;
-    --column: 3;
-    list-style-type: none;
-    display: flex;
-    background-color: white;
-}
-
-.projects li {
-    position: relative;
-    margin: 0 15px;
-    padding: 0 30px;
-    width: calc((100% / var(--column)) - 30px);
-    box-sizing: border-box;
-    /* border-style: double; */
-    /* background-color: ; */
-}
-
-
-/* .slide:before {
-    background: rgba(255, 93, 125, 0.11);
-} */
-
-
-/* 
-.slide {}
-
-.projects:hover {
-    transition:max-height .7s ease-in-out;
-    -webkit-transition:max-height .7s ease-in-out;
-    border-radius: 50%;
-    z-index: -1;
-} */
-
-.slider {
-    position: absolute;
-    top: 0;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    width: 100%;
-    /* max-height:0; */
-    /* height: calc(calc(100/3) * calc(10/11)); */
-    overflow: hidden;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #ff5d7d;
-}
-
-
-/* .activity-taipei:hover .overlay-nfac {
-    opacity: 1;
-    color: white;
-    text-align: center;
-    bottom: 0;
-    height: 100%;
-} */
-
-
-/* .slider {
-    position: absolute;
-    left: 0;
-    right: 0;
-} */
-
-.projects .ball {
-    position: absolute;
-    /* 另外一種置中方法 */
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 170px;
-    /* 隱藏到圖片底下 */
-    z-index: -1;
-}
-
-
-
-.projects li img {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    display: flex;
-    margin: 0 auto;
-    /* background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
-}
-
-/* 動畫 */
-
-/* Radial Out Referenced */
-.hvr-radial-out {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  overflow: hidden;
-  background: white;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  
-}
-.hvr-radial-out:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* background: #2098D1; */
-  border-radius: 100%;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.7s;
-  transition-duration: 0.7s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
-  /* color: white; */
-}
-.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
-  -webkit-transform: scale(2);
-  transform: scale(2);
-}
-/* Radial Out Referenced */
-
-.projects.animate .hvr-radial-out:before  {
-  -webkit-transform: scale(2);
-  transform: scale(2);
-}
-
-.projects.animate .project-1  {
-    color: #46b3e6;
-}
-
-.projects.animate .project-1:before  {
-    background: #d7fffd;
-}
-
-.projects.animate .project-2  {
-    color: #216353;
-}
-
-
-.projects.animate .project-2:before  {
-    background: #d1f5d3;
-}
-
-.projects.animate .project-3  {
-    color: #eb8242;
-
-}
-.projects.animate .project-3:before  {
-    background: #fcf7bb;
-}
-
-
-.project-1:hover {
-    color: #46b3e6;
-}
-
-.project-2:hover{
-    color: #216353;
-
-}
-.project-3:hover{
-    color: #eb8242;
-}
-.project-1:hover:before {
-    background: #d7fffd;
-}
-
-.project-2:hover:before {
-    background: #d1f5d3;
-
-}
-
-.project-3:hover:before {
-    background: #fcf7bb;
-}
-
-
-
-/* ------ */
-
-.internships {
-    max-width: 50%;
+    max-width: 45%;
     display: block;
     margin: 0 auto;
-    opacity: 0;
-}
-
-.internships.animate {
-    transition: all 1s ease-in;
-    opacity: 1;
-}
-
-.intern-company {
-    height: 100vh;
-}
-
-.internships {
     height: 300vh;
 }
 
-.internships h3 {
-    display: flex;
-    position: relative;
-    font-size: 50px;
-    margin: 0;
-}
 
-.internships h3>.ball {
+/* .projects.animate {
+    transition: all 1s ease-in;
+    opacity: 1;
+} */
+
+.projects h3>.ball {
     /* 推點點出去 */
     position: absolute;
-    left: -64px;
+    left: -90px;
     right: 0;
-    top: .15em;
+    top: .18em;
     width: 1em;
     height: 1em;
 }
 
-.internships h4 {
-    font-size: 20px;
-}
-
-.internships>ul {
-    margin: 0;
-    /* default有padding */
-    padding: 0;
-    /* max-width: 100%; */
-    /* height: 100%; */
-    list-style-type: none;
-}
-
-.internships li {
-    /*  */
-    margin: 30px 0;
-    padding: 0;
-    /* width: 100%; */
-    /* border-style: double; */
-    display: flex;
-    /* align-items: center; */
-    align-items: center;
-    justify-items: center;
-}
-
-.internships li>div {
-    margin: 0;
-    padding: 0;
-}
-
-.internships li a {
-    margin: 0;
-    padding: 0;
-
-}
-
-.intern-company h3 {
-    margin: 30px 0;
-}
-
-
 
 /* 動畫 */
+
+
 /* 先從display射程none之後發現不能用動畫    display: none; */
+
+
 /* 之後改成visibility 發現還是占空間 */
+
+
 /* 最後改成設height，發現波不了動畫 */
+
+
 /* 最後改成max-height成功 */
 
-/* .intern-intro {
-    height: 100vh;
-} */
-
-.intern-content {
-
+.project-content {
     -webkit-transition: max-height 0.5 ease-in-out;
     transition: max-height 0.5s ease-in-out;
     max-height: 0;
     overflow: hidden;
+    transition-delay: 2s;
 }
 
-.intern-intro.animate {
+
+/* .project-intro.animate {
     overflow: auto;
-}
+} */
 
-.intern-content > * {
+.project-content>* {
     opacity: 0;
     transform: translate(-50px, 0);
     transition: all .3s ease-out;
 }
 
-.intern-intro.animate .intern-content > * {
+.project-content-1 {
+    transition-delay: 700ms;
+}
+
+.project-content-2 {
+    transition-delay: 600ms;
+}
+
+.project-content-3 {
+    transition-delay: 500ms;
+}
+
+.project-content-4 {
+    transition-delay: 400ms;
+}
+
+.project-content-5 {
+    transition-delay: 300ms;
+}
+
+.project-content-6 {
+    transition-delay: 200ms;
+}
+
+.project-intro.animate .project-content>* {
     opacity: 1;
     transform: translate(0, 0);
 }
 
-.intern-intro.animate .intern-content .intern-content-1 {
-    transition-delay: 300ms;
-}
-/* 
-.intern-content-1 {
-
-
-    overflow: hidden;    
-    transition: all 0.5s ease-in-out;
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition-delay: 300ms;
-} */
-
-.intern-content-2 {
-    /* max-height:0; */
-    overflow: hidden;
-    transition:max-height 0.5s ease-in-out;
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition-delay: 250ms;
-
-}
-.intern-content-3 {
-
-
-    /* max-height:0; */
-    overflow: hidden;
-    transition:max-height 0.5s ease-in-out;
-    -webkit-transition:max-height 0.5 ease-in-out;
-
+.project-intro.animate .project-content .project-content-1 {
     transition-delay: 200ms;
 }
 
-.intern-content-4 {
-    /* max-height:0; */
-
-    transition:max-height 0.5s ease-in-out;
-    -webkit-transition:max-height 0.5 ease-in-out;
-
-    transition-delay: 150ms;
-
-    overflow: hidden;
-
-
+.project-intro.animate .project-content .project-content-2 {
+    transition-delay: 300ms;
 }
-.intern-content-5 {
 
-    /* max-height:0; */
-    overflow: hidden;
-    transition:max-height 0.5s ease-in-out;
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition-delay: 100ms;
-
+.project-intro.animate .project-content .project-content-3 {
+    transition-delay: 400ms;
 }
-.intern-content-6 {
 
-    /* max-height:0; */
-    overflow: hidden;
-    transition: 0.5s ease-in-out;
-    -webkit-transition:max-height 0.5 ease-in-out;
+.project-intro.animate .project-content .project-content-4 {
+    transition-delay: 500ms;
 }
-.intern-inner {
+
+.project-intro.animate .project-content .project-content-5 {
+    transition-delay: 600ms;
+}
+
+.project-intro.animate .project-content .project-content-6 {
+    transition-delay: 700ms;
+}
+
+.project-inner {
     position: -webkit-sticky;
     position: sticky;
-    top: 16%; 
+    top: 16%;
 }
 
-.intern-intro.animate {
+.project-intro.animate {
+    -webkit-transition: all 0.5 ease-in-out;
+    transition: all 0.5s ease-in-out;
+    height: 100vh;
+}
+
+.project-intro.animate .project-content {
+    max-height: 100%;
+    overflow: auto;
+    position: sticky;
+    -webkit-transition: max-height 0.5 ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.project-intro.animate .project-title {
+    /* opacity: 0.6; 這樣會整個都變透明 */
+    color: rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.2 linear;
+    transition: all 0.2 linear;
+}
+
+
+/* Internships */
+
+.internships {}
+
+.intern {
+    display: flex;
+}
+
+.intern-ind {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+}
+
+
+/* .intern-pics {
+    width: 40vw;
+} */
+
+.intern-info {
+    opacity: 0;
+    transform: translate(-50px, 0);
+    transition: all .3s ease-out;
+}
+
+.intern.animate .intern-info {
+    opacity: 1;
+    position: sticky;
+    transform: translate(0, 0);
+    /* background-color: black; */
     height: 100vh;
 }
 
 
-.intern-intro.animate .intern-content { 
-    max-height:100%;
-    overflow: auto;
-    position: sticky;
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition:max-height 0.5s ease-in-out;
+/* .intern-pic {
+    margin: 30vh 0 0;
+    width: 40vw;
 }
 
-.intern-intro.animate .intern-inner {
-    /* background: #216353;
-    color: white; */
+.intern-pic img {
+    width: 100%;
 }
 
-.intern-intro.animate .intern-title {
-    /* opacity: 0.6; 這樣會整個都變透明 */
-    color: rgba(0, 0, 0, 0.2); 
-    -webkit-transition:all 0.3 linear;
-    transition:all 0.3s linear;
+.intern-info>* {
+    opacity: 0;
+    transform: translate(-50px, 0);
+    transition: all .3s ease-out;
 }
-/* .intern-intro.animate .intern-content-1 {
-    max-height:100%;
-    overflow: auto;    
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition:max-height 0.5s ease-in-out;
+
+.intern-pic.animate .intern-info>* {
+    opacity: 1;
+    transform: translate(0, 0);
 } */
 
-.intern-intro.animate .intern-content-2 {
 
-    max-height:100%;
-    overflow: auto;
-
-    -webkit-transition:max- height 0.5 ease-in-out;
-    transition:max-height 0.5s ease-in-out;
-
-    transition-delay: 100ms;
-
-}
-.intern-intro.animate .intern-content-3 {
-
-    max-height:100%;
-    overflow: auto;
-
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition:max-height 0.5s ease-in-out;
-
-    transition-delay: 150ms;
-
-    
-}
-.intern-intro.animate .intern-content-4 {
-
-    max-height:100%;
-    overflow: auto;
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition:max-height 0.5s ease-in-out;
-    transition-delay: 200ms;
-
-}
-.intern-intro.animate .intern-content-5 {
-
-    max-height:100%;
-    overflow: auto;
-    -webkit-transition:max-height 0.5 ease-in-out;
-    transition:max-height 0.5s ease-in-out;
-
-    transition-delay: 250ms;
-
-}
-.intern-intro.animate .intern-content-6 {
-
-    overflow: auto;
-    max-height:100%;
-    -webkit-transition: max-height 0.5 ease-in-out;
-    transition: max-height 0.5s ease-in-out;
-
-    transition-delay: 300ms;
-
-}
-
-.internships li img {
-    width: 100%;
-    /* height: 100%; */
-    margin: 0;
-    padding: 0;
-    /* img預設是inline 會有3px的空隙 */
-    display: block;
-}
-
-
-.act-title {
-    /* max-width: 70%; */
-    display: block;
-    margin:200px 0;
-    /* display: flex; */
-    /* 還是可以置中 */
-    /* flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    text-align: center;
+/* .intern-info-2 {
     opacity: 0;
-    transition: all 1.5s ease-in-out;
-
 }
 
-.act-title.animate{
+.intern-pic-2 {
+    opacity: 0;
+}
+
+.intern-info-3 {
+    opacity: 0;
+}
+
+.intern-pic-3 {
+    opacity: 0;
+}
+
+.intern-info-4 {
+    opacity: 0;
+}
+
+.intern-pic-4 {
+    opacity: 0;
+} */
+
+
+/* Activity */
+
+.thumb {}
+
+.thumb a:hover img {
     opacity: 1;
-    transition: all 1.5s ease-in-out;
-
-
+    transform: scale(1.2);
 }
-
-.act-title>h2 {
-    margin: 100px 0 0;
-    font-size: 36px;
-}
-
-.act-title>h3 {
-    color: #46b3e6;
-    font-size: 26px;
-}
-
-.act-title>h4 {
-    margin: 0;
-    font-size: 36px;
-}
-
-.act-title>h5 {
-    margin: 0 0 100px;
-    font-size: 20px;
-}
-
-.act-title img {
-    max-width: 100%;
-    display: block;
-    margin: 50px auto 0;
-}
-
-
 
 .activities {
-    display: block;
-    width: 80%;
-    /* height: 30%; */
-    margin: 0 auto;
-}
-
-.activity{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 200px 0;
-
+    /* width: 80%;
+    height: 100%; */
+    /* margin: 0 auto; */
 }
 
-.activity > div {
-    width: 40%;
+.activity>div {
+    /* width: 50vw;
+    height: 50vh; */
 }
-
 
 .img-container {
     /* width: 50%; */
     /* position: relative; */
+    /* overflow: hidden; */
     /* padding: 30%; */
     /* background-color: #633; */
     /* padding-bottom: 67.43886%; */
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.img-container>img {
-    width: 100%;
+.img-container:hover img {
+    opacity: .25;
+    transform: scale(.8);
+    transition: opacity 1s, transform 1s;
+}
+
+.overlay img:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    transition: opacity 1s, transform 1s;
+}
+
+
+/* position: absolute; */
+
+.overlay>* {
+    margin: 0;
 }
 
 .overlay {
-    box-sizing: border-box;
-
-    padding: 0 20px;
+    /* position: absolute; */
+    color: white;
+    align-self: flex-end;
+    top: 75%;
+    left: 0%;
 }
 
-.activity-tokyo {
-    -webkit-transition: all 0.8 ease-in-out;
-    transition: all 0.8s ease-in-out;
-    opacity: 0;
+.overlay-taipei {
+    top: 80%;
 }
 
-.activity-taipei {
-    -webkit-transition: all 0.8 ease-in-out;
-    transition: all 0.8s ease-in-out;
-    opacity: 0;
+.overlay-taipei {
+    top: 80%;
 }
 
-.activity-china {
-    -webkit-transition: all 0.8 ease-in-out;
-    transition: all 0.8s ease-in-out;
-    opacity: 0;
-}
-
-/* Activities  */
-
-.activity-tokyo.animate  {
-    -webkit-transition: all 0.8 ease-in-out;
-    transition: all 0.8s ease-in-out;
-    opacity: 1;
-
-}
-
-.activity-china.animate{
-    -webkit-transition: all 0.8 ease-in-out;
-    transition: all 0.8s ease-in-out;
-    opacity: 1; 
-}
-
-.activity-taipei.animate {
-    -webkit-transition: all 0.8 ease-in-out;
-    transition: all 0.8s ease-in-out;
-    opacity: 1;
-
-}
 
 /* Contact */
+
 .contact {
     display: flex;
     opacity: 0;
@@ -1001,7 +689,7 @@ a:hover {
 
 .s-media img {
     margin: 0 10px;
-    width: 30px;    
+    width: 30px;
 }
 
 .contact-info {
@@ -1037,7 +725,7 @@ a:hover {
 
 .form>h4 {
     margin: 35px 0 10px;
-    font-size: 26px;
+    font-size: 1.625rem;
 }
 
 .form-control {
@@ -1046,7 +734,6 @@ a:hover {
     border-radius: 4px;
     border-width: 0 0 2px 0;
     /* border-width: 2px; */
-
     border-style: none none solid none;
     box-shadow: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1071,7 +758,6 @@ a:hover {
     border-radius: 3px;
     color: #2f323a;
     font-family: "Raleway";
-    font-size: 16px;
     margin: 30px 0;
     padding: 10px 50px;
     text-transform: uppercase;
@@ -1086,7 +772,10 @@ a:hover {
 
 
 /* ------------------------------------------------------------ */
+
+
 /* 球動畫 */
+
 .dotted-circle {
     position: absolute;
     border-radius: 50%;
@@ -1098,29 +787,52 @@ a:hover {
     bottom: .15px;
 }
 
-
 .balls>.ball {
     position: absolute;
     top: 0;
 }
 
 .ball {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dotted-ball {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dotted-ball:before {
+    position: absolute;
+    content: '';
+    height: calc(100% + 30px);
+    width: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    /* border: 5px dotted;
+    border-radius: inherit; */
+    animation: spin 5s linear infinite;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='black' stroke-width='1.2' stroke-dasharray='0.2%2c 5' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+@keyframes spin {
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
 
 .ball-1 {
     background-color: #46b3e6;
-    transition:max-height 0.5 ease-out;
+    transition: max-height 0.5 ease-out;
 }
-
-.float-ball-2 {}
 
 .ball-2 {
     background-color: #baf1a1;
 }
-
 
 .ball-3 {
     background-color: #ffe23c;
@@ -1138,12 +850,14 @@ a:hover {
     max-height: 200px;
 }
 
+
 /* Media query */
 
 @media only screen and (max-width: 980px) {
-    .network-container {
-        
+    html {
+        font-size: 10px;
     }
+    .network-container {}
     .header ul {
         display: none;
     }
@@ -1151,7 +865,8 @@ a:hover {
         display: block;
         margin: 0 10px 0;
     }
-    .unfold_menu {  
+    .unfold_menu {
+        display: block;
         position: fixed;
         top: 0;
         right: 0;
@@ -1160,30 +875,26 @@ a:hover {
         background-color: white;
         z-index: 1000;
     }
-
-    
-.unfold_menu>ul {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    /* 去掉點點 */
-}
-
-.unfold_menu li {
-    padding: 10px 30px;
-    margin: 50px ;
-    /* border: double; */
-    display: flex;
-    flex-direction: column;
-    /* 左右致中 */
-    justify-content: center;
-}
-
-.unfold_menu li p {
-    padding: 0;
-    margin: 0;
-    /* 去掉文字底線 */
-    display: inline-block;
-    /* font-family: 'regular'; */
-}
+    .unfold_menu>ul {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        /* 去掉點點 */
+    }
+    .unfold_menu li {
+        padding: 10px 30px;
+        margin: 50px;
+        /* border: double; */
+        display: flex;
+        flex-direction: column;
+        /* 左右致中 */
+        justify-content: center;
+    }
+    .unfold_menu li p {
+        padding: 0;
+        margin: 0;
+        /* 去掉文字底線 */
+        display: inline-block;
+        /* font-family: 'regular'; */
+    }
 }

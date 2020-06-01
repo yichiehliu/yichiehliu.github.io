@@ -20,12 +20,23 @@ function InternTitleToCom() {
 }
 
 
-// new IntersectionObserver(callback, InternTitleToCom) {
-
-// }
+// new IntersectionObserver(callback, InternTitleToCom) 
 
 
-// console.log(projectTBB.position().left)
+
+
+
+
+
+// Header 跳出
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 200) {
+        $(".header").addClass("show_header");
+    } else {
+        $(".header").removeClass("show_header");
+    }
+});
 
 
 function handleStepEnter({ element, direction }) {
@@ -43,105 +54,127 @@ function handleStepExit({ element, direction }) {
     // console.log(element, direction);
 }
 
+
+var scroller_contact = scrollama();
+scroller_contact.setup({
+        step: ".contact",
+        offset: .8,
+        debug: false
+    })
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+
 var scroller_myimage = scrollama();
 scroller_myimage.setup({
-    step: ".myimage-container",
-    offset: .8,
-    debug: false
-})
+        step: ".myimage-container",
+        offset: .8,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_selfintro = scrollama();
 scroller_selfintro.setup({
-    step: ".self-intro",
-    offset: .8,
-    debug: false
-})
+        step: ".self-intro",
+        offset: .8,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_title = scrollama();
 scroller_title.setup({
-    step: ".title",
-    offset: .8,
-    debug: false
-})
+        step: ".title",
+        offset: .8,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
-var scroller_intern = scrollama();
-scroller_intern.setup({
-    step: ".internships",
-    offset: .8,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
+
 var scroller_act_title = scrollama();
 scroller_act_title.setup({
-    step: ".act-title",
-    offset: .8,
-    debug: false
-})
+        step: ".act-title",
+        offset: .8,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_activity_1 = scrollama();
 scroller_activity_1.setup({
-    step: ".activity-tokyo",
-    offset: .7,
-    debug: false
-})
+        step: ".activity-tokyo",
+        offset: .7,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_activity_2 = scrollama();
 scroller_activity_2.setup({
-    step: ".activity-taipei",
-    offset: .7,
-    debug: false
-})
+        step: ".activity-taipei",
+        offset: .7,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_activity_3 = scrollama();
 scroller_activity_3.setup({
-    step: ".activity-china",
-    offset: .7,
-    debug: false
-})
+        step: ".activity-china",
+        offset: .7,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
 
-var scroller_intern_intro = scrollama();
-scroller_intern_intro.setup({
-    step: ".intern-intro",
-    offset: .16,
-    debug: false
-})
+var scroller_project_intro = scrollama();
+scroller_project_intro.setup({
+        step: ".project-intro",
+        offset: .16,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
 var scroller_project = scrollama();
 scroller_project.setup({
-    step: ".projects",
-    offset: .6,
-    debug: false
-})
+        step: ".projects",
+        offset: .6,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
+var scroller_intern = scrollama();
+scroller_intern.setup({
+        step: ".internships",
+        offset: .8,
+        debug: false
+    })
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+var scroller_intern_pic = scrollama();
+scroller_intern_pic.setup({
+        step: ".intern",
+        offset: .6,
+        debug: false
+    })
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
 var scroller_contact = scrollama();
 scroller_contact.setup({
-    step: ".contact",
-    offset: .8,
-    debug: false
-})
+        step: ".contact",
+        offset: .8,
+        debug: false
+    })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
