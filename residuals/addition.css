@@ -797,3 +797,105 @@
 .activitu-china {
     position: absolute;
 } */
+
+.thumb {}
+
+.thumb a:hover img {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.activities {
+    display: flex;
+    /* flex-direction: column; */
+    height: 100vh;
+}
+
+.activity {
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    transition: flex .3s ease-out, background-size 1.5s ease-out;
+    background-attachment: scroll;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+.activity:nth-child(1) {
+    background-image: url("https://yichiehliu.github.io/resized_image/slush.jpg");
+    background-position: 50% 0;
+}
+
+.activity:nth-child(2) {
+    background-image: url("https://yichiehliu.github.io/resized_image/nfac.jpg");
+    background-position: 50% 0;
+}
+
+.activity:nth-child(3) {
+    background-image: url("https://yichiehliu.github.io/resized_image/yanxing.jpg");
+    background-position: 50% 0;
+}
+
+.activity:hover {
+    flex-grow: 2;
+    background-size: 53%;
+}
+
+
+/* 
+.activity-tokyo {
+    background-color: #2f323a;
+}
+
+.activity-taipei {
+    background-color: #46b3e6;
+}
+.activity-china {
+    background-color: #baf1a1;
+} */
+
+.img-container {
+    /* width: 50%; */
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* padding: 30%; */
+    /* background-color: #633; */
+    /* padding-bottom: 67.43886%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container:hover img {
+    opacity: .25;
+    transform: scale(.8);
+    transition: opacity 1s, transform 1s;
+}
+
+.overlay img:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    transition: opacity 1s, transform 1s;
+}
+
+
+/* position: absolute; */
+
+.overlay>* {
+    margin: 0;
+}
+
+.overlay {
+    /* position: absolute; */
+    color: white;
+    align-self: flex-end;
+    top: 75%;
+    left: 0%;
+}
+
+.overlay-taipei {
+    top: 80%;
+}
+
+.overlay-taipei {
+    top: 80%;
+}

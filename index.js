@@ -38,20 +38,73 @@ $(window).scroll(function() {
     }
 });
 
+// 
+
+
+var swiper = new Swiper('.swiper-container', {
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        hide: false,
+    },
+});
+
+
+// STICKY 動畫
+
+let el = document.querySelector('.intern-sticky');
+
 
 function handleStepEnter({ element, direction }) {
+
     if (direction == 'down') {
         element.classList.add('animate');
     }
+    // console.log(element.dataset.step);
+
     // console.log(element, direction);
 }
 
 
 function handleStepExit({ element, direction }) {
+
     if (direction == 'up') {
         element.classList.remove('animate');
     }
     // console.log(element, direction);
+}
+
+function internPicStepEnter({ element, direction }) {
+
+    if (element.dataset.step == "1") {
+        el.classList.add('animate-1');
+    }
+    if (element.dataset.step == "2") {
+        el.classList.add('animate-2');
+    }
+    if (element.dataset.step == "3") {
+        el.classList.add('animate-3');
+    }
+    if (element.dataset.step == "4") {
+        el.classList.add('animate-4');
+    }
+
+}
+
+
+function internPicStepExit({ element, direction }) {
+
+    if (element.dataset.step == "1") {
+        el.classList.remove('animate-1');
+    }
+    if (element.dataset.step == "2") {
+        el.classList.remove('animate-2');
+    }
+    if (element.dataset.step == "3") {
+        el.classList.remove('animate-3');
+    }
+    if (element.dataset.step == "4") {
+        el.classList.remove('animate-4');
+    }
 }
 
 
@@ -82,6 +135,8 @@ scroller_selfintro.setup({
     })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
+
+
 
 var scroller_title = scrollama();
 scroller_title.setup({
@@ -134,7 +189,7 @@ scroller_activity_3.setup({
 var scroller_project_intro = scrollama();
 scroller_project_intro.setup({
         step: ".project-intro",
-        offset: .16,
+        offset: .2,
         debug: false
     })
     .onStepEnter(handleStepEnter)
@@ -162,12 +217,12 @@ scroller_intern.setup({
 
 var scroller_intern_pic = scrollama();
 scroller_intern_pic.setup({
-        step: ".intern",
-        offset: .6,
+        step: ".intern-pic",
+        offset: .8,
         debug: false
     })
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
+    .onStepEnter(internPicStepEnter)
+    .onStepExit(internPicStepExit);
 
 var scroller_contact = scrollama();
 scroller_contact.setup({

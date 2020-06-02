@@ -26,6 +26,9 @@
 **https://russellgoldenberg.github.io/scrollama/sticky-side/**
 **https://github.com/russellgoldenberg/scrollama/blob/master/docs/sticky-side/index.html**
 
+**Swiper js 套件程式碼參考**
+**https://github.com/nolimits4web/swiper**
+
 
 **聯絡表單程式參考**
 **https://codepen.io/stephanrusu/pen/QwKLJX**
