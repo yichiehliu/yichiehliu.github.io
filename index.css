@@ -934,8 +934,8 @@ button {
     }
     .menu-close {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 3%;
+        right: 3%;
         display: none;
         width: 5vw;
         transition: all 1s ease-in;
