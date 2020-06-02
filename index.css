@@ -951,7 +951,7 @@ button {
         position: fixed;
         top: 0;
         right: 0;
-        width: 75%;
+        width: 60%;
         height: 100%;
         background-color: white;
         z-index: 100;
@@ -993,21 +993,23 @@ button {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 0 auto;
     }
     .circle-n-image>.ball {
-        width: 30vw;
-        height: 30vw;
-        background-size: 33vw;
+        width: 50vw;
+        height: 50vw;
+        background-size: 55vw;
+        margin: 0 auto;
     }
     .circle-n-image>.ball:hover {
         font-size: 3vw;
     }
     .circle-n-image {
         display: block;
-        margin: 13vh auto;
+        margin: 13vh 0;
     }
     .myimg-container {
-        margin: 20vh 0;
+        /* margin: 20vh 0; */
     }
     .title {}
 }
