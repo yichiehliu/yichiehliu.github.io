@@ -7,11 +7,13 @@
     <title>YJ LIU's Page</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="canvas.css">
-    <link rel="stylesheet" href="../yichiehliu.github.io/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <!-- <link rel="stylesheet" href="Hover/css/hover.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Orbitron&family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <!-- <link rel=" stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
@@ -41,7 +43,7 @@
                         </div>
                     </div>
                     <div class="menu">
-                        <img src="resized_image/menu.svg" alt="menu">
+                        <img class="menu_pic" src="resized_image/menu.svg" alt="menu">
 
                     </div>
 
@@ -100,30 +102,34 @@
 
                     <!-- 網頁不care高度 -->
                 </div>
-                <div class="myimages">
-                    <div class="circle-n-image">
-                        <div class="img-circle">
-
-                        </div>
-                        <div class="myimage myimage-1">
+                <div class="myimg-container">
+                    <div class="myimages">
+                        <div class="circle-n-image img-circle-1">
+                            <div class="ball img-circle ">
+                                A DREAMER
+                            </div>
+                            <!-- <div class="myimage myimage-1">
                             <img src="resized_image/self.png" alt="self">
+                        </div> -->
                         </div>
-                    </div>
-                    <div class="circle-n-image">
-                        <div class="img-circle">
+                        <div class="circle-n-image img-circle-2">
+                            <div class="ball img-circle img-circle-2">
+                                A DEVELOPER
 
-                        </div>
-                        <div class="image-shadow image-shadow-2">
+                            </div>
+                            <!-- <div class="image-shadow image-shadow-2">
                             <img class="myimage myimage-2" src="resized_image/gis.png" alt="sky">
+                        </div> -->
                         </div>
-                    </div>
-                    <div class="circle-n-image">
-                        <div class="img-circle">
+                        <div class="circle-n-image img-circle-3">
+                            <div class="ball img-circle img-circle-3">
+                                A RESEARCHER
 
-                        </div>
-                        <div class="image-shadow image-shadow-3">
+                            </div>
+                            <!-- <div class="image-shadow image-shadow-3">
 
                             <img class="myimage myimage-3" src="resized_image/sky.png" alt="gis">
+                        </div> -->
                         </div>
                     </div>
                 </div>
@@ -134,8 +140,15 @@
 
             <a class="anchor" id="projects"></a>
             <div class="title">
-                <h3>PROJECTS
+                <div class="title-balls">
                     <div class=" ball ball-1 title-ball project-title-1"></div>
+                    <div class=" ball ball-2 title-ball project-title-1"></div>
+                    <div class=" ball ball-3 title-ball project-title-1"></div>
+                </div>
+
+                <h3>
+
+                    PROJECTS
 
                 </h3>
                 <h4>
@@ -252,9 +265,16 @@
             </div>
             <a class="anchor" id="internships"></a>
             <div class="title">
+                <div class="title-balls">
+
+                    <div class=" ball ball-1 title-ball intern-title-1"></div>
+                    <div class=" ball ball-2 title-ball intern-title-1"></div>
+                    <div class=" ball ball-3 title-ball intern-title-1"></div>
+                </div>
+
                 <h3>
                     INTERNSHIPS
-                    <div class=" ball ball-1 title-ball intern-title-1"></div>
+
 
                 </h3>
                 <h4>
@@ -355,6 +375,11 @@
         <br> <br> <br> <br> <br>
         <a class="anchor" id="activities"></a>
         <div class="title">
+            <div class="title-balls">
+                <div class=" ball ball-1 title-ball activity-title-1"></div>
+                <div class=" ball ball-2 title-ball activity-title-1"></div>
+                <div class=" ball ball-3 title-ball activity-title-1"></div>
+            </div>
             <h3>ACTIVITIES</h3>
             <h4>Build up the connections around the world.
                 <br> Get prepared to start my own bussiness in the future.
@@ -405,35 +430,21 @@
             </div>
 
             <!-- <h2>Have something to say?</h2> -->
-            <div class="form">
-                <h4>Send Me a Message</h4>
-                <form id="contact-form" class="form" action="#" method="POST" role="form">
-                    <input type="text" name="firstname" placeholder="Name" required="" style="border-color: rgb(6, 67, 96); background-color: rgb(6, 67, 96);">
-                    <input type="text" name="company" placeholder="Company" style="border-color: rgb(6, 67, 96); background-color: rgb(6, 67, 96);">
-                    <input type="email" name="email" placeholder="Email" required="" style="border-color: rgb(6, 67, 96); background-color: rgb(6, 67, 96);">
-                    <input type="text" name="phone" placeholder="Phone" style="border-color: rgb(6, 67, 96); background-color: rgb(6, 67, 96);">
-                    <textarea name="message" placeholder="Message" required="" style="border-color: rgb(6, 67, 96); background-color: rgb(6, 67, 96);" spellcheck="false"></textarea>
-                    <input type="submit" data-router-disabled="" value="Send Message">
-                </form>
-                <form id="contact-form" class="form" action="#" method="POST" role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1" required>
+            <div class="form-container">
+                <div class="form">
+                    <div class="ball-container">
+                        <div class="ball"></div>
+                        <div class="ball"></div>
+                        <div class="ball"></div>
                     </div>
-                    <div class="form-group">
-                        <!-- <label class="form-label" for="email">Your Email</label> -->
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Message..." tabindex="4" required></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-start-order">Send Message</button>
-                    </div>
-                </form>
-                <!-- </div> -->
+                    <h4>Send Me a Message</h4>
+                    <form id="contact-form" class="form" method="POST">
+                        <input type="name" id="name" name="name" placeholder="Name" required="">
+                        <input type="email" id="email" name="email" placeholder="Email" required="">
+                        <textarea name="message" id="message" placeholder="Message" required="" spellcheck="false"></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
         </div>
@@ -447,6 +458,11 @@
             <hr class="line">
             <div class="contact" id="contact">
                 <div class="contact-info">
+                    <div class="ball-container">
+                        <div class="ball"></div>
+                        <div class="ball"></div>
+                        <div class="ball"></div>
+                    </div>
 
                     <h3>CONTACT</h3>
                     <h4>YJ LIU</h4>
@@ -489,7 +505,8 @@
         <div class="ball ball-pink"></div>
         <div class="ball ball-purple"></div>
     </div>
-    <!-- <div class="unfold_menu">
+    <div class="unfold_menu">
+
         <ul>
             <li>
                 <a href="#about">
@@ -516,21 +533,25 @@
                     <p>CONTACT</p>
                 </a>
             </li>
+            <div class="menu-close">
+                <img src="icons/cross.svg" alt="cross">
+            </div>
         </ul>
 
-    </div> -->
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-    <!-- <script src="https://unpkg.com/scrollama"></script> -->
+    <script src="https://unpkg.com/scrollama"></script>
     <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="../yichiehliu.github.io/stickyfill.min.js"></script>
-    <script src="../yichiehliu.github.io/scrollama.min.js"></script>
-    <script src="../yichiehliu.github.io/swiper.min.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
     <script src="canvas.js"></script>
     <script src="index.js"></script>
-    <script src="sticky-side.js"></script>
+    <!-- <script src="sticky-side.js"></script> -->
 
 </body>
 

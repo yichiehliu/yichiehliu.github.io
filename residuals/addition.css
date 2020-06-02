@@ -899,3 +899,45 @@
 .overlay-taipei {
     top: 80%;
 }
+
+.myimg-container {
+    display: flex;
+    /* 上下致中 */
+    align-items: center;
+    /* logo和ul分開排版，SPACE只留在中間，SAPCE AROUND左右中等分 */
+    justify-content: space-between;
+}
+
+.myimage {
+    /* padding: 10px; */
+    /* width: calc(100%/3); */
+    display: block;
+    -webkit-transition: all 0.8 ease-in-out;
+    transition: all 0.8s ease-in-out;
+    /* opacity: 0; */
+    width: 100%;
+}
+
+.image-shadow {
+    width: calc(100%/3);
+    text-align: center;
+    /* height: auto; */
+    /* border-radius: 50%;
+    border: 3px solid #7E9CC2; */
+    /* height: 50vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-shadow-1 {
+    width: 100%;
+}
+
+.image-shadow-2 {
+    width: 100%;
+}
+
+.image-shadow-3 {
+    width: 100%;
+}
