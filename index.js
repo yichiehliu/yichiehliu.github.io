@@ -83,38 +83,40 @@ function handleStepExit({ element, direction }) {
 }
 
 
-
+var w = window.innerWidth;
 function internPicStepEnter({ element, direction }) {
-
-    if (element.dataset.step == "1") {
-        el.classList.add('animate-1');
-    }
-    if (element.dataset.step == "2") {
-        el.classList.add('animate-2');
-    }
-    if (element.dataset.step == "3") {
-        el.classList.add('animate-3');
-    }
-    if (element.dataset.step == "4") {
-        el.classList.add('animate-4');
+    if (w >= 980) {
+        if (element.dataset.step == "1") {
+            el.classList.add('animate-1');
+        }
+        if (element.dataset.step == "2") {
+            el.classList.add('animate-2');
+        }
+        if (element.dataset.step == "3") {
+            el.classList.add('animate-3');
+        }
+        if (element.dataset.step == "4") {
+            el.classList.add('animate-4');
+        }
     }
 
 }
 
 
 function internPicStepExit({ element, direction }) {
-
-    if (element.dataset.step == "1") {
-        el.classList.remove('animate-1');
-    }
-    if (element.dataset.step == "2") {
-        el.classList.remove('animate-2');
-    }
-    if (element.dataset.step == "3") {
-        el.classList.remove('animate-3');
-    }
-    if (element.dataset.step == "4") {
-        el.classList.remove('animate-4');
+    if (w >= 980) {
+        if (element.dataset.step == "1") {
+            el.classList.remove('animate-1');
+        }
+        if (element.dataset.step == "2") {
+            el.classList.remove('animate-2');
+        }
+        if (element.dataset.step == "3") {
+            el.classList.remove('animate-3');
+        }
+        if (element.dataset.step == "4") {
+            el.classList.remove('animate-4');
+        }
     }
 }
 
@@ -149,72 +151,16 @@ scroller_selfintro.setup({
 
 
 
-var scroller_title = scrollama();
-scroller_title.setup({
-    step: ".title",
-    offset: .8,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
+// var scroller_title = scrollama();
+// scroller_title.setup({
+//     step: ".title",
+//     offset: .8,
+//     debug: false
+// })
+//     .onStepEnter(handleStepEnter)
+//     .onStepExit(handleStepExit);
 
 
-var scroller_act_title = scrollama();
-scroller_act_title.setup({
-    step: ".act-title",
-    offset: .8,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
-
-var scroller_activity_1 = scrollama();
-scroller_activity_1.setup({
-    step: ".activity-tokyo",
-    offset: .7,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
-
-var scroller_activity_2 = scrollama();
-scroller_activity_2.setup({
-    step: ".activity-taipei",
-    offset: .7,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
-
-var scroller_activity_3 = scrollama();
-scroller_activity_3.setup({
-    step: ".activity-china",
-    offset: .7,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
-
-
-
-var scroller_project_intro = scrollama();
-scroller_project_intro.setup({
-    step: ".project-intro",
-    offset: .2,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
-
-
-var scroller_project = scrollama();
-scroller_project.setup({
-    step: ".projects",
-    offset: .6,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
 
 
 var scroller_intern = scrollama();
@@ -248,7 +194,7 @@ scroller_intern_pic.setup({
 var scroller_contact = scrollama();
 scroller_contact.setup({
     step: ".contact",
-    offset: .6,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)

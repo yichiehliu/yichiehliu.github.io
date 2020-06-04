@@ -483,9 +483,42 @@ svg {
 }
 
 
-/* Activity */
+.rwd-content {
+    display: none;
+}
 
+
+/* Activity */
 .activities {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg, #EFEFF2 0%, #FAFAFB 100%);
+    display: flex;
+    height: 50vh;
+
+
+}
+
+.act-title {
+    position: absolute;
+    top: 6vw;
+    left: 4vw;
+    width: 22vw;
+    margin-left: 4vw;
+    background: linear-gradient(180deg, #F1F1F4 0%, #FAFAFB 100%);
+}
+
+.act-title h3 {
+    font-size: 1.3vw;
+}
+
+.act-title h4 {
+    margin-top: 0;
+    font-size: 2vw;
+}
+
+
+.act-pic {
   display: flex;
   height: 50vh;
 }
@@ -605,10 +638,7 @@ svg {
     font-family: 'Raleway';
     background: linear-gradient(30deg, #053349 -50%, #085981 80%);
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
+
     margin: 0 auto;
     padding: 0;
     width: 100%;
@@ -622,7 +652,10 @@ svg {
     /* background-position: 50%; */
 }
 .contact-form {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 ::placeholder {
     /* Most modern browsers support this now. */
@@ -667,7 +700,7 @@ textarea {
     background-color: rgb(6, 67, 96);
 }
 
-.form>h4 {
+.form h4 {
     margin: 3vw 0 2vw;
     font-size: 2vw;
 }
@@ -808,7 +841,7 @@ button {
         z-index: 100;
     }
     .unfold_menu>ul {
-        height: 100%;
+    height: 100%;
         margin: 0;
         padding: 0;
         /* 去掉點點 */
@@ -862,4 +895,182 @@ button {
     .front-page {
         height: 100%;
     }
+
+    .title-underline {
+        width: 29vw;
+        height: 1vw;
+        background: #FADA3B;
+    }
+
+
+    .projects {
+    /* position: relative; */
+    width: 100%;
+    background: linear-gradient(180deg, #EFEFF2 0%, #FAFAFB 100%);
+    display: block;
+
+    }
+
+    .projects-intro {
+        width:100vw;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+
+    .project-title {
+        width: 100vw;
+        height: 90vh;
+        /* margin-bottom: 0 2vh;  */
+        padding: 16vh 20vw 5vh;
+        box-sizing: border-box;
+        position: static;
+
+    }
+
+    .project-title h3 {
+        font-size: 3vw;
+    }
+
+    .project-title h4 {
+        font-size: 4vw;
+        line-height: 7vw;
+    }
+    .project {
+        /* position: static; */
+        width: 100vw;
+        height: 90vh;
+        padding: 0 10vw;
+        box-sizing: border-box;
+        /* display: block; */
+        
+    }
+
+    .project-svg {
+        margin-top: 7vw;
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .p-text {
+        max-height: 60vh;
+        margin: 8vw 0;
+        padding: 0 6vw;
+    }
+    .p-text h3 {
+        font-size: 5vw;
+        line-height: 6vw;
+        margin: 0 0 1vw;
+
+    }
+
+    .p-text h4 {
+        margin: 0 0 5vw;
+        font-size: 4vw;
+        /* line-height: 1.9vw; */
+    }
+    .p-text p {
+        font-size: 3vw;
+        line-height: 4vw;
+        margin-bottom: 5vw;
+
+
+    }
+
+    .p-text a {
+        position: absolute;
+        bottom: 5vw;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        font-size: 3vw;
+    }
+
+
+    .intern-infos {
+        display: none;
+    }
+
+    .intern-pics .title-underline{
+        width: 20vw;
+    }
+
+    .intern-pic:nth-child(1) {
+        margin-top: 10vh;
+    }
+
+
+
+    
+    .act-title {
+        width: 100vw;
+        height: 90vh;
+        /* margin-bottom: 0 2vh;  */
+        padding: 16vh 20vw 5vh;
+        box-sizing: border-box;
+        position: static;
+
+    }
+
+    .act-title h3 {
+        font-size: 3vw;
+    }
+
+    .act-title h4 {
+        font-size: 4vw;
+        line-height: 7vw;
+    }
+
+    .form {
+        display: block;
+        /* flex-direction: column; */
+        height: 100vh;
+        width: 100vw;
+        padding: 10vh 8vw;
+        box-sizing: border-box;
+        /* margin: 0 auto; */
+        text-align: center;
+    }
+
+    
+    .form h4 {
+        /* margin: 7vw 0; */
+        margin-bottom: 5vh;
+        width: 80%;
+        font-size: 7vw;
+        /* text-align: center; */
+    }
+
+
+
+    .contact-form > * {
+        display: block;
+        font-size: 4vw;
+        /* width: 20%; */
+        
+        /* height: 10vw; */
+        width: 80%;
+        /* padding: 0 4vw; */
+        margin: 0 auto 3vw;
+        line-height: 8vw;
+    }
+    input {
+        height: 10vh;
+    }
+    textarea {
+        height: 30vh;
+        /* padding: 10vw 0; */
+    }
+    button {
+        height: 10vh;
+        /* width: 50%; */
+        margin: 10px 0;
+        bottom: 0;
+    }
+
+
+
+
 }
