@@ -1,52 +1,6 @@
-var startBB = $(".balls > .ball-blue")
-var projectTBB = $(".project-title-bb")
-var projectCBB = $(".project-content-bb")
-var InternTBB = $(".Intern-title-bb")
-var InternCBB = $(".Intern-content-bb")
-var ActTBB = $(".act-title-bb")
-var ActCBB = $(".act-content-bb")
-var ContactTBB = $(".contact-title-bb")
-var ContactCBB = $(".contact-content-bb")
 
 
-function projectRoute() {
-    startBB.css("left", `${projectTBB.position().left}px`)
-    startBB.css("top", `${projectTBB.position().top}px`)
-}
-
-function InternTitleToCom() {
-    startBB.css("left", `${projectTBB.position().left}px`)
-    startBB.css("top", `${projectTBB.position().top}px`)
-}
-
-
-// new IntersectionObserver(callback, InternTitleToCom) 
-
-
-
-
-
-
-
-// Header 跳出
-$(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    if (scroll >= 200) {
-        $(".header").addClass("show_header");
-    } else {
-        $(".header").removeClass("show_header");
-    }
-});
-
-// 
-
-
-var swiper = new Swiper('.swiper-container', {
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        hide: false,
-    },
-});
+$('.front-page').parallax({ imageSrc: 'resized_image/home-header.svg' });
 
 var submit = document.querySelector('.btn');
 
@@ -68,10 +22,10 @@ function emailtome() {
     var service_id = "default_service";
     var template_id = "ej_contact";
     emailjs.send(service_id, template_id, template_params, "user_IAM8HfFeS86yKxQnF3ySF")
-        .then(function(response) {
+        .then(function (response) {
             alert("Message successfully sent!");
             console.log('SUCCESS!', response.status, response.text);
-        }, function(error) {
+        }, function (error) {
             console.log('FAILED...', error);
         });
     alert("Message successfully sent!");
@@ -81,24 +35,28 @@ submit.addEventListener("click", emailtome);
 
 
 // menu
-$(".menu").click(function() {
+$(".menu").click(function () {
     // $(".menu").toggleClass(".unfold_menu");
     $(this).toggleClass("on");
     $(".menu-close").toggleClass("on");
+    $(".menu-overlay").toggleClass("on");
     $(".unfold_menu").slideToggle(200);
 });
 
-$(".menu-close").click(function() {
+$(".menu-close").click(function () {
     // $(".menu").toggleClass(".unfold_menu");
     $(this).toggleClass("on");
+    $(".menu-overlay").toggleClass("on");
     $(".unfold_menu").slideToggle(200);
 });
 
 
-$(".unfold_menu li").click(function() {
+$(".unfold_menu li").click(function () {
     $(".menu-close").toggleClass("on");
+    $(".menu-overlay").toggleClass("on");
     $(".unfold_menu").slideToggle(200);
 });
+
 
 // STICKY 動畫
 
@@ -123,6 +81,8 @@ function handleStepExit({ element, direction }) {
     }
     // console.log(element, direction);
 }
+
+
 
 function internPicStepEnter({ element, direction }) {
 
@@ -161,29 +121,29 @@ function internPicStepExit({ element, direction }) {
 
 var scroller_contact = scrollama();
 scroller_contact.setup({
-        step: ".contact",
-        offset: .8,
-        debug: false
-    })
+    step: ".contact",
+    offset: .8,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
 var scroller_myimage = scrollama();
 scroller_myimage.setup({
-        step: ".myimage-container",
-        offset: .8,
-        debug: false
-    })
+    step: ".myimage-container",
+    offset: .8,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_selfintro = scrollama();
 scroller_selfintro.setup({
-        step: ".self-intro",
-        offset: .8,
-        debug: false
-    })
+    step: ".self-intro",
+    offset: .8,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
@@ -191,47 +151,47 @@ scroller_selfintro.setup({
 
 var scroller_title = scrollama();
 scroller_title.setup({
-        step: ".title",
-        offset: .8,
-        debug: false
-    })
+    step: ".title",
+    offset: .8,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
 var scroller_act_title = scrollama();
 scroller_act_title.setup({
-        step: ".act-title",
-        offset: .8,
-        debug: false
-    })
+    step: ".act-title",
+    offset: .8,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_activity_1 = scrollama();
 scroller_activity_1.setup({
-        step: ".activity-tokyo",
-        offset: .7,
-        debug: false
-    })
+    step: ".activity-tokyo",
+    offset: .7,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_activity_2 = scrollama();
 scroller_activity_2.setup({
-        step: ".activity-taipei",
-        offset: .7,
-        debug: false
-    })
+    step: ".activity-taipei",
+    offset: .7,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_activity_3 = scrollama();
 scroller_activity_3.setup({
-        step: ".activity-china",
-        offset: .7,
-        debug: false
-    })
+    step: ".activity-china",
+    offset: .7,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
@@ -239,62 +199,63 @@ scroller_activity_3.setup({
 
 var scroller_project_intro = scrollama();
 scroller_project_intro.setup({
-        step: ".project-intro",
-        offset: .2,
-        debug: false
-    })
+    step: ".project-intro",
+    offset: .2,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
 var scroller_project = scrollama();
 scroller_project.setup({
-        step: ".projects",
-        offset: .6,
-        debug: false
-    })
+    step: ".projects",
+    offset: .6,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
 var scroller_intern = scrollama();
 scroller_intern.setup({
-        step: ".internships",
-        offset: .8,
-        debug: false
-    })
+    step: ".internships",
+    offset: .8,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 var scroller_intern_pic = scrollama();
 scroller_intern_pic.setup({
-        step: ".intern-pic",
-        offset: .8,
-        debug: false
-    })
+    step: ".intern-pic",
+    offset: .5,
+    debug: false
+})
     .onStepEnter(internPicStepEnter)
     .onStepExit(internPicStepExit);
 
+
+// var scroller_intern_pic_e = scrollama();
+// scroller_intern_pic_e.setup({
+//     step: ".intern-pic",
+//     offset: .7,
+//     debug: true
+// })
+//     .onStepEnter(internPicStepEnter)
+//     .onStepExit(internPicStepExit);
+
 var scroller_contact = scrollama();
 scroller_contact.setup({
-        step: ".contact",
-        offset: .8,
-        debug: false
-    })
+    step: ".contact",
+    offset: .6,
+    debug: false
+})
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
 
-// var scroller_2 = scrollama();
-// scroller_2.setup({
-//     step: ".intern-intro",
-//     offset: .21,
-//     debug: false
-// })
-//     .onStepExit(handleStepExit);
 
-// function handleStepExit({ element, direction }) {
-//     // if (direction == 'up') {
-//     element.classList.remove('animate');
-//     console.log(element, direction);
-// }
+
+// var intern_container = $('.intern-infos')
+// var intern_text = $('.intern-info')

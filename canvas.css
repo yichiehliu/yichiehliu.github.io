@@ -14,16 +14,6 @@ canvas {
 
 /* ---- particles.js container ---- */
 
-#particles-js {
-    /* position: absolute; */
-    width: 100%;
-    height: 100vh;
-    background-color: #8e7d7e;
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 100% 100%;
-}
 
 
 /* ---- stats.js ---- */

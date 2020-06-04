@@ -1,23 +1,24 @@
 # yichiehliu.github.io
 
-**https://yichiehliu.github.io**
-****
-##主要用到的檔案
+**https://ycliu.github.io**
+***
+## 主要用到的檔案
 **Folder:resized_images/**
 **html:index.html**
 **Css:index.css canvas.css**
 **js:index.js canvas.js scrollama.min.js swiper.min.js 和下面1-5點程式碼套件**
-****
-###我在這次作業中做了什麼
+***
+### 我在這次作業中做了什麼
 **HTML都是我自己手動刻的**
 **CSS大多也是我自己寫只有以下幾個有列出來的1-5點有參考程式碼，或是不會的語法會用參考其他教學網站進行修改**
 **js的部分也是以下1-5點參考，scroll事件的套件，程式碼用的比較多，但都有因為自己的用途修改程式碼**
-****
-##設計理念
-####設計稿圖檔
-**https://excalidraw.com/#json=5660845757431808,QTwDapHgQiGk1C4G_wdBag**
-####內容呈現
-**我的網站背景以白色為主，因為主軸是動畫的球，所以不希望在背景增加太多干擾元素**
+***
+## 設計理念
+#### 設計稿圖檔
+**第一版設計：https://excalidraw.com/#json=5660845757431808,QTwDapHgQiGk1C4G_wdBag**
+**第二版設計：https://excalidraw.com/#json=5660845757431808,QTwDapHgQiGk1C4G_wdBag**
+
+#### 內容呈現
 
 **內容分為六個部分**
 **0.Header:Logo在滑鼠滑過會跳起，旁邊a標籤會跳轉至下面對應的部分**
@@ -32,8 +33,8 @@
 **2.980px以上 for 電腦**
 
 
-****
-##程式碼參考
+***
+## 程式碼參考
 **1.主頁Particles程式碼參考**
 **https://vincentgarreau.com/particles.js/#default**
 
@@ -54,6 +55,12 @@
 **聯絡表單程式參考**
 **https://codepen.io/stephanrusu/pen/QwKLJX**
 
+
+
+## 設計參考
+**色彩設計**
+**https://cssgradient.io/**
+**https://colorhunt.co/palettes/**
 
 **設計版型參考**
 **https://skookum.com/**
