@@ -26,9 +26,9 @@ function emailtome() {
             alert("Message successfully sent!");
             console.log('SUCCESS!', response.status, response.text);
         }, function (error) {
+            alert("Can't Send the Message!");
             console.log('FAILED...', error);
         });
-    alert("Message successfully sent!");
 
 }
 submit.addEventListener("click", emailtome);

@@ -9,6 +9,8 @@ body {
     background-repeat: no-repeat;
 }
 
+
+
 a {
     color: black;
     font-family: 'Raleway';
@@ -379,9 +381,9 @@ svg {
 /* Internships */
 
 
-.intern-title {
+#particles-js {
     margin: 0;
-    height: 500px;
+    /* height: 90vh; */
     color: #fff;
     /* background: linear-gradient(235.39deg, #085981 0.83%, #053349 100%); */
     /* background-color: #8e7d7e; */
@@ -862,9 +864,9 @@ textarea {
     font-size: 2vw;
 }
 
-.form>*:hover,
-.form>*:focus,
-.form>*:active {
+.contact-form>*:hover,
+.contact-form>*:focus,
+.contact-form>*:active {
     box-shadow: none;
     /* border-style: none none solid none; */
     outline: none;
@@ -1288,7 +1290,7 @@ button {
 
     .act-pic h4 {
         font-size: 4vw;
-        /* margin: 1vw 0 2vw; */
+        margin-bottom: 1.2vw;
     }
 
 
@@ -1380,18 +1382,18 @@ button {
     }
 
     .rwd-content h3 {
-        font-size: 6vw;
+        font-size: 8vw;
         /* color: #788593; */
     }
 
     .rwd-content h4 {
-        font-size: 3vw;
+        font-size: 5vw;
         margin: 0;
-        line-height: 4vw;
+        line-height: 7vw;
     }
     .rwd-content p {
-        font-size: 2vw;
-        line-height: 4vw;
+        font-size: 4vw;
+        line-height: 6vw;
 
     }
     .contact {
