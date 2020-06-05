@@ -1227,8 +1227,8 @@ button {
 
     .intern-title {
         width: 100%;
-        /* height: 90vh; */
-        padding: 16vh 25px;
+        height: 70vh;
+        /* padding: 16vh 25px; */
         box-sizing: border-box;
         /* position: static; */
     }
