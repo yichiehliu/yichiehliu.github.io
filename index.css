@@ -610,6 +610,8 @@ background: linear-gradient(180deg, rgba(105,105,105,0.6451622885482318) 0%, rgb
     background: #fefefe;
     box-shadow: -1.111vw 0.278vw 5.694vw rgba(50,48,51,0.02);
     transition: box-shadow 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    font-family: 'Inter';
+
 }
 
 .act-intro-2,
@@ -652,8 +654,10 @@ background: linear-gradient(180deg, rgba(105,105,105,0.6451622885482318) 0%, rgb
 .act-pic h4 {
     font-size: 1.3vw;
     margin: 0;
-}
+    margin-bottom: 3px;
+    font-weight: unset;
 
+}
 .act-pic a {
     text-decoration: none;
 
@@ -1286,6 +1290,7 @@ button {
     .act-pic h2 {
         font-size: 7vw;
         margin: 1vw 0 2vw;
+
     }
 
     .act-pic h4 {
