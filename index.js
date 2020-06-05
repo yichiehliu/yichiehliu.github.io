@@ -86,6 +86,7 @@ function handleStepExit({ element, direction }) {
 var w = window.innerWidth;
 function internPicStepEnter({ element, direction }) {
     if (w >= 980) {
+        el.className = 'intern-sticky';
         if (element.dataset.step == "1") {
             el.classList.add('animate-1');
         }
@@ -105,7 +106,7 @@ function internPicStepEnter({ element, direction }) {
 
 function internPicStepExit({ element, direction }) {
     if (w >= 980) {
-        if (element.dataset.step == "1") {
+        if (element.dataset.step == "1" && direction == 'down') {
             el.classList.remove('animate-1');
         }
         if (element.dataset.step == "2") {
@@ -114,7 +115,7 @@ function internPicStepExit({ element, direction }) {
         if (element.dataset.step == "3") {
             el.classList.remove('animate-3');
         }
-        if (element.dataset.step == "4") {
+        if (element.dataset.step == "4" && direction == 'up') {
             el.classList.remove('animate-4');
         }
     }
@@ -163,23 +164,16 @@ scroller_selfintro.setup({
 
 
 
-var scroller_intern = scrollama();
-scroller_intern.setup({
-    step: ".internships",
-    offset: .8,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
+
 
 var scroller_intern_pic = scrollama();
 scroller_intern_pic.setup({
     step: ".intern-pic",
     offset: .5,
-    debug: false
+    debug: true
 })
     .onStepEnter(internPicStepEnter)
-    .onStepExit(internPicStepExit);
+// .onStepExit(internPicStepExit);
 
 
 // var scroller_intern_pic_e = scrollama();
@@ -194,7 +188,7 @@ scroller_intern_pic.setup({
 var scroller_contact = scrollama();
 scroller_contact.setup({
     step: ".contact",
-    offset: .9,
+    offset: 1,
     debug: false
 })
     .onStepEnter(handleStepEnter)
