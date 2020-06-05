@@ -1,8 +1,12 @@
 body {
     margin: 0;
     font-size: 16px;
-    padding-top: 8vw;
+    /* padding-top: 8vw; */
     font-family: 'Inter',sans-serif;
+    /* background-image: url(resized_image/mountain.jpg); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 a {
@@ -44,7 +48,7 @@ a:hover {
 }
 
 .header {
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     top: 0;
     display: flex;
@@ -205,6 +209,10 @@ a:hover {
     margin-top: -50px;
 }
 
+.front-page .self-intro {
+    display: none;
+}
+
 .home-header {
     position: absolute; 
     width: 100%;
@@ -219,9 +227,10 @@ a:hover {
 
 /* title */
 .title-underline {
-    width: 187px;
+    width: 90px;
     height: 9px;
     background: #FADA3B;
+    margin-top: 10px;
 }
 
 
@@ -266,8 +275,8 @@ a:hover {
 .project {
     position: relative;
 
-    width: 26vw;
-    height: 42vw;
+    width: 28vw;
+    /* height: 42vw; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -292,7 +301,7 @@ a:hover {
     position: relative;
     width: 150px;
     height: 130px;
-    margin: 3vw 0;
+    margin: 13% 0;
     border: 2px dashed #000000;
     box-sizing: border-box; 
 }
@@ -319,32 +328,48 @@ svg {
 }
 
 .p-text {
-    margin: 1.5vw 0;
-    padding: 0 2.1vw;
+    
+    /* margin: 1.5vw 0;
+    padding: 0 2.1vw; */
+    padding: 0 3vw 2vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    flex-grow: 1;
 }
+
+
 .p-text h3 {
-    font-size: 1.35vw;
-    line-height: 1.4vw;
-    margin-bottom: 0.8vw;
+    font-size: 2vw;
+    line-height: 2vw;
+    margin-bottom: 1vw;
 }
 
 .p-text h4 {
     margin: 0;
-    font-size: 1.2vw;
+    font-size: 1.6vw;
     /* line-height: 1.9vw; */
 }
 .p-text p {
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     line-height: 1.8vw;
 
 }
 
 .p-text a {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: flex-end; */
+    flex-grow: 1;
+    /* position: absolute;
     bottom: 3.5vw;
     left: 50%;
     transform: translate(-50%, 0);
-    text-align: center;
+    text-align: center; */
+    padding-top: 12%;
+    font-size: 1.3vw;
 }
 
 /* Internships */
@@ -354,8 +379,9 @@ svg {
     margin: 0;
     height: 500px;
     color: #fff;
-    background: linear-gradient(235.39deg, #085981 0.83%, #053349 100%);
+    /* background: linear-gradient(235.39deg, #085981 0.83%, #053349 100%); */
     /* background-color: #8e7d7e; */
+    background: #46b3e6;
     text-align: center;
     position: relative;
     /* padding: 14vw 6vw; */
@@ -413,25 +439,25 @@ svg {
 
 .intern-sticky {
     position: sticky;
-    top: 40%;
+    top: 30%;
     margin: 0 3rem;
-    background-color: #f3f3f3;
+    /* background-color: #f3f3f3; */
 }
 
 
 .intern-info {
     position: absolute;
-    box-shadow: -0.4vw 0.1vw 5vw rgba(177, 175, 175, 0.08);
+    /* box-shadow: -0.4vw 0.1vw 5vw rgba(177, 175, 175, 0.08); */
 
 }
 
 .intern-info h3 {
-    font-size: 2vw;
+    font-size: 3vw;
     margin: 0;
 }
 
 .intern-info h4 {
-    font-size: 1.4vw;
+    font-size: 1.1vw;
 }
 
 .intern-info p {
@@ -573,6 +599,7 @@ svg {
 /* Contact */
 
 .contact {
+    
     display: flex;
     opacity: 0;
     -webkit-transition: all 0.8 ease-in-out;
@@ -637,13 +664,15 @@ svg {
 }
 
 .form {
+    background-color: #46b3e6;
+
     /* width: 100%; */
     /* top: 50%; */
     /* position: absolute;
     bottom: 20;
     left: 0; */
     font-family: 'Raleway';
-    background: linear-gradient(30deg, #053349 -50%, #085981 80%);
+    /* background: linear-gradient(30deg, #053349 -50%, #085981 80%); */
     color: #fff;
 
     margin: 0 auto;
@@ -774,6 +803,7 @@ button {
 
 .footer {
     /* background-color: #b2dffb; */
+    background-color: #46b3e6;
 }
 
 .copyrights {
@@ -796,7 +826,14 @@ button {
 @media only screen and (max-width: 980px) {
 
     body {
-
+    padding-top: 8vw;
+        background-image: url(resized_image/mountain.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    }
+    .header {
+    position: fixed;
     }
     .network-container {}
     .header ul {
@@ -881,13 +918,40 @@ button {
         height: 8vw;
     }
 
-    .wrap {
-        padding: 0 20px;
+    .footer {
+        background-color: transparent   ;
+        
     }
 
-    .self-intro {
-    margin-top: 8vw;
+    .wrap {
+        padding: 0 25px;
+        /* background-color: #fff; */
+
     }
+
+    .wrap .self-intro {
+    display: none;
+    }   
+
+    .self-intro {
+        margin-top: 8vw;
+    }
+
+    .self-intro h4 {
+        font-size: 4vw;
+        margin-bottom: 7vw;
+        font-weight: normal;
+        margin-top: 100px;
+
+    }
+
+    
+    .self-intro h2 {
+        font-size: 8vw;
+        margin-bottom: 7vw;
+    }
+
+
 
     .header {
         height: 15vw;
@@ -901,9 +965,23 @@ button {
         font-size: 3vw;
 
     }
+
+
     .front-page {
-        height: 100%;
+    margin-top: -1vw;
+    height: 92vh;
+    background-position: 85%;
+    padding-bottom: 0;
+    position: relative;
     }
+
+        
+    .front-page .self-intro {
+
+        position: absolute;
+        display: block;
+    }  
+
 
     .title-underline {
         width: 29vw;
@@ -931,26 +1009,26 @@ button {
 
     .project-title {
         width: 100%;
-        height: 90vh;
+        /* height: 90vh; */
         /* margin-bottom: 0 2vh;  */
-        padding: 16vh 20vw 5vh;
+        padding: 16vh 25px;
         box-sizing: border-box;
         position: static;
 
     }
 
     .project-title h3 {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .project-title h4 {
-        font-size: 4vw;
-        line-height: 7vw;
+        font-size: 5vw;
+        line-height: 8vw;
     }
     .project {
         /* position: static; */
         width: 100%;
-        height: 90vh;
+        /* height: 90vh; */
         padding: 0 10vw;
         box-sizing: border-box;
         /* display: block; */
@@ -958,43 +1036,55 @@ button {
     }
 
     .project-svg {
-        margin-top: 7vw;
+        margin: 12% 0;
         width: 40vw;
         height: 40vw;
     }
 
     .p-text {
-        max-height: 60vh;
-        margin: 8vw 0;
-        padding: 0 6vw;
+        /* max-height: 60vh; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        /* margin: 8vw 0; */
+        padding: 0;
     }
     .p-text h3 {
-        font-size: 5vw;
-        line-height: 6vw;
-        margin: 0 0 1vw;
+        font-size: 8vw;
+        line-height: 8vw;
+        /* margin: 0 0 1vw; */
 
     }
 
     .p-text h4 {
-        margin: 0 0 5vw;
-        font-size: 4vw;
+        margin: 0;
+        font-size: 6vw;
         /* line-height: 1.9vw; */
     }
     .p-text p {
-        font-size: 3vw;
-        line-height: 4vw;
-        margin-bottom: 5vw;
+        font-size: 4vw;
+        line-height: 6vw;
+        margin: 7vw 0;
 
 
     }
 
     .p-text a {
-        position: absolute;
-        bottom: 5vw;
-        left: 50%;
-        transform: translate(-50%, 0);
-        text-align: center;
-        font-size: 3vw;
+        /* position: absolute; */
+        /* bottom: 5vw; */
+        /* left: 50%; */
+        /* transform: translate(-50%, 0); */
+        /* text-align: center; */
+        font-size: 5vw;
+        /* margin: 100px 0; */
+        /* position: absolute; */
+        display: flex;
+        justify-self: flex-end;
+        flex-grow: 1;
+        align-items: flex-end;
+        padding: 20% 0 10%;
     }
 
     .internships {

@@ -1,6 +1,6 @@
 
 
-$('.front-page').parallax({ imageSrc: 'resized_image/home-header.svg' });
+// $('.front-page').parallax({ imageSrc: 'resized_image/home-header.svg' });
 
 var submit = document.querySelector('.btn');
 
@@ -141,14 +141,14 @@ scroller_myimage.setup({
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
-var scroller_selfintro = scrollama();
-scroller_selfintro.setup({
-    step: ".self-intro",
-    offset: .8,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
+// var scroller_selfintro = scrollama();
+// scroller_selfintro.setup({
+//     step: ".self-intro",
+//     offset: .8,
+//     debug: false
+// })
+//     .onStepEnter(handleStepEnter)
+//     .onStepExit(handleStepExit);
 
 
 
@@ -170,7 +170,7 @@ var scroller_intern_pic = scrollama();
 scroller_intern_pic.setup({
     step: ".intern-pic",
     offset: .5,
-    debug: true
+    debug: false
 })
     .onStepEnter(internPicStepEnter)
 // .onStepExit(internPicStepExit);
