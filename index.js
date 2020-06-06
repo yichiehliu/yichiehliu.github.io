@@ -24,36 +24,29 @@ window.onscroll = function () {
 }
 // $('.front-page').parallax({ imageSrc: 'resized_image/home-header.svg' });
 
-var submit = document.querySelector('.btn');
 
-function emailtome() {
-
-    var user_value = document.getElementById("name").value;
-    var message_value = document.getElementById("message").value;
-    var user_email_value = document.getElementById("email").value;
-    console.log(user_value, user_email_value, message_value);
-
-
-
-    var template_params = {
-        "user": String(user_value),
-        "user_email": String(user_email_value),
-        "message": String(message_value)
-    }
+var myform = $(".contact-form");
+myform.submit(function (event) {
+    event.preventDefault();
 
     var service_id = "default_service";
     var template_id = "ej_contact";
-    emailjs.send(service_id, template_id, template_params, "user_IAM8HfFeS86yKxQnF3ySF")
-        .then(function (response) {
-            alert("Message successfully sent!");
-            console.log('SUCCESS!', response.status, response.text);
-        }, function (error) {
-            alert("Can't Send the Message!");
-            console.log('FAILED...', error);
-        });
 
-}
-submit.addEventListener("click", emailtome);
+    myform.find("button").text("Sending...");
+    emailjs.sendForm(service_id, template_id, myform[0], "user_IAM8HfFeS86yKxQnF3ySF")
+        .then(function () {
+            alert("Message successfully sent!");
+            myform.find("button").text("Message sent");
+            location.reload();
+        }, function (err) {
+            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+            myform.find("button").text("Message failed to sent");
+            location.reload();
+
+        });
+    return false;
+});
+
 
 
 // menu
@@ -162,27 +155,86 @@ scroller_myimage.setup({
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
 
-// var scroller_selfintro = scrollama();
-// scroller_selfintro.setup({
-//     step: ".self-intro",
+var scroller_selfintro_h4 = scrollama();
+scroller_selfintro_h4.setup({
+    step: ".self-intro-h4",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+var scroller_selfintro_h2_1 = scrollama();
+scroller_selfintro_h2_1.setup({
+    step: ".self-intro-h2-1",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+var scroller_selfintro_h2_2 = scrollama();
+scroller_selfintro_h2_2.setup({
+    step: ".self-intro-h2-2",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+
+var scroller_title = scrollama();
+scroller_title.setup({
+    step: ".project-title",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+
+
+// var scroller_p = scrollama();
+// scroller_p.setup({
+//     step: ".project",
 //     offset: .8,
 //     debug: false
 // })
-//     .onStepEnter(handleStepEnter)
-//     .onStepExit(handleStepExit);
+//     .onStepEnter(handleStepEnter);
 
+var scroller_p1 = scrollama();
+scroller_p1.setup({
+    step: ".project-1",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
 
-
-// var scroller_title = scrollama();
-// scroller_title.setup({
-//     step: ".title",
-//     offset: .8,
-//     debug: false
-// })
-//     .onStepEnter(handleStepEnter)
-//     .onStepExit(handleStepExit);
-
-
+var scroller_p2 = scrollama();
+scroller_p2.setup({
+    step: ".project-2",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
+var scroller_p3 = scrollama();
+scroller_p3.setup({
+    step: ".project-3",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
+var scroller_p4 = scrollama();
+scroller_p4.setup({
+    step: ".project-4",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
 
 
 

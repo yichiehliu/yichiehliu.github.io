@@ -26,10 +26,10 @@
 
 **內容分為六個部分<br>**
 **0.Header:Logo在滑鼠滑過會跳起，旁邊a標籤會跳轉至下面對應的部分<br>**
-**1.About: 主頁有視差滾動<br>**
+**1.About: 主頁，利用scrollma做淡入特效<br>**
 **2.Projects:Show出我做過相關project的主題，上面有對應主題的icon，點view more可以連結到專案的github網址<br>**
 **3.Internships: 利用scrollma Show出我的實習經歷和照片<br>**
-**4.Activity: Show出我曾經參加的活動和簡述，點圖片可以連結到相應的活動網址或粉專<br>**
+**4.Activity: Show出我曾經參加的活動和簡述，圖片會放大縮小，點圖片可以連結到相應的活動網址或粉專<br>**
 **5.Contact:可以利用表單聯繫我，會由EmailJS的服務進行email傳送，另有相關社群媒體icon可以聯繫<br>**
 
 **加入響應式設計，分為兩個版型<br>**
@@ -45,11 +45,12 @@
 **https://russellgoldenberg.github.io/scrollama/sticky-side/<br>**
 **https://github.com/russellgoldenberg/scrollama/blob/master/docs/sticky-side/index.html<br>**
 
-**3.圖片視差滾動 js 套件程式碼參考<br>**
+**3.Email js 套件程式碼參考<br>**
+**https://www.emailjs.com/docs/rest-api/send/**
 
 **4.header scroll改變位置<br>**
 **https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp**
-****
+***
 
 ## 設計參考
 **色彩設計<br>**
