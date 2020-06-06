@@ -1381,6 +1381,21 @@ button {
     }
 
 
+    .project-1.animate,
+    .project-2.animate,
+    .project-3.animate,
+    .project-4.animate,
+    .act-set-1.animate,
+    .act-set-2.animate,
+    .act-set-3.animate,
+    .act-set-4.animate {
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+        -webkit-transition: all .3s ease-out;
+        transition: all .3s ease-out;
+    }
+
+
 
     .project-2.animate,
     .act-set-2.animate {
