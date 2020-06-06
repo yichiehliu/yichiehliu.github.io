@@ -188,7 +188,7 @@ a:hover {
     position: relative;
     margin-top: 10vw;
     z-index: 10;
-    font-family: 'Kalam',sans-serif;
+    font-family: 'Kalam';
 
     
     
@@ -370,8 +370,8 @@ a:hover {
     opacity: 0;
     -webkit-transform: translate(0, 100px);
     transform: translate(0,100px);
-    -webkit-transition: all .5s ease-out;
-    transition: all .5s ease-out;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }
 
 .project-1.animate,
@@ -391,12 +391,12 @@ a:hover {
 
 .project-2.animate,
 .act-set-2.animate {
-    transition-delay: .4s;
+    transition-delay: .2s;
 }
 
 .project-4.animate,
 .act-set-4.animate {
-    transition-delay: .4s;
+    transition-delay: .2s;
 }
 
 .project>* {

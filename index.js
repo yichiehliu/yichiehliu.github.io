@@ -139,7 +139,7 @@ function internPicStepExit({ element, direction }) {
 var scroller_contact = scrollama();
 scroller_contact.setup({
     step: ".contact",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)
@@ -149,7 +149,7 @@ scroller_contact.setup({
 var scroller_myimage = scrollama();
 scroller_myimage.setup({
     step: ".myimage-container",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)
@@ -158,7 +158,7 @@ scroller_myimage.setup({
 var scroller_selfintro_h4 = scrollama();
 scroller_selfintro_h4.setup({
     step: ".self-intro-h4",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)
@@ -167,7 +167,7 @@ scroller_selfintro_h4.setup({
 var scroller_selfintro_h2_1 = scrollama();
 scroller_selfintro_h2_1.setup({
     step: ".self-intro-h2-1",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)
@@ -176,7 +176,7 @@ scroller_selfintro_h2_1.setup({
 var scroller_selfintro_h2_2 = scrollama();
 scroller_selfintro_h2_2.setup({
     step: ".self-intro-h2-2",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)
@@ -186,7 +186,7 @@ scroller_selfintro_h2_2.setup({
 var scroller_pt = scrollama();
 scroller_pt.setup({
     step: ".project-title",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)
@@ -196,7 +196,7 @@ scroller_pt.setup({
 var scroller_at = scrollama();
 scroller_at.setup({
     step: ".act-title",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter)
@@ -206,15 +206,16 @@ scroller_at.setup({
 // var scroller_p = scrollama();
 // scroller_p.setup({
 //     step: ".project",
-//     offset: .8,
+//     offset: .9,
 //     debug: false
 // })
 //     .onStepEnter(handleStepEnter);
 
+
 var scroller_p1 = scrollama();
 scroller_p1.setup({
     step: ".project-1",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -223,7 +224,7 @@ scroller_p1.setup({
 var scroller_p2 = scrollama();
 scroller_p2.setup({
     step: ".project-2",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -231,7 +232,7 @@ scroller_p2.setup({
 var scroller_p3 = scrollama();
 scroller_p3.setup({
     step: ".project-3",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -239,7 +240,7 @@ scroller_p3.setup({
 var scroller_p4 = scrollama();
 scroller_p4.setup({
     step: ".project-4",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -250,7 +251,7 @@ scroller_p4.setup({
 var scroller_a1 = scrollama();
 scroller_a1.setup({
     step: ".act-set-1",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -259,7 +260,7 @@ scroller_a1.setup({
 var scroller_a2 = scrollama();
 scroller_a2.setup({
     step: ".act-set-2",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -267,7 +268,7 @@ scroller_a2.setup({
 var scroller_a3 = scrollama();
 scroller_a3.setup({
     step: ".act-set-3",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -275,7 +276,7 @@ scroller_a3.setup({
 var scroller_a4 = scrollama();
 scroller_a4.setup({
     step: ".act-set-4",
-    offset: .8,
+    offset: .9,
     debug: false
 })
     .onStepEnter(handleStepEnter);
@@ -292,14 +293,14 @@ scroller_intern_pic.setup({
 // .onStepExit(internPicStepExit);
 
 
-var scroller_intern_pic_ani = scrollama();
-scroller_intern_pic_ani.setup({
-    step: ".intern-pic-ani",
-    offset: .7,
-    debug: false
-})
-    .onStepEnter(handleStepEnter)
-// .onStepExit(internPicStepExit);
+// var scroller_intern_pic_ani = scrollama();
+// scroller_intern_pic_ani.setup({
+//     step: ".intern-pic-ani",
+//     offset: .7,
+//     debug: false
+// })
+//     .onStepEnter(handleStepEnter)
+// // .onStepExit(internPicStepExit);
 
 // var scroller_intern_pic_e = scrollama();
 // scroller_intern_pic_e.setup({
