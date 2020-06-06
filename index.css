@@ -392,12 +392,12 @@ a:hover {
 
 .project-2.animate,
 .act-set-2.animate {
-    transition-delay: .2s;
+    transition-delay: .3s;
 }
 
 .project-4.animate,
 .act-set-4.animate {
-    transition-delay: .2s;
+    transition-delay: .3s;
 }
 
 .project>* {
@@ -1378,6 +1378,18 @@ button {
         flex-grow: 1;
         align-items: flex-end;
         padding: 20% 0 10%;
+    }
+
+
+
+    .project-2.animate,
+    .act-set-2.animate {
+        transition-delay: 0s;
+    }
+
+    .project-4.animate,
+    .act-set-4.animate {
+        transition-delay: 0s;
     }
 
     .internships {
