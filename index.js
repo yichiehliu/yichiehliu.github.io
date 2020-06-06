@@ -183,15 +183,24 @@ scroller_selfintro_h2_2.setup({
     .onStepExit(handleStepExit);
 
 
-var scroller_title = scrollama();
-scroller_title.setup({
+var scroller_pt = scrollama();
+scroller_pt.setup({
     step: ".project-title",
     offset: .8,
     debug: false
 })
     .onStepEnter(handleStepEnter)
-    .onStepExit(handleStepExit);
+// .onStepExit(handleStepExit);
 
+
+var scroller_at = scrollama();
+scroller_at.setup({
+    step: ".act-title",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter)
+// .onStepExit(handleStepExit);
 
 
 // var scroller_p = scrollama();
@@ -238,6 +247,40 @@ scroller_p4.setup({
 
 
 
+var scroller_a1 = scrollama();
+scroller_a1.setup({
+    step: ".act-set-1",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
+
+var scroller_a2 = scrollama();
+scroller_a2.setup({
+    step: ".act-set-2",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
+var scroller_a3 = scrollama();
+scroller_a3.setup({
+    step: ".act-set-3",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
+var scroller_a4 = scrollama();
+scroller_a4.setup({
+    step: ".act-set-4",
+    offset: .8,
+    debug: false
+})
+    .onStepEnter(handleStepEnter);
+// .onStepExit(handleStepExit);
+
 
 var scroller_intern_pic = scrollama();
 scroller_intern_pic.setup({
@@ -248,6 +291,15 @@ scroller_intern_pic.setup({
     .onStepEnter(internPicStepEnter)
 // .onStepExit(internPicStepExit);
 
+
+var scroller_intern_pic_ani = scrollama();
+scroller_intern_pic_ani.setup({
+    step: ".intern-pic-ani",
+    offset: .7,
+    debug: false
+})
+    .onStepEnter(handleStepEnter)
+// .onStepExit(internPicStepExit);
 
 // var scroller_intern_pic_e = scrollama();
 // scroller_intern_pic_e.setup({
