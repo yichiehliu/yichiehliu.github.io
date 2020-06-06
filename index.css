@@ -27,7 +27,7 @@ a {
 
 .header a:visited {
     /* //設定已經瀏覽過的連結 */
-    color: black;
+    /* color: black; */
 }
 
 .header a:active {
@@ -251,7 +251,8 @@ a:hover {
     background-position: bottom;
     background-size: cover;
     
-    padding-bottom: 43%;
+    /* padding-bottom: 43%; */
+    height: 71vh;
     margin-top: -50px;
 }
 
