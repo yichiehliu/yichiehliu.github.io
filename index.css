@@ -187,7 +187,7 @@ a {
 
 .self-intro {
     position: relative;
-    margin-top: 60px;
+    margin-top: 10vw;
     z-index: 10;
     font-family: 'Kalam';
 
@@ -678,6 +678,10 @@ background: linear-gradient(180deg, rgba(105,105,105,0.6451622885482318) 0%, rgb
 .act-pic a {
     text-decoration: none;
 
+}
+
+.item img {
+    transition: all .5s ease-out;
 }
 
 
