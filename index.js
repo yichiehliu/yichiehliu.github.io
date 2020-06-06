@@ -12,6 +12,14 @@ window.onscroll = function () {
         }
         prevScrollpos = currentScrollPos;
     }
+    else {
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector(".header").style.top = "0";
+        } else {
+            document.querySelector(".header").style.top = "-16vw";
+        }
+        prevScrollpos = currentScrollPos;
+    }
 
 }
 // $('.front-page').parallax({ imageSrc: 'resized_image/home-header.svg' });
