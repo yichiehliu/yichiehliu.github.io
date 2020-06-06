@@ -11,12 +11,11 @@ body {
 
 a {
     color: black;
-
+    font-family: 'Raleway';
 }
 
 .header a {
     float: left;
-    font-family: 'Raleway';
 }
 
 .header a.anchor {
@@ -36,7 +35,7 @@ a {
     color: black;
 }
 
-.header a:hover {
+a:hover {
     text-decoration: underline;
     color: #3fc5f0;
 }
@@ -390,14 +389,14 @@ a {
     transition: all .5s ease-out;
 }
 
-.project-1.animate,
-.act-set-1.animate {
-    transition-delay: .3s;
+.project-2.animate,
+.act-set-2.animate {
+    transition-delay: .4s;
 }
 
-.project-3.animate,
-.act-set-3.animate {
-    transition-delay: .3s;
+.project-4.animate,
+.act-set-4.animate {
+    transition-delay: .4s;
 }
 
 .project>* {
