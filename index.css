@@ -9,10 +9,13 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
 a {
     color: black;
+
+}
+
+.header a {
+    float: left;
     font-family: 'Raleway';
 }
 
@@ -50,7 +53,8 @@ a {
 }
 
 .header {
-    /* position: fixed; */
+    position: fixed;
+    
     left: 0;
     top: 0;
     display: flex;
@@ -59,6 +63,7 @@ a {
     box-sizing: border-box;
     background-color: #fff;
     z-index: 100;
+     transition: top 0.3s;
 }
 .header .header-inner {
     height: 100%;
@@ -627,13 +632,25 @@ background: linear-gradient(180deg, rgba(105,105,105,0.6451622885482318) 0%, rgb
     margin-top: -7vw;
 }
 
+/* .act-sets {
+    opacity: 0;
+    transform: translate(0, 50px);
+    transition: all .5s ease-out;
+} */
+
+/* .act-sets.animate {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all .5s ease-out;  
+} */
+
 
 .item {
     height: 30vw;
     overflow: hidden;
-
-
 }
+
+
 
 #nfac  {
     object-position: right;

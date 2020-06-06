@@ -6,13 +6,13 @@
 **Folder:resized_images/ 放網頁會用到的圖檔 favicon_io/是網頁tab icon圖檔 icon/則是網頁內的icon圖檔<br>**
 **html:index.html<br>**
 **Css:index.css<br>**
-**js:index.js canvas.js emailJS套件 和下面1-3點程式碼套件<br>**
+**js:index.js canvas.js emailJS套件 和下面1-4點程式碼套件<br>**
 ***
 ## 我在這次作業中做了什麼
 **參考其他網頁設計後開始自己的設計<br>**
 **HTML是自己手動刻<br>**
-**CSS也是自己寫為主，以下有列出來的1-3點有參考css程式碼，或是不會的語法會用參考其他教學網站 codepen範例進行修改<br>**
-**js的部分也是以下1-3點參考，但都有因為自己的用途修改程式碼<br>**
+**CSS也是自己寫為主，以下有列出來的1-4點有參考css程式碼，或是不會的語法會用參考其他教學網站 codepen範例進行修改<br>**
+**js的部分也是以下1-4點參考，但都有因為自己的用途修改程式碼<br>**
 
 ## 網頁版本
 **原本有已經做好第一版了，一開始設計稿也是以第一版為主，以球體動畫為主軸，<br>github網址：https://github.com/yichiehliu/ycliu.github.io<br>但後來覺得太醜，於是全部砍掉重寫<br>**
@@ -45,7 +45,10 @@
 **https://russellgoldenberg.github.io/scrollama/sticky-side/<br>**
 **https://github.com/russellgoldenberg/scrollama/blob/master/docs/sticky-side/index.html<br>**
 
-**3.圖片視差滾動 js 套件程式碼參考**
+**3.圖片視差滾動 js 套件程式碼參考<br>**
+
+**4.header scroll改變位置<br>**
+**https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp**
 ****
 
 ## 設計參考

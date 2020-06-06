@@ -1,5 +1,19 @@
 
+var prevScrollpos = window.pageYOffset;
+var w = window.innerWidth;
 
+window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (w >= 980) {
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector(".header").style.top = "0";
+        } else {
+            document.querySelector(".header").style.top = "-8vw";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+}
 // $('.front-page').parallax({ imageSrc: 'resized_image/home-header.svg' });
 
 var submit = document.querySelector('.btn');
@@ -83,7 +97,6 @@ function handleStepExit({ element, direction }) {
 }
 
 
-var w = window.innerWidth;
 function internPicStepEnter({ element, direction }) {
     if (w >= 980) {
         el.className = 'intern-sticky';
@@ -193,6 +206,15 @@ scroller_contact.setup({
 })
     .onStepEnter(handleStepEnter)
     .onStepExit(handleStepExit);
+
+// var item = scrollama();
+// item.setup({
+//     step: ".act-sets",
+//     offset: .2,
+//     debug: true
+// })
+//     .onStepEnter(handleStepEnter)
+//     .onStepExit(handleStepExit);
 
 
 
