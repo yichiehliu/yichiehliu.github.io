@@ -159,7 +159,7 @@ function doubleSelect(x, y) {
     return bool;
 }
 
-
+// 標記炸彈
 $(".btn").contextmenu(function () {
 
 
