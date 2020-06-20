@@ -15,6 +15,7 @@
     <div class="content">
         <form action="" class="game">
             <div class="diff">
+                <label for="Difficulty">Difficulty</label>
                 <select class="Difficulty" required="">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -23,21 +24,31 @@
                 </select>
             </div>
             <div class="wandh">
+
                 <div class="width">
+                    <label for="width">Width</label>
                     <input class="width-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="5"
                         max="40">
                 </div>
                 <div class="height">
+                    <label for="height">Height</label>
                     <input class="height-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="5"
                         max="40">
                 </div>
             </div>
 
             <div class="Bomb">
+                <label for="height">Bomb</label>
                 <input class="bomb-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="1"
                     max="40">
             </div>
         </form>
+        <div class="stbutton">
+            <a href="https://yichiehliu.github.io/final/game" class="game-link">
+                <button class="start"></button>
+
+            </a>
+        </div>
     </div>
 
     <div class="footer">

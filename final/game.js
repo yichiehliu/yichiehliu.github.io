@@ -108,12 +108,12 @@ function createData(numrows, numcols, numbomb) {
 function createFramework() {
     bbtable = $("<table></table>").attr({ id: "bbtable" });
     // new Number($("#rowcount").val());
-    var rows = 6;
-    var cols = 6;
-    var bombs = 7;
+    var rows = 8;
+    var cols = 8;
+    var bombs = 10;
     var cnt = 1;
     var tr = [];
-    var DataArray = createData(rows, cols, bombs);
+    DataArray = createData(rows, cols, bombs);
     console.log(DataArray);
     // return;
 
@@ -128,7 +128,7 @@ function createFramework() {
                     .attr({ class: ["cell", "cell" + j] })
                     .appendTo(row);
                 $("<button></button>")
-                    .attr({ class: ["btn"], 'data-index': cnt, 'data': DataArray[i + 1][j + 1], 'data-disabled': true })
+                    .attr({ class: ["btn"], 'data-index-x': i + 1, 'data-index-y': j + 1, 'data-array': -99, 'data-disabled': true })
                     .appendTo(td);
                 cnt += 1;
             }
@@ -138,17 +138,85 @@ function createFramework() {
     }
     bbtable.appendTo(".content");
 }
+
+var DataArray = []
 createFramework();
 
-console.log("yes")
+console.log(DataArray)
 
-// 0要怎麼一起點開
-// data要先隱藏
+function whiteAni() {
 
+}
+
+function assignShowArr(x, y) {
+    $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-array", DataArray[x][y]);
+    $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled", false);
+}
+
+function doubleSelect(x, y) {
+    var bool = false
+    bool = $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled")
+    return bool;
+}
+
+
+$(".btn").contextmenu(function () {
+
+
+})
 
 $(".btn").click(function () {
     // console.log($(this))
-    $(this).attr("data-disabled", false);
+
+    var curX = +$(this).attr("data-index-x");
+    var curY = +$(this).attr("data-index-y");
+    var queue = [];
+    // assignShowArr(curX, curY)
+
+    if (DataArray[curX][curY] == 0) {
+        queue.push([curX, curY])
+        while (queue.length > 0) {
+            // console.log(1)
+            const [cX, cY] = queue.shift();
+
+            for (var i = -1; i < 2; i++) {
+                for (var j = -1; j < 2; j++) {
+                    // console.log(2)
+                    // $.each(queue, function (index, val) {
+                    //     console.log(val);
+                    // });
+                    // console.log(4)
+                    // if (!(i == 0 && j == 0)) {
+
+                    // console.log(DataArray[cX + i][cY + j], doubleSelect(cX + i, cY + j))
+                    if (DataArray[cX + i][cY + j] == 0 && doubleSelect(cX + i, cY + j) == "true") {
+                        // console.log(123)
+                        queue.push([cX + i, cY + j])
+                    }
+                    assignShowArr(cX + i, cY + j)
+
+                }
+            }
+            // queue.forEach(element => console.log(element));
+
+
+        }
+
+
+
+    }
+    else if (DataArray[curX][curY] == -1) {
+        assignShowArr(curX, curY)
+    }
+    else {
+        assignShowArr(curX, curY)
+    }
+
+
+
+
+
+
     // if (this.attr("data-disabled") == false) {
 
     // }

@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(rgb(131, 23, 71), rgb(40, 0, 0));
+    /* background-color: black; */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game div {
+    /* margin: 0 auto; */
+    margin: 40px 0;
+}

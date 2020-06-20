@@ -36,7 +36,7 @@ tr {
 }
 
 .btn[data-disabled="false"]::before {
-    content: attr(data);
+    content: attr(data-array);
     color: white;
     font-weight: bold;
     font-size: 1.3em;
