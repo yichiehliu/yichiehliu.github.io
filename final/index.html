@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
 
@@ -13,49 +14,60 @@
 
     </div>
     <div class="content">
-        <form action="" class="game">
-            <div class="diff">
-                <label for="Difficulty">Difficulty</label>
-                <select class="Difficulty" required="">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                    <option value="custom">Custom</option>
-                </select>
+        <div class="game-title">
+            <span>MINESWEEPER</span>
+        </div>
+        <form action="" class="game" method="POST">
+            <div class="diff box">
+                <label id="Difficulty">
+                    <span class="form-span">Difficulty</span>
+                    <select class="Difficulty" required="">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </label>
             </div>
             <div class="wandh">
 
-                <div class="width">
-                    <label for="width">Width</label>
-                    <input class="width-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="5"
-                        max="40">
+                <div class="width box">
+                    <label id="width">
+                        <span class="form-span">Width</span>
+                        <input class="width-input" type="number" inputmode="numeric" pattern="[0-9]*" required=""
+                            min="5" max="40">
+                    </label>
                 </div>
-                <div class="height">
-                    <label for="height">Height</label>
-                    <input class="height-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="5"
-                        max="40">
+                <div class="height box">
+                    <label id="height">
+                        <span class="form-span">Height</span>
+                        <input class="height-input" type="number" inputmode="numeric" pattern="[0-9]*" required=""
+                            min="5" max="40">
+                    </label>
                 </div>
             </div>
 
-            <div class="Bomb">
-                <label for="height">Bomb</label>
-                <input class="bomb-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="1"
-                    max="40">
+            <div class="Bomb box">
+                <label id="Bomb">
+                    <span class="form-span">Bomb</span>
+                    <input class="bomb-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="1"
+                        max="40">
+                </label>
+            </div>
+            <div class="stbutton">
+                <a href="https://yichiehliu.github.io/final/game" class="game-link">
+                    <button class="start">START</button>
+                </a>
             </div>
         </form>
-        <div class="stbutton">
-            <a href="https://yichiehliu.github.io/final/game" class="game-link">
-                <button class="start"></button>
 
-            </a>
-        </div>
     </div>
 
     <div class="footer">
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="home.js"></script>
+    <script src="index.js"></script>
 </body>
 
 

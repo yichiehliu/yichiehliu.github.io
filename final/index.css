@@ -1,9 +1,12 @@
 body {
-    background: linear-gradient(rgb(131, 23, 71), rgb(40, 0, 0));
+    /* background: linear-gradient(rgb(131, 23, 71), rgb(40, 0, 0)); */
+    background: linear-gradient(rgb(54, 49, 176), rgb(14, 16, 62));
+
     /* background-color: black; */
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: Space Mono, Arial, Helvetica, sans-serif;
 
 }
 
@@ -11,11 +14,103 @@ body {
 .content {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.game div {
+.game-title {
+    position: absolute;
+    top: 50px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 4em;
+    font-weight: 900;
+    letter-spacing: 10px;
+    
+}
+
+
+.box {
+    border-bottom: 2px solid #fff;
+    height: 70px;
+    width: 250px;
+    border-radius: 1vw 0 0;
+    /* border: 1px solid #fff; */
+    margin: 15px 0;
+    padding: 10px 20px;
+    background: rgba(0,0,0,.39); 
+    box-sizing: border-box;  
+}
+
+.height {
+    margin-left: 40px;
+}
+.game input, select {
+    font-family: Space Mono, Arial, Helvetica, sans-serif;
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    /* height: 35px; */
+    font-size: 17px;
+    outline: none;
+}
+
+.form-span {
+    font-size: 14px;
+    opacity: .7;
+}
+select option {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.game div span {
+    color: #fff;
     /* margin: 0 auto; */
-    margin: 40px 0;
+    /* margin: 40px 0; */
+}
+
+.game div > *{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.wandh {
+    display: flex;
+}
+
+
+.start {
+    height: 65px;
+    border-radius: 1vw;
+    width: 540px;
+    margin-top: 15px;
+    padding: 0;
+    border: 0;
+    color: linear-gradient(rgb(54, 49, 176), rgb(14, 16, 62));
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 10px;
+    
+    background: #fff;
+}
+
+.stbutton a {
+    text-decoration: none;
+}
+
+.diff,
+.Bomb {
+    width: 540px;
+}
+
+
+.box:focus,
+.box:active {
+    /* transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out; */
+    border-bottom: 2px solid rgb(112, 199, 243);
+    /* opacity: 1; */
 }
