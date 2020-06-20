@@ -1,0 +1,60 @@
+:root {
+    --cell-size: 40px;
+}
+
+body {
+    background: linear-gradient(rgb(131, 23, 71), rgb(40, 0, 0));
+    /* background-color: black; */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+table {
+    margin: 0 auto;
+}
+
+tr {
+    display: block;
+    margin: 5px;
+}
+
+
+
+
+
+.btn[data-disabled="true"] {
+
+}
+.btn::before {
+    /* content: attr(data); */
+}
+
+.btn[data-disabled="false"] {
+    border-radius: 50%;
+}
+
+.btn[data-disabled="false"]::before {
+    content: attr(data);
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    margin: 0 5px;
+    border: 2px solid #fff;
+    border-color: white;
+    background-color: transparent;
+
+	
+    padding: 0;
+    color: inherit;
+    font: inherit;
+	outline: inherit;       
+    width: var(--cell-size);
+    height: var(--cell-size);
+}
+
