@@ -42,7 +42,7 @@ tr {
     position: absolute;
     top: -2px;
     left: -2px;
-    animation-duration: .5s;
+    animation-duration: .8s;
     animation-fill-mode: both;
     animation-name: flash;
     animation-iteration-count: 1;
@@ -108,7 +108,7 @@ tr {
 
 
 @keyframes flash {
-    0%   {opacity: 1;}
+    10%   {opacity: 1;}
     100%   {opacity: 0;}
 }
 
