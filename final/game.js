@@ -177,38 +177,41 @@ $(".btn").contextmenu(function () {
 
 // 點格子，左鍵
 $(".btn").click(function () {
-    // 轉INDEX型別
-    var curX = +$(this).attr("data-index-x");
-    var curY = +$(this).attr("data-index-y");
-    var queue = [];
+    if ($(".btn").attr("data-disabled") == "true") {
+        // 轉INDEX型別
+        var curX = +$(this).attr("data-index-x");
+        var curY = +$(this).attr("data-index-y");
+        var queue = [];
 
-    // 檢查是否是結束遊戲(勝利OR失敗)
-    // 點到-1，失敗
-    if (DataArray[curX][curY] == -1) {
-        assignShowArr(curX, curY)
-    }
-    // 畫面剩下沒點開的都是-1，勝利
+        // 檢查是否是結束遊戲(勝利OR失敗)
+        // 點到-1，失敗
+        if (DataArray[curX][curY] == -1) {
+            assignShowArr(curX, curY)
+        }
+        // 畫面剩下沒點開的都是-1，勝利
 
 
 
-    // 檢查展開
-    if (DataArray[curX][curY] == 0) {
-        queue.push([curX, curY])
-        while (queue.length > 0) {
-            const [cX, cY] = queue.shift();
-            for (var i = -1; i < 2; i++) {
-                for (var j = -1; j < 2; j++) {
-                    if (DataArray[cX + i][cY + j] == 0 && doubleSelect(cX + i, cY + j) == "true") {
-                        // console.log(123)
-                        queue.push([cX + i, cY + j])
+        // 檢查展開
+        if (DataArray[curX][curY] == 0) {
+            queue.push([curX, curY])
+            while (queue.length > 0) {
+                const [cX, cY] = queue.shift();
+                for (var i = -1; i < 2; i++) {
+                    for (var j = -1; j < 2; j++) {
+                        if (DataArray[cX + i][cY + j] == 0 && doubleSelect(cX + i, cY + j) == "true") {
+                            // console.log(123)
+                            queue.push([cX + i, cY + j])
+                        }
+                        assignShowArr(cX + i, cY + j)
                     }
-                    assignShowArr(cX + i, cY + j)
                 }
+                // queue.forEach(element => console.log(element));
             }
-            // queue.forEach(element => console.log(element));
+        }
+        else {
+            assignShowArr(curX, curY)
         }
     }
-    else {
-        assignShowArr(curX, curY)
-    }
+
 });

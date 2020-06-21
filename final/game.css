@@ -92,9 +92,10 @@ tr {
 }
 
 .btn[data-array="-1"] {
-    background-image: url(images/space.svg);
+    background-image: url(images/explosion.svg);
     /* margin: 0; */
-    border: none;
+    border: 2px solid transparent;
+    background-size: var(--cell-size);
 }
 .btn[data-array="-1"]::before {
     content: none;
