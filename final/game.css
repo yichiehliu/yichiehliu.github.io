@@ -23,6 +23,7 @@ tr {
 }
 
 .btn {
+    position: relative;
     margin: 0 5px;
     border: 2px solid #fff;
     /* border-color: white; */
@@ -37,6 +38,25 @@ tr {
     height: var(--cell-size);
 }
 
+.white-box {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: flash;
+    animation-iteration-count: 1;
+    background-color: #fff;
+    width: var(--cell-size);
+    height: var(--cell-size);
+
+
+    /* z-index: 10; */
+}
+
+.right-click-box {
+
+}
 
 
 .btn[data-disabled="true"] {
@@ -47,17 +67,20 @@ tr {
 }
 
 .btn[data-disabled="false"] {
+    position: relative;
     border-radius: 50%;
 }
 
 /* content藥用pseduo element */
 .btn[data-disabled="false"]::before {
+    position: relative;
     content: attr(data-array);
     color: white;
     font-weight: bold;
     font-size: 1.3em;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .btn[data-array="0"] {
     border-radius: 0%;
@@ -75,6 +98,18 @@ tr {
 }
 .btn[data-array="-1"]::before {
     content: none;
+}
+
+
+
+/* 失敗 */
+
+
+
+
+@keyframes flash {
+    0%   {opacity: 1;}
+    100%   {opacity: 0;}
 }
 
 

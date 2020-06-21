@@ -1,7 +1,18 @@
 
 
+$(".width-input").on('change', function () {
+    if ($(".Difficulty").val() == "easy" || $(".Difficulty").val() == "easy")
+        if ($(".width-input").val()) {
 
+        }
+}
+    
+$(".width-input").on('change', function () {
+    if () {
 
+    }
+}
+    
 $(".Difficulty").on('change', function () {
     var value = $(this).val();
     // console.log(value)

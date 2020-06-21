@@ -149,8 +149,16 @@ function whiteAni() {
 }
 
 function assignShowArr(x, y) {
-    $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-array", DataArray[x][y]);
-    $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled", false);
+    console.log()
+    if ($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length == 0) {
+        // console.log($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length);
+        $("<div></div>")
+            .attr({ class: ["white-box"] })
+            .appendTo($(`[data-index-x="${x}"][data-index-y="${y}"]`));
+        $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-array", DataArray[x][y]);
+        $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled", false);
+    }
+
 }
 
 function doubleSelect(x, y) {
@@ -163,6 +171,7 @@ function doubleSelect(x, y) {
 $(".btn").contextmenu(function () {
 
 
+
 })
 
 
@@ -172,10 +181,15 @@ $(".btn").click(function () {
     var curX = +$(this).attr("data-index-x");
     var curY = +$(this).attr("data-index-y");
     var queue = [];
+
     // 檢查是否是結束遊戲(勝利OR失敗)
+    // 點到-1，失敗
+    if (DataArray[curX][curY] == -1) {
+        assignShowArr(curX, curY)
+    }
     // 畫面剩下沒點開的都是-1，勝利
 
-    // 點到-1，失敗
+
 
     // 檢查展開
     if (DataArray[curX][curY] == 0) {
@@ -193,9 +207,6 @@ $(".btn").click(function () {
             }
             // queue.forEach(element => console.log(element));
         }
-    }
-    else if (DataArray[curX][curY] == -1) {
-        assignShowArr(curX, curY)
     }
     else {
         assignShowArr(curX, curY)

@@ -17,12 +17,12 @@
         <div class="game-title">
             <span>MINESWEEPER</span>
         </div>
-        <form class="game">
-            <div class="diff box">
+        <form action="game.html" class="game">
+            <div class="diff set-div">
                 <label id="Difficulty">
                     <span class="form-span">Difficulty</span>
-                    <select class="Difficulty" required="">
-                        <option value="easy">Easy</option>
+                    <select class="Difficulty box" required="">
+                        <option value="easy" SELECTED>Easy</option>
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>
                         <option value="custom">Custom</option>
@@ -31,27 +31,27 @@
             </div>
             <div class="wandh">
 
-                <div class="width box">
+                <div class="width set-div">
                     <label id="width">
                         <span class="form-span">Width</span>
-                        <input class="width-input" type="number" inputmode="numeric" pattern="[0-9]*" required=""
-                            min="5" max="40">
+                        <input class="width-input box" type="number" inputmode="numeric" pattern="[0-9]*" required=""
+                            min="5" max="40" value="8">
                     </label>
                 </div>
-                <div class="height box">
+                <div class="height set-div">
                     <label id="height">
                         <span class="form-span">Height</span>
-                        <input class="height-input" type="number" inputmode="numeric" pattern="[0-9]*" required=""
-                            min="5" max="40">
+                        <input class="height-input box" type="number" inputmode="numeric" pattern="[0-9]*" required=""
+                            min="5" max="40" value="8">
                     </label>
                 </div>
             </div>
 
-            <div class="Bomb box">
+            <div class="Bomb set-div">
                 <label id="Bomb">
                     <span class="form-span">Bomb</span>
-                    <input class="bomb-input" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="1"
-                        max="40">
+                    <input class="bomb-input box" type="number" inputmode="numeric" pattern="[0-9]*" required="" min="1"
+                        max="25" value="10">
                 </label>
             </div>
             <div class="stbutton">

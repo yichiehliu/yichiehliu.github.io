@@ -34,11 +34,11 @@ body {
 .box {
     border-bottom: 2px solid #fff;
     height: 70px;
-    width: 250px;
+    width: 100%;
     border-radius: 1vw 0 0;
     /* border: 1px solid #fff; */
     margin: 15px 0;
-    padding: 10px 20px;
+    padding: 30px 20px 10px;
     background: rgba(0,0,0,.39); 
     box-sizing: border-box;  
 }
@@ -46,7 +46,7 @@ body {
 .height {
     margin-left: 40px;
 }
-.game input, select {
+input, select {
     font-family: Space Mono, Arial, Helvetica, sans-serif;
     width: 100%;
     color: #fff;
@@ -57,9 +57,16 @@ body {
     outline: none;
 }
 
+.set-div {
+    position: relative;
+}
+
 .form-span {
     font-size: 14px;
     opacity: .7;
+    position: absolute;
+    top: 25px;
+    left: 20px;
 }
 select option {
     background: rgba(0, 0, 0, 0.5);
@@ -71,14 +78,13 @@ select option {
     /* margin: 40px 0; */
 }
 
-.game div > *{
-    display: flex;
-    flex-direction: column;
-    
-}
 
 .wandh {
     display: flex;
+}
+
+.wandh > div {
+    width: 50%;
 }
 
 
@@ -102,6 +108,7 @@ select option {
 }
 
 .diff,
+.wandh,
 .Bomb {
     width: 540px;
 }
@@ -114,3 +121,5 @@ select option {
     border-bottom: 2px solid rgb(112, 199, 243);
     /* opacity: 1; */
 }
+
+
