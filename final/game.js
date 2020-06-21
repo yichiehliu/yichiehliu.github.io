@@ -154,6 +154,8 @@ function assignShowArr(x, y) {
 
     if (($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length == 0) && $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color") != "rgb(112, 199, 243)" && $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled") == "true") {
         clickcnt -= 1;
+        // console.log(clickcnt, typeof (clickcnt))
+
         // console.log($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length);
         // console.log(DataArray[x][y])
 
@@ -194,6 +196,9 @@ $(".btn").contextmenu(function (event) {
 $(".reload").click(function () {
     location.reload(true);
 });
+$(".reload-win").click(function () {
+    location.reload(true);
+});
 
 var gameOver = 0;
 
@@ -224,23 +229,8 @@ $(".btn").click(function () {
             $(".reload").css("display", "initial")
             $(".menu").css("display", "initial")
         }
-        console.log(clickcnt, typeof (clickcnt))
-
-        // 畫面剩下沒點開的都是-1，勝利，遊戲結束
-        if (clickcnt == 1) {
-            console.log(clickcnt, typeof (clickcnt))
-            $(".tb-content").remove()
-            $(".winbar").css("display", "flex")
-            $(".reload-win").css("display", "initial")
-            $(".menu-win").css("display", "initial")
-
-
-        }
-
-
-
         // 檢查展開
-        if (DataArray[curX][curY] == 0) {
+        else if (DataArray[curX][curY] == 0) {
             queue.push([curX, curY])
             // 只要queue裡面還有0就繼續開(代表還有格子沒到邊界)
             while (queue.length > 0) {
@@ -262,6 +252,15 @@ $(".btn").click(function () {
         // 不是0也不是-1就直接開了
         else {
             assignShowArr(curX, curY)
+        }
+
+
+        // 畫面剩下沒點開的都是-1，勝利，遊戲結束
+        if (clickcnt == 0) {
+            $(".tb-content").remove()
+            $(".winbar").css("display", "flex")
+            $(".reload-win").css("display", "initial")
+            $(".menu-win").css("display", "initial")
         }
     }
 
