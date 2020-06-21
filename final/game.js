@@ -159,51 +159,40 @@ function doubleSelect(x, y) {
     return bool;
 }
 
-// 標記炸彈
+// 標記炸彈，右鍵，變藍色，不能按左鍵，且要再按一次右鍵才能岸左鍵
 $(".btn").contextmenu(function () {
 
 
 })
 
-$(".btn").click(function () {
-    // console.log($(this))
 
+// 點格子，左鍵
+$(".btn").click(function () {
+    // 轉INDEX型別
     var curX = +$(this).attr("data-index-x");
     var curY = +$(this).attr("data-index-y");
     var queue = [];
-    // assignShowArr(curX, curY)
+    // 檢查是否是結束遊戲(勝利OR失敗)
+    // 畫面剩下沒點開的都是-1，勝利
 
+    // 點到-1，失敗
+
+    // 檢查展開
     if (DataArray[curX][curY] == 0) {
         queue.push([curX, curY])
         while (queue.length > 0) {
-            // console.log(1)
             const [cX, cY] = queue.shift();
-
             for (var i = -1; i < 2; i++) {
                 for (var j = -1; j < 2; j++) {
-                    // console.log(2)
-                    // $.each(queue, function (index, val) {
-                    //     console.log(val);
-                    // });
-                    // console.log(4)
-                    // if (!(i == 0 && j == 0)) {
-
-                    // console.log(DataArray[cX + i][cY + j], doubleSelect(cX + i, cY + j))
                     if (DataArray[cX + i][cY + j] == 0 && doubleSelect(cX + i, cY + j) == "true") {
                         // console.log(123)
                         queue.push([cX + i, cY + j])
                     }
                     assignShowArr(cX + i, cY + j)
-
                 }
             }
             // queue.forEach(element => console.log(element));
-
-
         }
-
-
-
     }
     else if (DataArray[curX][curY] == -1) {
         assignShowArr(curX, curY)
@@ -211,13 +200,4 @@ $(".btn").click(function () {
     else {
         assignShowArr(curX, curY)
     }
-
-
-
-
-
-
-    // if (this.attr("data-disabled") == false) {
-
-    // }
 });
