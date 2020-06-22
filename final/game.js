@@ -112,7 +112,7 @@ function createFramework() {
     // new Number($("#rowcount").val());
     rows = 5;
     cols = 5;
-    bombs = 1;
+    bombs = 5;
     var cnt = 1;
     var tr = [];
     DataArray = createData(rows, cols, bombs);
@@ -256,7 +256,7 @@ $(".btn").click(function () {
 
 
         // 畫面剩下沒點開的都是-1，勝利，遊戲結束
-        if (clickcnt == 0) {
+        if (clickcnt == 0 && gameOver != 1) {
             $(".tb-content").remove()
             $(".winbar").css("display", "flex")
             $(".reload-win").css("display", "initial")
