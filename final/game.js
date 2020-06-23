@@ -142,6 +142,7 @@ function getCookie() { //獲取cookie
 
 // 製造表格框架
 function createFramework() {
+    getCookie();
     bbtable = $("<table></table>").attr({ id: "bbtable" });
     // new Number($("#rowcount").val());
     console.log($.cookie(), w, bmb);

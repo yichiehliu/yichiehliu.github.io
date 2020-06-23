@@ -19,16 +19,21 @@ $(".Difficulty").on('change', function () {
         $(".width-input").val(8);
         $(".height-input").val(8);
         $(".bomb-input").val(10);
+        $(".bomb-input").attr("max", 10)
     }
     else if (value == "medium") {
         $(".width-input").val(16);
         $(".height-input").val(16);
         $(".bomb-input").val(40);
+        $(".bomb-input").attr("max", 40)
+
     }
     else if (value == "hard") {
         $(".width-input").val(24);
         $(".height-input").val(24);
         $(".bomb-input").val(99);
+        $(".bomb-input").attr("max", 99)
+
     }
 
 })
