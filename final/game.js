@@ -139,12 +139,12 @@ function getCookie() { //獲取cookie
 // var x = document.cookie;
 // window.alert(Cookies.get('the_cookie'));
 
-console.log($.cookie(), w, bmb);
 
 // 製造表格框架
 function createFramework() {
     bbtable = $("<table></table>").attr({ id: "bbtable" });
     // new Number($("#rowcount").val());
+    console.log($.cookie(), w, bmb);
     rows = h;
     cols = w;
     bombs = bmb;
@@ -254,7 +254,17 @@ $(".menu-win").click(function () {
     window.location.href = "./index.html"
 })
 
-
+function removeRotate() {
+    for (var i = 1; i <= rows; i++) {
+        for (var j = 1; j <= cols; j++) {
+            if ($(`[data-index-x="${i}"][data-index-y="${j}"]`).attr("data-disabled") == "true") {
+                $("<div></div>")
+                    .attr({ class: ["square-r"] })
+                    .appendTo(td);
+            }
+        }
+    }
+}
 
 
 
