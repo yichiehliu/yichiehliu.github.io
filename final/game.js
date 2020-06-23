@@ -227,10 +227,13 @@ $(".btn").contextmenu(function (event) {
     var curY = +$(this).attr("data-index-y");
     if ($(this).css("border-color") != "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
         $(this).css("border-color", "rgb(112, 199, 243)")
+        // $(this).css("background", "rgb(112, 199, 243)")
     }
     else if ($(this).css("border-color") == "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
         // 會改道炸彈的邊框，所以後面要把-1的border color用掉
         $(this).css("border-color", "#fff")
+        // $(this).css("background", "initial")
+
     }
 })
 

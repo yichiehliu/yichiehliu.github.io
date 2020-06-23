@@ -143,6 +143,7 @@ tr {
 
 
 .btn[data-disabled="true"] {
+    /* background-color: rgba(255,255,255,0.2); */
 
 }
 .btn::before {
@@ -167,7 +168,7 @@ tr {
 
 .btn[data-array="0"] {
     border-radius: 0%;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .btn[data-array="0"]::before {
