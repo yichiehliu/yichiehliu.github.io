@@ -37,7 +37,7 @@ body {
 .box {
     border-bottom: 2px solid #fff;
     height: 70px;
-    width: 100%;
+    /* width: 100%; */
     border-radius: 1vw 0 0;
     /* border: 1px solid #fff; */
     margin: 15px 0;
@@ -94,7 +94,7 @@ select option {
 .start {
     height: 65px;
     border-radius: 1vw;
-    width: 540px;
+    width: 50vw;
     margin-top: 15px;
     padding: 0;
     border: 0;
@@ -110,10 +110,17 @@ select option {
     text-decoration: none;
 }
 
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .diff,
 .wandh,
 .Bomb {
-    width: 540px;
+    width: 50vw;
 }
 
 
@@ -133,7 +140,12 @@ select option {
     }
 
     .header {
-        font-size: 3.8em;
+        width: 90vw;
+        font-size:9vw;
+    }
+    span {
+        /* width: 100%; */
+        /* padding: 20px; */
     }
     .title {
         padding-left: 0;
@@ -142,5 +154,15 @@ select option {
     .game {
         /* width: 100%; */
     }
+    .start {
+        width: 90vw;
+    }
+    
+    .diff,
+    .wandh,
+    .Bomb {
+        width: 90vw;
+    }
+
 }
 
