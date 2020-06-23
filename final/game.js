@@ -2,6 +2,17 @@
 $(document).ready(function () {
     getCookie();
 });
+
+
+// restart 
+$(".restart-pic").click(function () {
+    location.reload(true);
+});
+
+$(".arrow-pic").click(function () {
+    window.location.href = "./index.html"
+})
+
 // 炸彈位子亂數
 function RNG(range, amt) {
     var nums = [],

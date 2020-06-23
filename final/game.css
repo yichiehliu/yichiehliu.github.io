@@ -388,7 +388,61 @@ color: #fff;
     bottom: 20px;
     text-align: center;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
+
+.footer-text {
+    flex: 1;
+    order: 2;
+    /* margin-right: 5%; */
+}
+
+
+.arrow {
+    flex: 1;
+    order: 1;
+    justify-content: flex-start;
+    display: flex;
+
+    margin-left: 5%;
+    box-sizing: border-box;
+}
+
+.restart-pic {
+    background-image: url(images/restart.svg);
+
+}
+
+.arrow-pic{
+    background-image: url(images/arrow.svg);
+
+}
+
+.arrow-pic,
+.restart-pic{
+    width: calc(var(--cell-size)/1.2);
+    height: calc(var(--cell-size)/1.2);
+    background-size:  calc(var(--cell-size)/1.2);
+    background-repeat: no-repeat;
+
+}
+
+.restart {
+    flex: 1;
+    order: 3;
+    display: flex;
+    margin-right: 5%;
+    justify-content: flex-end;
+    box-sizing: border-box;
+
+
+}
+
+
+
 
 
 
