@@ -14,7 +14,7 @@ function getCookie() {
     h = $.cookie("height");
     w = $.cookie("width");
     bmb = $.cookie("bomb");
-    console.log($.cookie('the_cookie'), w, bmb);
+    // console.log($.cookie('the_cookie'), w, bmb);
 
     if (diff) {
         $(".Difficulty").val(diff);
@@ -78,7 +78,7 @@ function createData(numrows, numcols, numbomb) {
 
     // 0是周圍都沒有炸彈，-1是炸彈，正常數字1-8是周圍格子炸彈數量
     var bombpos = RNG(numrows * numcols, numbomb);
-    console.log(bombpos);
+    // console.log(bombpos);
     // 放炸彈
     for (var i = 0; i < numbomb; i++) {
         var row = 0;
@@ -101,7 +101,7 @@ function createData(numrows, numcols, numbomb) {
     }
 
 
-
+    // 算每一格周圍8格的炸彈數量
     for (var i = 1; i <= numrows; ++i) {
         for (var j = 1; j <= numcols; ++j) {
             var cntBomb = 0;
@@ -140,23 +140,19 @@ function createData(numrows, numcols, numbomb) {
     return arr;
 }
 
-// var x = document.cookie;
-// window.alert(Cookies.get('the_cookie'));
-
-
 // 製造表格框架
 function createFramework() {
     getCookie();
     bbtable = $("<table></table>").attr({ id: "bbtable" });
     // new Number($("#rowcount").val());
-    console.log($.cookie(), w, bmb);
+    // console.log($.cookie(), w, bmb);
     rows = h;
     cols = w;
     bombs = bmb;
     var cnt = 0
 
     DataArray = createData(rows, cols, bombs);
-    console.log(DataArray);
+    // console.log(DataArray);
     // return;
 
     if ((row && cols) != "") {
@@ -181,13 +177,15 @@ function createFramework() {
     bbtable.appendTo(".tb-content");
 }
 
+
+// 遊戲畫面載入
 let rows = 0;
 let cols = 0;
 let bombs = 0;
 let DataArray = []
 createFramework();
 
-console.log(DataArray)
+// console.log(DataArray)
 // ---------------------------------------------------------------------
 // 踩地雷本身
 // 打開格子
@@ -195,12 +193,9 @@ console.log(DataArray)
 const initailclick = cols * rows - bombs
 let clickcnt = cols * rows - bombs
 function assignShowArr(x, y) {
-
-
     if (($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length == 0) && $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color") != "rgb(112, 199, 243)" && $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled") == "true") {
+        // 改現在有多少block還可以點
         clickcnt -= 1;
-        // 改現在有多少block
-
         // console.log(clickcnt, typeof (clickcnt))
 
         // console.log($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length);
@@ -346,7 +341,6 @@ $(".btn").click(function () {
                 }
             }
             // 遊戲結束，重來和main menu
-
             stopTimer();
             $(".reload").css("display", "initial")
             $(".menu").css("display", "initial")
