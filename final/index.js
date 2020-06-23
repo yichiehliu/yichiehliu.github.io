@@ -56,7 +56,8 @@ function getCookie() { //獲取cookie
 $.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
 
 
-$(".start").click(function () {
+$(".start").click(function (event) {
+    event.preventDefault();
     var diff = $(".Difficulty").val()
     var h = $(".height-input").val()
     var w = $(".width-input").val()
