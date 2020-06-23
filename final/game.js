@@ -145,9 +145,9 @@ console.log($.cookie(), w, bmb);
 function createFramework() {
     bbtable = $("<table></table>").attr({ id: "bbtable" });
     // new Number($("#rowcount").val());
-    rows = 5;
-    cols = 5;
-    bombs = 2;
+    rows = h;
+    cols = w;
+    bombs = bmb;
     var cnt = 0
 
     DataArray = createData(rows, cols, bombs);
@@ -256,6 +256,8 @@ $(".menu-win").click(function () {
 
 
 
+
+
 // 計時器
 function checkTime(i) {
     if (i < 10) {
@@ -294,6 +296,7 @@ let gameOver = 0;
 let counter = 0;
 let mins = 0;
 let seconds = 0;
+
 
 
 // 點格子，左鍵
