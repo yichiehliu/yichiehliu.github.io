@@ -1,4 +1,7 @@
 // 遊戲前置作業
+$(document).ready(function () {
+    getCookie();
+});
 // 炸彈位子亂數
 function RNG(range, amt) {
     var nums = [],
@@ -132,9 +135,7 @@ function getCookie() { //獲取cookie
     }
 }
 
-$(document).ready(function () {
-    getCookie();
-});
+
 // var x = document.cookie;
 // window.alert(Cookies.get('the_cookie'));
 
