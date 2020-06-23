@@ -1,17 +1,17 @@
 
-$(".width-input").on('change', function () {
-    if ($(".Difficulty").val() == "easy" || $(".Difficulty").val() == "easy")
-        if ($(".width-input").val()) {
 
-        }
-})
+
+let max = 0
+let min = 1
 
 $(".width-input").on('change', function () {
     $(".bomb-input").attr("max", $(".width-input").val() * $(".height-input").val())
+    max = $(".width-input").val() * $(".height-input").val()
 })
 
 $(".height-input").on('change', function () {
     $(".bomb-input").attr("max", $(".width-input").val() * $(".height-input").val())
+    max = $(".width-input").val() * $(".height-input").val()
 })
 
 
@@ -20,6 +20,7 @@ $(".height-input").on('change', function () {
 $(".Difficulty").on('change', function () {
     var value = $(this).val();
     // console.log(value)
+
     if (value != "custom") {
         $('.width-input').attr('readonly', 'readonly');
         $('.height-input').attr('readonly', 'readonly');
@@ -48,6 +49,8 @@ $(".Difficulty").on('change', function () {
         $('.width-input').removeAttr('readonly');
         $('.height-input').removeAttr('readonly');
         $('.bomb-input').removeAttr('readonly');
+        $(".bomb-input").attr("max", $(".width-input").val() * $(".height-input").val())
+
     }
 
 })
@@ -75,7 +78,8 @@ function getCookie() {
 $.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
 
 // 開始遊戲
-$(".start").click(function (event) {
+$(".game").submit(function (event) {
+
     event.preventDefault();
 
     var diff = $(".Difficulty").val()
@@ -97,6 +101,7 @@ $(".start").click(function (event) {
 //     $.cookie("bomb", bomb))
 
 $(document).ready(function () {
+
     getCookie();
     if ($(".Difficulty").val() == "custom") {
         $('.width-input').removeAttr('readonly');
