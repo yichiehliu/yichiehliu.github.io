@@ -57,24 +57,24 @@ $.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
 
 
 $(".start").click(function () {
+    var diff = $(".Difficulty").val()
+    var h = $(".height-input").val()
+    var w = $(".width-input").val()
+    var bomb = $(".bomb-input").val()
 
+    $.cookie("diff", diff);
+    $.cookie("height", h);
+    $.cookie("width", w);
+    $.cookie("bomb", bomb);
 })
 
 
-var diff = $(".Difficulty").val()
-var h = $(".height-input").val()
-var w = $(".width-input").val()
-var bomb = $(".bomb-input").val()
 
-$.cookie("diff", diff);
-$.cookie("height", h);
-$.cookie("width", w);
-$.cookie("bomb", bomb);
 
-console.log($.cookie("diff", diff),
-    $.cookie("height", h),
-    $.cookie("width", w),
-    $.cookie("bomb", bomb))
+// console.log($.cookie("diff", diff),
+//     $.cookie("height", h),
+//     $.cookie("width", w),
+//     $.cookie("bomb", bomb))
 
 $(document).ready(function () {
     getCookie();
