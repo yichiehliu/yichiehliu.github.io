@@ -257,31 +257,31 @@ $(".btn").contextmenu(function (event) {
 
         if ($(this).css("border-color") != "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
             $(this).css("border-color", "rgb(112, 199, 243)")
-            // 周圍8格一起變色
-            for (var i = -1; i < 2; i++) {
-                for (var j = -1; j < 2; j++) {
-                    if (DataArray[cX + i][cY + j] != -1 && DataArray[cX + i][cY + j] != 0 && $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).attr("data-disabled") == "false") {
-                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("border-color", "rgb(112, 199, 243)")
-                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("color", "rgb(112, 199, 243)")
+            // // 周圍8格一起變色
+            // for (var i = -1; i < 2; i++) {
+            //     for (var j = -1; j < 2; j++) {
+            //         if (DataArray[cX + i][cY + j] != -1 && DataArray[cX + i][cY + j] != 0 && $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).attr("data-disabled") == "false") {
+            //             $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("border-color", "rgb(112, 199, 243)")
+            //             $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("color", "rgb(112, 199, 243)")
 
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
             // $(this).css("background", "rgb(112, 199, 243)")
         }
         else if ($(this).css("border-color") == "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
             // 會改道炸彈的邊框，所以後面要把-1的border color用掉
             $(this).css("border-color", "#fff")
-            // 周圍8格一起變色
-            for (var i = -1; i < 2; i++) {
-                for (var j = -1; j < 2; j++) {
-                    if (DataArray[cX + i][cY + j] != -1 && DataArray[cX + i][cY + j] != 0 && $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).attr("data-disabled") == "false") {
-                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("border-color", "#fff")
-                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("color", "#fff")
+            // // 周圍8格一起變色
+            // for (var i = -1; i < 2; i++) {
+            //     for (var j = -1; j < 2; j++) {
+            //         if (DataArray[cX + i][cY + j] != -1 && DataArray[cX + i][cY + j] != 0 && $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).attr("data-disabled") == "false") {
+            //             $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("border-color", "#fff")
+            //             $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("color", "#fff")
 
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
 
         }
     }
