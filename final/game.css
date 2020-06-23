@@ -265,7 +265,11 @@ tr {
     margin: 20px auto 25px;
 }
 
-.square-r-1 {
+.square-r-1,
+.square-r-2,
+.square-r-3,
+.square-r-4,
+.square-r-5 {
     width: 110px;
     height: 110px;
     /* margin: 20px auto 25px; */
@@ -281,6 +285,38 @@ tr {
     border-radius: 13%;
     animation: srotate 10s ease-in-out infinite;
     overflow: hidden;
+    margin: 0 auto;
+    margin-top: 7px;
+}
+
+.square-r-2 {
+    width: 90px;
+    height: 90px;
+
+}
+.square-r-3 {
+    width: 70px;
+    height: 70px;
+
+}
+.square-r-4 {
+    width: 50px;
+    height: 50px;
+
+}
+.square-r-5 {
+    width: 30px;
+    height: 30px;
+
+}
+
+.dot {
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
 }
 
 .win-text {

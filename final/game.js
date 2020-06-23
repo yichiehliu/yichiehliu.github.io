@@ -243,6 +243,15 @@ $(".reload-win").click(function () {
 });
 
 
+$(".menu").click(function () {
+    window.location.href = "./index.html"
+})
+$(".menu-win").click(function () {
+    window.location.href = "./index.html"
+})
+
+
+
 // 計時器
 function checkTime(i) {
     if (i < 10) {
