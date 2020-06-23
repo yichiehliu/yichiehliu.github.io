@@ -471,6 +471,9 @@ color: #fff;
         padding: 15px 40px; 
         margin: 10px 0;
     }
+    .tb-content {
+        height: 75vh;
+    }
 }
 
 
