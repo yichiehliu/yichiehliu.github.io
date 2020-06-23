@@ -188,6 +188,12 @@ createFramework();
 // console.log(DataArray)
 // ---------------------------------------------------------------------
 // 踩地雷本身
+// 紀錄遊戲是否結束
+let gameOver = 0;
+// 紀錄是否開始計時
+let counter = 0;
+let mins = 0;
+let seconds = 0;
 // 打開格子
 // 計算有幾個格子可以點
 const initailclick = cols * rows - bombs
@@ -200,7 +206,7 @@ function assignShowArr(x, y) {
 
         // console.log($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length);
         // console.log(DataArray[x][y])
-
+        //白色閃光 
         $("<div></div>")
             .attr({ class: ["white-box"] })
             .appendTo($(`[data-index-x="${x}"][data-index-y="${y}"]`));
@@ -208,13 +214,31 @@ function assignShowArr(x, y) {
         $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled", false);
         // 炸彈的話(怕被標記過)所以統一把邊框拿掉
         if (DataArray[x][y] == -1) {
-            $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color", "#transparent")
+            $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color", "transparent")
         }
         if (DataArray[x][y] != -1) {
             $(".block-real").text(clickcnt + "/" + initailclick)
         }
     }
+}
 
+function EndGameShowArr(x, y) {
+    if (($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length == 0) && $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled") == "true") {
+        // 改現在有多少block還可以點
+        clickcnt -= 1;
+        $("<div></div>")
+            .attr({ class: ["white-box"] })
+            .appendTo($(`[data-index-x="${x}"][data-index-y="${y}"]`));
+        $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-array", DataArray[x][y]);
+        $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled", false);
+        // 炸彈的話(怕被標記過)所以統一把邊框拿掉
+        if (DataArray[x][y] == -1) {
+            $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color", "transparent")
+        }
+        if (DataArray[x][y] != -1) {
+            $(".block-real").text(clickcnt + "/" + initailclick)
+        }
+    }
 }
 
 function doubleSelect(x, y) {
@@ -227,18 +251,41 @@ function doubleSelect(x, y) {
 $(".btn").contextmenu(function (event) {
     // 避免跳出系統預設右鍵menu
     event.preventDefault();
-    var curX = +$(this).attr("data-index-x");
-    var curY = +$(this).attr("data-index-y");
-    if ($(this).css("border-color") != "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
-        $(this).css("border-color", "rgb(112, 199, 243)")
-        // $(this).css("background", "rgb(112, 199, 243)")
-    }
-    else if ($(this).css("border-color") == "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
-        // 會改道炸彈的邊框，所以後面要把-1的border color用掉
-        $(this).css("border-color", "#fff")
-        // $(this).css("background", "initial")
+    if (gameOver == 0) {
+        var cX = +$(this).attr("data-index-x");
+        var cY = +$(this).attr("data-index-y");
 
+        if ($(this).css("border-color") != "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
+            $(this).css("border-color", "rgb(112, 199, 243)")
+            // 周圍8格一起變色
+            for (var i = -1; i < 2; i++) {
+                for (var j = -1; j < 2; j++) {
+                    if (DataArray[cX + i][cY + j] != -1 && DataArray[cX + i][cY + j] != 0 && $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).attr("data-disabled") == "false") {
+                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("border-color", "rgb(112, 199, 243)")
+                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("color", "rgb(112, 199, 243)")
+
+                    }
+                }
+            }
+            // $(this).css("background", "rgb(112, 199, 243)")
+        }
+        else if ($(this).css("border-color") == "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
+            // 會改道炸彈的邊框，所以後面要把-1的border color用掉
+            $(this).css("border-color", "#fff")
+            // 周圍8格一起變色
+            for (var i = -1; i < 2; i++) {
+                for (var j = -1; j < 2; j++) {
+                    if (DataArray[cX + i][cY + j] != -1 && DataArray[cX + i][cY + j] != 0 && $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).attr("data-disabled") == "false") {
+                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("border-color", "#fff")
+                        $(`[data-index-x="${cX + i}"][data-index-y="${cY + j}"]`).css("color", "#fff")
+
+                    }
+                }
+            }
+
+        }
     }
+
 })
 
 // restart按鈕
@@ -303,12 +350,7 @@ function startTimer() {
 
 
 
-// 紀錄遊戲是否結束
-let gameOver = 0;
-// 紀錄是否開始計時
-let counter = 0;
-let mins = 0;
-let seconds = 0;
+
 
 
 
@@ -336,7 +378,7 @@ $(".btn").click(function () {
             for (var i = 1; i <= rows; i++) {
                 for (var j = 1; j <= cols; j++) {
                     if (DataArray[i][j] == -1) {
-                        assignShowArr(i, j)
+                        EndGameShowArr(i, j)
                     }
                 }
             }

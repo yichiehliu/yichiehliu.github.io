@@ -1,90 +1,100 @@
 ## 製作踩地雷遊戲
 **https://yichiehliu.github.io**
-## 主要用到的檔案
 ***
 
-**Folder:resized_images/ 放網頁會用到的圖檔 favicon_io/是網頁tab icon圖檔 icon/則是網頁內的icon圖檔<br>**
-**html:index.html index.html<br>**
-**Css:index.css game.css<br>**
-**js:index.js game.js<br>**
+>## 專案運行環境限制
+因為我在紀錄使用者遊戲設定有用到cookie，所以在本地端跑這個程式的時候請開terminal跑npm 的server(需要有安裝node.js)，基本上以下三步驟:<br>
+1. terminal位置要開在這個專案的位子<br>
+2. 在terminal打npx browser-sync start --server<br>
+3. server成功運行之後打開browser在網址列輸入在terminal上顯示允許的port，通常是localhost:3000。<br>
+
+**這樣就可以運行這個專案了<br>**
 ***
 
-### 讀取Cookie
-**https://www.fooish.com/javascript/cookie.html**
-
-**1.遊戲設定選單<br>**
-**有難易度、長寬和炸彈數量可以設定**
-**簡單版:8 x 8，10顆炸彈**
-**中等版:16 x 16，24顆炸彈**
-**困難版:24 x 24，99顆炸彈**
-
-
-**2.踩地雷畫面**
-**2.1 製造炸彈、準備畫面呈現**
-**2.1.1 先利用Cookie獲取使用者在前一夜設定的遊戲難度**
-**2.1.2 獲得遊戲設定資訊之後就可以利用亂數產生器(RNG)產生炸彈位子**
-
-
-**(2)踩地雷遊戲進行邏輯**
-**(3)製造炸彈**
-
-**3.遊戲結果**
-
-
-
-**參考其他網頁設計後開始自己的設計<br>**
-**HTML是自己手動刻<br>**
-**CSS也是自己寫為主，以下有列出來的1-4點有參考css程式碼，或是不會的語法會用參考其他教學網站 codepen範例進行修改<br>**
-**js的部分也是以下1-4點參考，但都有因為自己的用途修改程式碼<br>**
-
-## 網頁版本
-**原本有已經做好第一版了，一開始設計稿也是以第一版為主，以球體動畫為主軸，<br>github網址：https://github.com/yichiehliu/ycliu.github.io<br>但後來覺得太醜，於是全部砍掉重寫<br>**
-**後來寫的第二版才是現在連結到的版本**
+>## 主要用到的檔案
+* Folder: images/ 放網頁會用到的圖檔和icon<br>
+* html: index.html / index.html<br>
+* CSS: index.css / game.css<br>
+* JS/Jquery: index.js / game.js<br>
 ***
-## 設計稿圖檔
-**第一版設計：<br>https://excalidraw.com/#json=5660845757431808,QTwDapHgQiGk1C4G_wdBag<br>**
-**第二版設計：<br>https://www.figma.com/file/VglTf4p6DWG1zpmgGFoUMl/Untitled?node-id=0%3A1**
+>## 踩地雷
+ 
 
-## 內容呈現
+### 1. 遊戲設定選單<br>
+* 介面<br>有難易度、長寬和炸彈數量可以設定
+    * 簡單版:8 x 8，10顆炸彈
+    * 中等版:16 x 16，24顆炸彈
+    * 困難版:24 x 24，99顆炸彈<br>
+    * 自訂:長寬最高可到24，炸彈數不可以超過長*寬，也不可以空白
+* 程式邏輯
+    * 利用Cookie存下使用者的遊戲設定
+    * 只要有使用者選擇簡單、中等、困難的難度，底下長寬和炸彈數自動更改
 
-**內容分為六個部分<br>**
-**0.Header:Logo在滑鼠滑過會跳起，旁邊a標籤會跳轉至下面對應的部分<br>**
-**1.About: 主頁，利用scrollma做淡入特效<br>**
-**2.Projects:Show出我做過相關project的主題，上面有對應主題的icon，點view more可以連結到專案的github網址<br>**
-**3.Internships: 利用scrollma Show出我的實習經歷和照片<br>**
-**4.Activity: Show出我曾經參加的活動和簡述，圖片會放大縮小，點圖片可以連結到相應的活動網址或粉專<br>**
-**5.Contact:可以利用表單聯繫我，會由EmailJS的服務進行email傳送，另有相關社群媒體icon可以聯繫<br>**
 
-**加入響應式設計，分為兩個版型<br>**
-**1.980px以下，for 手機平板等<br>**
-**2.980px以上 for 電腦**
+### 2. 踩地雷遊戲畫面<br>
+* 介面
+  * 左上: 現在還可以點開的格子/可以點開的格子總數
+  * 右上: 計時器
+  * 左下: 跳回menu
+  * 右下: 重新整理頁面
+  * 按左鍵: 點開格子
+  * 按右鍵: 標記格子，不能點選已經標記的格子，且周圍已經打開的數字也會跟著變藍色
+* 程式邏輯
+    * 利用Cookie獲取使用者在前一頁設定的遊戲難度
+    * 利用亂數產生器製造炸彈位子
+    * 產生使用者輸入的長*寬的2D陣列，並把有炸彈的位子標記為-1
+    * 算每一格周圍8格的炸彈數量，把每一格的數字都填上
+    * 產生table，每一格都是一個button，
+      * 利用`data-index-x`和
+    `data-index-y`
+    紀錄該button對應到2D陣列的index
+      * `data-array`紀錄周圍炸彈數量，沒打開之前都是-99
+      * `data-disabled`紀錄是否被打開過
+
+### 3. 踩地雷遊戲邏輯<br>
+* 介面
+  * 點開第一個button就會開始計時
+  * 左上的會跟玩家說現在還可以點的數量
+  * 點開會有閃光(css)
+  * 按右鍵可以標記，邊框會變藍色，且周圍已經打開的數字和邊框也會跟著變色
+  * 如果點到是0則會以周圍8格繼續擴張，直到碰到格子不是0，是數字就會停止
+  * 如果點到是1-8的數字就直接顯示
+  * 如果點到炸彈則遊戲結束
+
+* 程式邏輯
+  * 利用queue資料結構管理0的展開
+    * 一開始有點到0則把該位子push進queue
+    * while迴圈管理，只要queue裡面有東西就會把裡面最早push進去的位子拿出來
+    * 把那個0周圍的8格的值都檢視一遍，如果是0則要把這個0這個點也push進queue，下一輪繼續檢查這個0的八個方位的格子是什麼，如果是數字1-8就直接打開
+    * 這裡考慮要開的格子是要還沒被開過且如果被標記的話不用被打開
+    * 只要queue裡面還有0就繼續開(代表還有格子沒到邊界)
+    * 一直開到queue清空為止
+
+### 4. 遊戲結果<br>
+* 介面
+  * 點開如果是炸彈遊戲結束，會跳出所有炸彈，和Replay和跳回main menu的兩個button
+  * 畫面剩下沒點開的button都是炸彈，則勝利，遊戲結束，會跳到勝利畫面，會顯示剛剛玩家用了多少時間破關
+  * 按下炸彈之後就停止計時、按鈕也都無法再按
+* 程式邏輯
+  * 按鈕的畫面跳轉都是用`location.reload(true);`和`window.location.href`進行
+  * 遊戲的設定因為都是用cookie紀錄，所以重新整理之後還是可以獲得同樣得遊戲設定
+
 
 ***
-## 程式碼參考
-**1.Internship主頁Particles程式碼參考**
-**https://vincentgarreau.com/particles.js/#default<br>**
+>## RWD
+加入響應式設計，分為兩個版型<br>
+1. 980px以下，for 手機平板等<br>
+2. 980px以上 for 電腦**
 
-**2.Scroll事件程式碼參考<br>**
-**https://russellgoldenberg.github.io/scrollama/sticky-side/<br>**
-**https://github.com/russellgoldenberg/scrollama/blob/master/docs/sticky-side/index.html<br>**
+***
+>## 程式碼參考
+1. Cookie
+https://www.fooish.com/javascript/cookie.html
 
-**3.Email js 套件程式碼參考<br>**
-**https://www.emailjs.com/docs/rest-api/send/**
 
-**4.header scroll改變位置<br>**
-**https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp**
+2. Timer
+https://codepen.io/PaulBrUK1972/pen/zAbpg
 ***
 
-## 設計參考
-**色彩設計<br>**
-**https://cssgradient.io/<br>**
-**https://colorhunt.co/palettes/<br>**
 
-**設計版型參考<br>**
-**https://muffingroup.com/#homePage<br>**
-**https://leo9studio.com/<br>**
-**https://oceanstart.dev/<br>**
-**https://skookum.com/<br>**
-**http://praticca.com.br/<br>**
-**https://dwl.media/**
 

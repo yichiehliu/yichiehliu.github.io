@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Space Mono, Arial, Helvetica, sans-serif;
+    color: white;
 
 
 }
@@ -159,7 +160,6 @@ tr {
 .btn[data-disabled="false"]::before {
     position: relative;
     content: attr(data-array);
-    color: white;
     font-weight: bold;
     font-size: 1.3em;
     font-family: Arial, Helvetica, sans-serif;
