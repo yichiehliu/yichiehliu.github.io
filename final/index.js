@@ -15,11 +15,7 @@ $(".height-input").on('change', function () {
 })
 
 
-if ($(".Difficulty").val() == "custom") {
-    $('.width-input').removeAttr('readonly');
-    $('.height-input').removeAttr('readonly');
-    $('.bomb-input').removeAttr('readonly');
-}
+
 
 $(".Difficulty").on('change', function () {
     var value = $(this).val();
@@ -106,4 +102,9 @@ $(".start").click(function (event) {
 
 $(document).ready(function () {
     getCookie();
+    if ($(".Difficulty").val() == "custom") {
+        $('.width-input').removeAttr('readonly');
+        $('.height-input').removeAttr('readonly');
+        $('.bomb-input').removeAttr('readonly');
+    }
 });
