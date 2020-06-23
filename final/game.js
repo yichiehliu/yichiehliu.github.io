@@ -145,9 +145,9 @@ console.log($.cookie(), w, bmb);
 function createFramework() {
     bbtable = $("<table></table>").attr({ id: "bbtable" });
     // new Number($("#rowcount").val());
-    rows = w;
-    cols = h;
-    bombs = bmb;
+    rows = 5;
+    cols = 5;
+    bombs = 2;
     var cnt = 0
 
     DataArray = createData(rows, cols, bombs);
