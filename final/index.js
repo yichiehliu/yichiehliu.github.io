@@ -7,10 +7,13 @@ $(".width-input").on('change', function () {
 })
 
 $(".width-input").on('change', function () {
-    // if () {
-
-    // }
+    $(".bomb-input").attr("max", $(".width-input").val() * $(".height-input").val())
 })
+
+$(".height-input").on('change', function () {
+    $(".bomb-input").attr("max", $(".width-input").val() * $(".height-input").val())
+})
+
 
 $(".Difficulty").on('change', function () {
     var value = $(this).val();
@@ -34,6 +37,12 @@ $(".Difficulty").on('change', function () {
         $(".bomb-input").val(99);
         $(".bomb-input").attr("max", 99)
 
+
+    }
+    else {
+        $('.width-input').removeAttr('readonly');
+        $('.height-input').removeAttr('readonly');
+        $('.bomb-input').removeAttr('readonly');
     }
 
 })
@@ -62,6 +71,8 @@ $.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
 
 
 $(".start").click(function (event) {
+    event.preventDefault();
+
     var diff = $(".Difficulty").val()
     var h = $(".height-input").val()
     var w = $(".width-input").val()
@@ -71,6 +82,7 @@ $(".start").click(function (event) {
     $.cookie("height", h);
     $.cookie("width", w);
     $.cookie("bomb", bomb);
+    window.location.href = "./game.html"
 })
 
 
