@@ -101,10 +101,44 @@ function createData(numrows, numcols, numbomb) {
     return arr;
 }
 
-var rows = 0;
-var cols = 0;
-var bombs = 0;
 
+let diff = "";
+let h = "";
+let w = "";
+let bmb = "";
+
+// Cookie 讀取
+function getCookie() { //獲取cookie
+    // $.cookie.defaults = { path: '/' };
+
+    $.cookie('the_cookie');
+    diff = $.cookie("diff");
+    h = $.cookie("height");
+    w = $.cookie("width");
+    bmb = $.cookie("bomb");
+    console.log($.cookie('the_cookie'), w, bmb);
+
+    if (diff) {
+        $(".Difficulty").val(diff);
+    }
+    if (h) {
+        $(".height-input").val(h);
+    }
+    if (w) {
+        $(".width-input").val(w);
+    }
+    if (bmb) {
+        $(".bomb-input").val(bomb);
+    }
+}
+
+$(document).ready(function () {
+    getCookie();
+});
+// var x = document.cookie;
+// window.alert(Cookies.get('the_cookie'));
+
+console.log($.cookie(), w, bmb);
 
 // 製造表格框架
 function createFramework() {
@@ -112,9 +146,9 @@ function createFramework() {
     // new Number($("#rowcount").val());
     rows = 5;
     cols = 5;
-    bombs = 5;
-    var cnt = 1;
-    var tr = [];
+    bombs = 1;
+    var cnt = 0
+
     DataArray = createData(rows, cols, bombs);
     console.log(DataArray);
     // return;
@@ -141,19 +175,26 @@ function createFramework() {
     bbtable.appendTo(".tb-content");
 }
 
-var DataArray = []
+let rows = 0;
+let cols = 0;
+let bombs = 0;
+let DataArray = []
 createFramework();
 
 console.log(DataArray)
 // ---------------------------------------------------------------------
 // 踩地雷本身
 // 打開格子
-var clickcnt = cols * rows - bombs
+// 計算有幾個格子可以點
+const initailclick = cols * rows - bombs
+let clickcnt = cols * rows - bombs
 function assignShowArr(x, y) {
 
 
     if (($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length == 0) && $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color") != "rgb(112, 199, 243)" && $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled") == "true") {
         clickcnt -= 1;
+        // 改現在有多少block
+        $(".block-real").text(clickcnt + "/" + initailclick)
         // console.log(clickcnt, typeof (clickcnt))
 
         // console.log($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length);
@@ -193,6 +234,7 @@ $(".btn").contextmenu(function (event) {
     }
 })
 
+// restart按鈕
 $(".reload").click(function () {
     location.reload(true);
 });
@@ -200,10 +242,54 @@ $(".reload-win").click(function () {
     location.reload(true);
 });
 
-var gameOver = 0;
+
+// 計時器
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+function stopTimer() {
+    clearTimeout(timex);
+};
+
+function reseTimer() {
+    mins = 0; seconds = 0;
+    $('.timer').text('00:00');
+};
+
+function startTimer() {
+    timex = setTimeout(function () {
+        seconds++;
+        if (seconds > 59) {
+            seconds = 0;
+            mins++;
+        }
+        $('.timer').text(checkTime(mins) + ":" + checkTime(seconds));
+
+        startTimer();
+    }, 1000);
+}
+
+
+
+// 紀錄遊戲是否結束
+let gameOver = 0;
+// 紀錄是否開始計時
+let counter = 0;
+let mins = 0;
+let seconds = 0;
+
 
 // 點格子，左鍵
 $(".btn").click(function () {
+
+    if (counter == 0) {
+        counter = 1;
+        startTimer();
+    }
 
     // 1.沒點到炸彈2.要沒被標記 3.也沒被打開
     if (gameOver == 0 && $(this).css("border-color") != "rgb(112, 199, 243)" && $(this).attr("data-disabled") == "true") {
@@ -226,6 +312,8 @@ $(".btn").click(function () {
                 }
             }
             // 遊戲結束，重來和main menu
+
+            stopTimer();
             $(".reload").css("display", "initial")
             $(".menu").css("display", "initial")
         }
@@ -257,6 +345,8 @@ $(".btn").click(function () {
 
         // 畫面剩下沒點開的都是-1，勝利，遊戲結束
         if (clickcnt == 0 && gameOver != 1) {
+            $(".timespent").text(checkTime(mins) + ":" + checkTime(seconds))
+            stopTimer();
             $(".tb-content").remove()
             $(".winbar").css("display", "flex")
             $(".reload-win").css("display", "initial")

@@ -1,18 +1,17 @@
 
-
 $(".width-input").on('change', function () {
     if ($(".Difficulty").val() == "easy" || $(".Difficulty").val() == "easy")
         if ($(".width-input").val()) {
 
         }
-}
-    
-$(".width-input").on('change', function () {
-    if () {
+})
 
-    }
-}
-    
+$(".width-input").on('change', function () {
+    // if () {
+
+    // }
+})
+
 $(".Difficulty").on('change', function () {
     var value = $(this).val();
     // console.log(value)
@@ -33,3 +32,50 @@ $(".Difficulty").on('change', function () {
     }
 
 })
+
+
+function getCookie() { //獲取cookie
+    var diff = $.cookie("diff");
+    var h = $.cookie("height");
+    var w = $.cookie("width");
+    var bomb = $.cookie("bomb");
+
+    if (diff) {
+        $(".Difficulty").val(diff);
+    }
+    if (h) {
+        $(".height-input").val(h);
+    }
+    if (w) {
+        $(".width-input").val(w);
+    }
+    if (bomb) {
+        $(".bomb-input").val(bomb);
+    }
+}
+$.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
+
+
+$(".start").click(function () {
+
+})
+
+
+var diff = $(".Difficulty").val()
+var h = $(".height-input").val()
+var w = $(".width-input").val()
+var bomb = $(".bomb-input").val()
+
+$.cookie("diff", diff);
+$.cookie("height", h);
+$.cookie("width", w);
+$.cookie("bomb", bomb);
+
+console.log($.cookie("diff", diff),
+    $.cookie("height", h),
+    $.cookie("width", w),
+    $.cookie("bomb", bomb))
+
+$(document).ready(function () {
+    getCookie();
+});

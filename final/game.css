@@ -1,5 +1,5 @@
 :root {
-    --cell-size: 40px;
+    --cell-size: 35px;
 }
 
 body {
@@ -16,31 +16,62 @@ body {
 
 .header{
     color: #fff;
-    letter-spacing: .8em;
     text-align: center;
     width: 100%;
     display: flex;
+    box-sizing: border-box;
+    padding: 0 5%;
+    margin: 15px 0;
 }
 
 .header > * {
     font-size: 1.2em;
+    align-items: center;
 }
 
 .remain-block{
     flex: 1;
     order: 1;
+    display: flex;
+    justify-content: flex-start;
+    
 }
 
 .counter {
     flex: 1;
     order: 3;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .title {
     flex: 1;
     order: 2;
+    padding-left:.75em;
+    letter-spacing: .8em;
+
     
 }
+
+.timer-pic {
+    background-image: url(images/stopwatch.svg);
+    margin-left: .6em;
+    height: calc(var(--cell-size)/2);
+    width: calc(var(--cell-size)/2);
+    background-size: calc(var(--cell-size)/2);
+}
+
+.block-pic {
+    background-image: url(images/grid.svg);
+    height: calc(var(--cell-size)/2);
+    width: calc(var(--cell-size)/2);
+    margin-right: .6em;
+
+    background-size: calc(var(--cell-size)/2);
+
+}
+
+
 
 .line {
     height: 1.5px;
@@ -50,8 +81,18 @@ body {
 }
 
 .tb-content {
-    margin-top: 100px;
-    height: 60vh;
+    overflow: scroll;
+    margin-top: 8vh;
+    height: 70vh;
+}
+
+.tb-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.tb-content {
+  -ms-overflow-style: none;
 }
 
 table {
@@ -67,6 +108,7 @@ tr {
     position: relative;
     margin: 0 5px;
     border: 2px solid #fff;
+    border-radius: 15%;
     /* border-color: white; */
     background-color: transparent;
 
@@ -149,12 +191,27 @@ tr {
     100%   {opacity: 0;}
 }
 
+@keyframes rotate {
+    100% {transform: rotate(315deg);
+    }
+}
+
+@keyframes srotate {
+    50% {
+    transform: rotate(90deg);
+}
+}
 
 /* 失敗 */
 .reset {
     width: 600px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translate(-50%,0);
+
     /* align-items: center; */
 }
 
@@ -182,8 +239,9 @@ tr {
 
 /* 獲勝 */
 .winbar {
+    color: #fff;
     position: absolute;
-    bottom: 50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
@@ -193,9 +251,89 @@ tr {
 
 }
 
+.square-r {
+    width: 130px;
+    height: 130px;
+    display: block;
+    border: 3px solid #fff;
+    position: relative;
+    border-radius: 10%;
+    overflow: hidden;
+    animation: rotate 20s linear infinite;
+    transform: rotate(45deg);
+    filter: drop-shadow(0 0 10px #fff);
+    margin: 20px auto 25px;
+}
+
+.square-r-1 {
+    width: 110px;
+    height: 110px;
+    /* margin: 20px auto 25px; */
+
+    /* position: absolute;
+    --inset: 20px;
+    top: var(--inset);
+    left: var(--inset);
+    right: var(--inset);
+    bottom: var(--inset); */
+    filter: none;
+    border: 3px dotted hsla(0,0%,100%,.5);
+    border-radius: 13%;
+    animation: srotate 10s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.win-text {
+    margin: 20px 0;
+}
+
+.time {
+    margin-top: 20px;
+}
+.timespent {
+    margin: 10px 0;
+}
+
+.reset-win {
+    display: flex;
+    flex-direction: column;
+}
+
+.reload-win,
+.menu-win { 
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #000;
+    padding: 20px 100px;
+    margin: 20px 0 0;
+    letter-spacing: 5px;
+    outline: none;
+    box-shadow: none;
+    border: 3px solid #fff;
+    border-radius: 10px;
+}
+
+.menu-win {
+background-color: transparent;
+color: #fff;
+}
+
+.timer-pic-win {
+    background-image: url(images/stopwatch.svg);
+    background-size: 60px;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+
 .line-s {
     height: 1.5px;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     background: #fff;
 }

@@ -12,11 +12,17 @@
 <body>
     <div class="header">
         <div class="remain-block">
-
+            <div class="block-pic"></div>
+            <div class="block-real">
+                0/0
+            </div>
         </div>
-        <h1 class="title">MINESWEEPER</h1>
+        <div class="title">MINESWEEPER</div>
         <div class="counter">
-
+            <div class="timer">
+                00:00
+            </div>
+            <div class="timer-pic"></div>
         </div>
 
     </div>
@@ -48,13 +54,32 @@
         YJLIU
     </div>
     <div class="winbar">
-        <div class="win-text">
-            YOU WIN!!
+        <div class="square-r">
+            <div class="square-r square-r-1">
+                <div class="square-r square-r-2">
+                    <div class="square-r square-r-3">
+                        <div class="square-r square-r-4">
+                            <div class="square-r square-r-5">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <span class="mode">EASY</span>
+        <div class="win-text">
+            YOU WIN!
+        </div>
+        <span class="mode"></span>
         <div class="line-s"></div>
-        <div class="score">
-            123
+        <div class="time">
+            <div class="timer-pic timer-pic-win"></div>
+            <div class="timespent">
+                00:00
+
+            </div>
         </div>
         <div class="line-s"></div>
         <div class="reset-win">
@@ -68,6 +93,8 @@
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="game.js"></script>
 
 
