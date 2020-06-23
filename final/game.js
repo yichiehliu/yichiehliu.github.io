@@ -128,7 +128,7 @@ function getCookie() { //獲取cookie
         $(".width-input").val(w);
     }
     if (bmb) {
-        $(".bomb-input").val(bomb);
+        $(".bomb-input").val(bmb);
     }
 }
 
