@@ -15,29 +15,40 @@ $(".height-input").on('change', function () {
 })
 
 
+if ($(".Difficulty").val() == "custom") {
+    $('.width-input').removeAttr('readonly');
+    $('.height-input').removeAttr('readonly');
+    $('.bomb-input').removeAttr('readonly');
+}
+
 $(".Difficulty").on('change', function () {
     var value = $(this).val();
     // console.log(value)
-    if (value == "easy") {
-        $(".width-input").val(8);
-        $(".height-input").val(8);
-        $(".bomb-input").val(10);
-        $(".bomb-input").attr("max", 10)
-    }
-    else if (value == "medium") {
-        $(".width-input").val(16);
-        $(".height-input").val(16);
-        $(".bomb-input").val(40);
-        $(".bomb-input").attr("max", 40)
+    if (value != "custom") {
+        $('.width-input').attr('readonly', 'readonly');
+        $('.height-input').attr('readonly', 'readonly');
+        $('.bomb-input').attr('readonly', 'readonly');
+        if (value == "easy") {
+            $(".width-input").val(8);
+            $(".height-input").val(8);
+            $(".bomb-input").val(10);
+            $(".bomb-input").attr("max", 10)
+        }
+        else if (value == "medium") {
+            $(".width-input").val(16);
+            $(".height-input").val(16);
+            $(".bomb-input").val(40);
+            $(".bomb-input").attr("max", 40)
 
-    }
-    else if (value == "hard") {
-        $(".width-input").val(24);
-        $(".height-input").val(24);
-        $(".bomb-input").val(99);
-        $(".bomb-input").attr("max", 99)
+        }
+        else if (value == "hard") {
+            $(".width-input").val(24);
+            $(".height-input").val(24);
+            $(".bomb-input").val(99);
+            $(".bomb-input").attr("max", 99)
 
 
+        }
     }
     else {
         $('.width-input').removeAttr('readonly');

@@ -196,7 +196,7 @@ function assignShowArr(x, y) {
     if (($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length == 0) && $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color") != "rgb(112, 199, 243)" && $(`[data-index-x="${x}"][data-index-y="${y}"]`).attr("data-disabled") == "true") {
         clickcnt -= 1;
         // 改現在有多少block
-        $(".block-real").text(clickcnt + "/" + initailclick)
+
         // console.log(clickcnt, typeof (clickcnt))
 
         // console.log($(`[data-index-x="${x}"][data-index-y="${y}"]`).find('div').length);
@@ -210,6 +210,9 @@ function assignShowArr(x, y) {
         // 炸彈的話(怕被標記過)所以統一把邊框拿掉
         if (DataArray[x][y] == -1) {
             $(`[data-index-x="${x}"][data-index-y="${y}"]`).css("border-color", "#transparent")
+        }
+        if (DataArray[x][y] != -1) {
+            $(".block-real").text(clickcnt + "/" + initailclick)
         }
     }
 
