@@ -94,7 +94,7 @@ select option {
 .start {
     height: 65px;
     border-radius: 1vw;
-    width: 50vw;
+    width: 540px;
     margin-top: 15px;
     padding: 0;
     border: 0;
@@ -120,7 +120,7 @@ select option {
 .diff,
 .wandh,
 .Bomb {
-    width: 50vw;
+    width: 540px;
 }
 
 
