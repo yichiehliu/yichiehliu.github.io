@@ -22,7 +22,7 @@ body {
     display: flex;
     box-sizing: border-box;
     padding: 0 5%;
-    margin: 15px 0;
+    margin: 22px 0;
 }
 
 .header > * {
@@ -83,8 +83,12 @@ body {
 
 .tb-content {
     overflow: scroll;
-    margin-top: 8vh;
-    height: 70vh;
+    /* margin-top: 15vh; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
 
 .tb-content::-webkit-scrollbar {
@@ -437,9 +441,23 @@ color: #fff;
     margin-right: 5%;
     justify-content: flex-end;
     box-sizing: border-box;
-
-
 }
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        height: 100vh;
+    }
+
+    .header {
+        font-size: .8em;
+    }
+    .title {
+        padding-left: 0;
+        letter-spacing: .2em;
+    }
+}
+
 
 
 

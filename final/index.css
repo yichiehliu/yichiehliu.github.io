@@ -19,9 +19,12 @@ body {
     align-items: center;
 }
 
-.game-title {
+.header {
     position: absolute;
-    top: 50px;
+    text-align: center;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,0);
     margin: 0 auto;
     color: #fff;
     font-size: 4em;
@@ -122,4 +125,22 @@ select option {
     /* opacity: 1; */
 }
 
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        height: 100vh;
+    }
+
+    .header {
+        font-size: 3.8em;
+    }
+    .title {
+        padding-left: 0;
+        letter-spacing: .2em;
+    }
+    .game {
+        /* width: 100%; */
+    }
+}
 
