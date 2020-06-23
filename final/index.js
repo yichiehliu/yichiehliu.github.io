@@ -42,8 +42,6 @@ $(".Difficulty").on('change', function () {
             $(".height-input").val(24);
             $(".bomb-input").val(99);
             $(".bomb-input").attr("max", 99)
-
-
         }
     }
     else {
@@ -54,8 +52,8 @@ $(".Difficulty").on('change', function () {
 
 })
 
-
-function getCookie() { //獲取cookie
+//cookie
+function getCookie() {
     var diff = $.cookie("diff");
     var h = $.cookie("height");
     var w = $.cookie("width");
@@ -76,7 +74,7 @@ function getCookie() { //獲取cookie
 }
 $.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
 
-
+// 開始遊戲
 $(".start").click(function (event) {
     event.preventDefault();
 
@@ -91,8 +89,6 @@ $(".start").click(function (event) {
     $.cookie("bomb", bomb);
     window.location.href = "./game.html"
 })
-
-
 
 
 // console.log($.cookie("diff", diff),

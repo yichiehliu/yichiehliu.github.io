@@ -1,4 +1,35 @@
 // 遊戲前置作業
+
+
+let diff = "";
+let h = "";
+let w = "";
+let bmb = "";
+// Cookie 讀取
+function getCookie() {
+    // $.cookie.defaults = { path: '/' };
+
+    $.cookie('the_cookie');
+    diff = $.cookie("diff");
+    h = $.cookie("height");
+    w = $.cookie("width");
+    bmb = $.cookie("bomb");
+    console.log($.cookie('the_cookie'), w, bmb);
+
+    if (diff) {
+        $(".Difficulty").val(diff);
+    }
+    if (h) {
+        $(".height-input").val(h);
+    }
+    if (w) {
+        $(".width-input").val(w);
+    }
+    if (bmb) {
+        $(".bomb-input").val(bmb);
+    }
+}
+
 $(document).ready(function () {
     getCookie();
 });
@@ -18,20 +49,15 @@ function RNG(range, amt) {
     var nums = [],
         ranNums = [],
         i = amt;
-
     for (var i = 0; i < amt; ++i) {
         j = Math.floor(Math.random() * (range)) + 1;
         while (nums.includes(j)) {
             j = Math.floor(Math.random() * (range)) + 1;
         }
         nums[i] = j;
-
     }
     return nums;
-
 }
-
-
 
 // 製造炸彈格子
 function createData(numrows, numcols, numbomb) {
@@ -46,7 +72,6 @@ function createData(numrows, numcols, numbomb) {
             else {
                 columns[j] = 9;
             }
-
         }
         arr[i] = columns;
     }
@@ -114,38 +139,6 @@ function createData(numrows, numcols, numbomb) {
     }
     return arr;
 }
-
-
-let diff = "";
-let h = "";
-let w = "";
-let bmb = "";
-
-// Cookie 讀取
-function getCookie() { //獲取cookie
-    // $.cookie.defaults = { path: '/' };
-
-    $.cookie('the_cookie');
-    diff = $.cookie("diff");
-    h = $.cookie("height");
-    w = $.cookie("width");
-    bmb = $.cookie("bomb");
-    console.log($.cookie('the_cookie'), w, bmb);
-
-    if (diff) {
-        $(".Difficulty").val(diff);
-    }
-    if (h) {
-        $(".height-input").val(h);
-    }
-    if (w) {
-        $(".width-input").val(w);
-    }
-    if (bmb) {
-        $(".bomb-input").val(bmb);
-    }
-}
-
 
 // var x = document.cookie;
 // window.alert(Cookies.get('the_cookie'));
