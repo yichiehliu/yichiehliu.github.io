@@ -475,6 +475,8 @@ color: #fff;
         width: 60%;
     }
     .reload-win, .menu-win{
+        font-size: 1.1rem;
+        letter-spacing: 3px;
         padding: 20px 80px;
     }
 }
