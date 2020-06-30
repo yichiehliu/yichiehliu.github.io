@@ -85,9 +85,6 @@ body {
     overflow: scroll;
     margin-top: 2vh;
     /* margin: auto; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 80vh;
 }
 
@@ -474,7 +471,14 @@ color: #fff;
     .tb-content {
         height: 75vh;
     }
+    .winbar {
+        width: 60%;
+    }
+    .reload-win, .menu-win{
+        padding: 20px 80px;
+    }
 }
+
 
 
 
