@@ -4,11 +4,12 @@
 
 >## 專案運行環境限制
 因為我在紀錄使用者遊戲設定有用到cookie，所以在本地端跑這個程式的時候請開terminal跑npm 的server(需要有安裝node.js)，基本上以下三步驟:<br>
-1. terminal位置要開在這個專案的位子<br>
+1. terminal位置要開在這個專案的位子<br>x
 2. 在terminal打npx browser-sync start --server<br>
 3. server成功運行之後打開browser在網址列輸入在terminal上顯示允許的port，通常是localhost:3000。<br>
 
-這樣就可以運行這個專案了<br>
+這樣就可以本地運行這個專案了<br>
+用file直接打開會跑不出踩地雷的格子，因為後台cookie沒有讀取到<br>
 ***
 
 >## 主要用到的檔案
